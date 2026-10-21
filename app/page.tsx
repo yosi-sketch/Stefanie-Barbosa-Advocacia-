@@ -9,17 +9,15 @@ import {
   Award,
   CheckCircle2,
   Clock,
-  Coins,
   FileCheck2,
   HeartHandshake,
-  Landmark,
+  Lock,
   Mail,
   MapPin,
   Menu,
   Phone,
   Scale,
   ShieldCheck,
-  ShoppingBag,
   Sparkles,
   Star,
   Users2,
@@ -27,27 +25,27 @@ import {
 } from "lucide-react";
 import GlowingButton from "./components/GlowingButton";
 
-const WHATSAPP_NUMBER = "553888355914";
-const PHONE_DISPLAY = "(38) 98835-5914";
-const EMAIL_CONTACT = "contato@michaelysilva.adv.br";
-const INSTAGRAM_URL = "https://www.instagram.com/michaelysilva_adv/";
-const INSTAGRAM_HANDLE = "@michaelysilva_adv";
+const WHATSAPP_NUMBER = "5534992906297";
+const PHONE_DISPLAY = "(34) 99290-6297";
+const WHATSAPP_DIRECT_LINK = "https://wa.me/message/74EKQ3CEL5UQH1";
+const EMAIL_CONTACT = "contato@franciellegoncalves.adv.br";
+const INSTAGRAM_URL = "https://www.instagram.com/franciellegoncalves.adv";
+const INSTAGRAM_HANDLE = "@franciellegoncalves.adv";
 
-const ADDRESS_TEXT = "R. Astolfo Moreira, 305 A - Centro, João Pinheiro - MG, 38770-000";
+const ADDRESS_TEXT = "R. Lagamar, 98 - Copacabana, Patos de Minas - MG, 38701-184";
 const GOOGLE_SEARCH_URL =
-  "https://www.google.com/search?q=Michaely+Pereira+Silva+%E2%80%94+Advogada+Jo%C3%A3o+Pinheiro+%C2%B7+MG";
+  "https://www.google.com/search?q=Francielle+Gon%C3%A7alves+%E2%80%94+Advogada+Patos+de+Minas+%C2%B7+MG";
 
-const LOGO_SEAL_SRC = "/logo-symbol.png";
-const LOGO_FULL_SRC = "/logo.png";
-const FOTO_HERO_SRC = "/michaely-portrait.png";
-const FOTO_INFOGRAFICO_SRC = "/michaely-infographic.png";
+const LOGO_FULL_SRC = "/logo-barbosa-gold.png";
+const FOTO_HERO_SRC = "/francielle-portrait.png";
+const FOTO_SOBRE_SRC = "/francielle-full.jpg";
 
 function getWhatsAppUrl(
   message?: string,
   number: string = WHATSAPP_NUMBER
 ) {
   const defaultText =
-    "Olá, Dra. Michaely Silva! Gostaria de agendar uma consulta jurídica e tirar dúvidas sobre o meu caso.";
+    "Olá, Dra. Francielle Gonçalves! Gostaria de agendar uma consulta jurídica e tirar dúvidas sobre o meu caso.";
   return `https://wa.me/${number}?text=${encodeURIComponent(
     message || defaultText
   )}`;
@@ -157,169 +155,204 @@ interface PracticeArea {
 
 const practiceAreas: PracticeArea[] = [
   {
-    id: "direito-do-consumidor",
-    title: "Direito do Consumidor & Defesa de Direitos",
-    icon: ShoppingBag,
-    tag: "Negativação Indevida · Danos Morais · Cobranças Abusivas · Falhas na Entrega",
+    id: "divorcio-partilha-bens",
+    title: "Divórcio Humanizado & Partilha de Bens",
+    icon: Scale,
+    tag: "Consensual em Cartório · Litigioso · Partilha de Bens · Empresas & Imóveis",
     summary:
-      "Defesa incisiva contra práticas abusivas de empresas, bancos e operadoras, buscando a exclusão de negativações ilegais no SPC/Serasa e indenizações devidas.",
+      "Condução estratégica e acolhedora de divórcios, priorizando acordos céleres em cartório e blindando seu patrimônio contra divisões injustas ou ocultações.",
     details:
-      "O consumidor não pode ser penalizado por falhas e abusos do mercado. A Dra. Michaely Silva atua com agilidade para obter ordens liminares de exclusão do nome dos órgãos de proteção ao crédito, restituição em dobro de quantias cobradas indevidamente e compensação financeira por danos morais decorrentes de cobranças vexatórias, cancelamentos de serviços e golpes digitais.",
+      "O divórcio marca o encerramento de um ciclo e não precisa se transformar em uma guerra de desgaste emocional e prejuízo financeiro. A Dra. Francielle Gonçalves Barbosa atua com técnica apurada e sensibilidade para conduzir divórcios consensuais com rapidez diretamente em cartório ou ações contenciosas firmes perante o Poder Judiciário. Com olhar investigativo, identificamos manobras patrimoniais, blindamos cotas empresariais e asseguramos a partilha justa de cada conquista do casal.",
     topics: [
-      "Exclusão liminar urgente do nome no SPC, Serasa e Boa Vista por negativação indevida",
-      "Ações indenizatórias por danos morais por cobrança vexatória ou serviço não prestado",
-      "Restituição em dobro de valores cobrados indevidamente (art. 42 do Código de Defesa do Consumidor)",
-      "Cancelamento de compras fraudulentas, golpes no PIX e clonagem de cartões de crédito",
-      "Ações contra companhias aéreas por atraso, cancelamento de voos e extravio de bagagens",
-      "Combate a cláusulas contratuais abusivas, vendas casadas e recusa de garantia legal",
+      "Divórcio consensual ágil em cartório (extrajudicial) com economia tributária e sigilo absoluto",
+      "Divórcio contencioso estratégico com pedidos liminares urgentes de separação de corpos e afastamento do lar",
+      "Partilha equilibrada de patrimônio complexo: imóveis urbanos e rurais, veículos, empresas e cotas societárias",
+      "Bloqueio judicial preventivo de contas bancárias e investimentos para evitar dilapidação e ocultação de bens",
+      "Reconhecimento e dissolução de união estável com resguardo patrimonial integral",
+      "Arbitramento de aluguel em favor do cônjuge prejudicado pelo uso exclusivo do imóvel comum",
     ],
     whatsAppText:
-      "Olá, Dra. Michaely! Gostaria de uma avaliação para um problema de Direito do Consumidor (cobrança indevida, negativação ou dano moral).",
+      "Olá, Dra. Francielle! Gostaria de agendar uma consulta sobre divórcio e partilha de bens.",
   },
   {
-    id: "direito-de-familia",
-    title: "Direito de Família, Divórcio & Guarda",
+    id: "guarda-filhos-convivencia",
+    title: "Guarda dos Filhos & Regime de Convivência",
     icon: HeartHandshake,
-    tag: "Divórcio · Guarda & Convivência · Pensão Alimentícia · Partilha de Bens",
+    tag: "Guarda Compartilhada · Convivência Saudável · Proteção dos Filhos · Alienação Parental",
     summary:
-      "Condução sensível, técnica e segura dos conflitos familiares, protegendo o patrimônio dos cônjuges e garantindo o bem-estar e o futuro dos filhos.",
+      "Proteção irrestrita dos vínculos de afeto e do bem-estar dos filhos, estruturando planos de convivência harmoniosos e combatendo a alienação parental.",
     details:
-      "As questões de família exigem um equilíbrio delicado entre firmeza jurídica e profundo respeito humano. Dra. Michaely Pereira Silva acompanha divórcios consensuais e litigiosos, fixação e revisão de pensão alimentícia, regimes de convivência e guarda, atuando para prevenir traumas desnecessários e assegurar uma partilha justa de bens.",
+      "Os filhos nunca devem ser instrumentos de disputa ou chantagem entre os genitores. A Dra. Francielle Gonçalves atua com olhar acolhedor e humanizado para defender o melhor interesse da criança ou adolescente, estabelecendo rotinas claras, definição equilibrada do lar de referência e regras transparentes de convivência em férias e datas comemorativas. Havendo situações de risco ou alienação parental, ingressamos com medidas judiciais imediatas.",
     topics: [
-      "Divórcio consensual ágil em cartório (extrajudicial) e divórcio judicial contencioso",
-      "Ação de alimentos: fixação, execução de pensão em atraso, revisão de valor e exoneração",
-      "Regulamentação e modificação de guarda (compartilhada e unilateral) e plano de convivência",
-      "Partilha equilibrada de bens, imóveis, veículos e investimentos do casal",
-      "Reconhecimento e dissolução de união estável com resguardo patrimonial",
-      "Investigação e reconhecimento de paternidade com retificação de registro civil",
+      "Regulamentação de guarda compartilhada com definição segura do lar de referência e rotinas saudáveis",
+      "Elaboração de planos minuciosos de convivência para fins de semana, férias escolares, aniversários e feriados",
+      "Ações judiciais de urgência para alteração de guarda em virtude de negligência, risco moral ou violência",
+      "Combate enérgico a atos de alienação parental e restrições indevidas de contato com as crianças",
+      "Autorização judicial para viagens internacionais ou mudança definitiva de cidade/estado",
+      "Mediação preventiva para pacificação de divergências entre os pais e preservação da saúde emocional dos filhos",
     ],
     whatsAppText:
-      "Olá, Dra. Michaely! Gostaria de consultar sobre uma questão de Direito de Família (divórcio, pensão alimentícia ou guarda).",
+      "Olá, Dra. Francielle! Gostaria de uma avaliação jurídica sobre guarda dos meus filhos e regulamentação de convivência.",
   },
   {
-    id: "inventario-judicial-extrajudicial",
-    title: "Inventário Judicial & Extrajudicial em Cartório",
-    icon: FileCheck2,
-    tag: "Partilha de Herança · Cartório Rápido · Planejamento Sucessório · ITCD MG",
-    summary:
-      "Regularização e partilha célere de heranças, reduzindo custos tributários e burocracias para que a família receba seu patrimônio em paz.",
-    details:
-      "A perda de um ente querido já é um momento doloroso e não deve ser agravada por burocracias infindáveis. Havendo consenso entre herdeiros capazes, realizamos o inventário extrajudicial em cartório de forma rápida e segura. Para os casos de herdeiros menores ou discordâncias, atuamos no inventário judicial com firmeza na defesa da justa cota-parte.",
-    topics: [
-      "Inventário Extrajudicial em Cartório: procedimento célere e econômico para herdeiros em consenso",
-      "Inventário Judicial célere para patrimônios complexos ou quando há herdeiros menores/incapazes",
-      "Levantamento de alvarás judiciais para liberação de saldos bancários, FGTS e PIS/PASEP",
-      "Planejamento sucessório prévio e apuração do imposto sobre herança (ITCD - Minas Gerais)",
-      "Cessão de direitos hereditários e regularização documental de imóveis herdados",
-      "Mediação entre herdeiros para resolução amigável e pacífica da partilha",
-    ],
-    whatsAppText:
-      "Olá, Dra. Michaely! Gostaria de orientação para dar entrada em um inventário judicial ou extrajudicial.",
-  },
-  {
-    id: "direito-bancario",
-    title: "Direito Bancário & Combate a Juros Abusivos",
-    icon: Coins,
-    tag: "Pós-Graduada · Empréstimo Não Solicitado · Superendividamento · Fraudes Bancárias",
-    summary:
-      "Combate a abusos de instituições financeiras, juros extorsivos, descontos indevidos de consignados em aposentadorias e renegociação de dívidas.",
-    details:
-      "Com especialização de pós-graduação em Direito Bancário, Dra. Michaely defende consumidores e aposentados lesados por empréstimos consignados não autorizados, taxas de juros acima da média do Banco Central e fraudes bancárias, atuando na repetição do indébito e na renegociação sob a Lei do Superendividamento.",
-    topics: [
-      "Cancelamento de empréstimos consignados fraudulentos em benefícios do INSS e indenização",
-      "Ações revisionais de financiamentos de veículos e contratos de crédito com juros abusivos",
-      "Defesa contra fraudes por engenharia social, transferências via PIX e boletos falsos",
-      "Renegociação estruturada e unificação de passivos com base na Lei do Superendividamento",
-      "Desbloqueio de contas bancárias e salários indevidamente retidos por dívidas",
-      "Defesa técnica em execuções de títulos extrajudiciais e ações de busca e apreensão",
-    ],
-    whatsAppText:
-      "Olá, Dra. Michaely! Gostaria de consultar sobre problemas com banco (empréstimo consignado não solicitado ou juros abusivos).",
-  },
-  {
-    id: "direito-do-trabalho",
-    title: "Direito do Trabalho & Rescisões Contratuais",
-    icon: Landmark,
-    tag: "Pós-Graduada · Verbas Rescisórias · Horas Extras · Rescisão Indireta · Acidentes",
-    summary:
-      "Proteção técnica dos direitos dos trabalhadores e orientação preventiva, garantindo o recebimento integral de todas as verbas conquistadas pelo trabalho.",
-    details:
-      "Pós-graduada em Direito do Trabalho, a Dra. Michaely Silva analisa detalhadamente cartões de ponto, holerites e termos de rescisão para identificar supressão de direitos, horas extras não quitadas, insalubridade e hipóteses de rescisão indireta em decorrência de descumprimento das obrigações pelo empregador.",
-    topics: [
-      "Cálculo e cobrança de verbas rescisórias integrais (aviso prévio, FGTS + 40%, 13º e férias)",
-      "Ação de Rescisão Indireta do contrato de trabalho (demissão por justa causa do empregador)",
-      "Reconhecimento de vínculo empregatício sem registro em carteira e anotações retroativas",
-      "Cobrança de horas extras, intervalos intrajornada, adicional noturno e descanso semanal remunerado",
-      "Reivindicação de adicionais de insalubridade e periculosidade devidos",
-      "Indenização por assédio moral no ambiente de trabalho e acidentes laborais",
-    ],
-    whatsAppText:
-      "Olá, Dra. Michaely! Gostaria de orientações sobre direitos trabalhistas, rescisão de contrato e horas extras.",
-  },
-  {
-    id: "orientacao-juridica-consultoria",
-    title: "Orientação Jurídica & Consultoria Preventiva",
+    id: "pensao-alimenticia-execucao",
+    title: "Pensão Alimentícia Justa & Cobrança Rápida",
     icon: ShieldCheck,
-    tag: "Análise Contratual · Resolução Amigável · Notificações · Clareza sem Juridiquês",
+    tag: "Fixação Justa · Revisão Proporcional · Execução de Atrasados · Prisão & Penhora",
     summary:
-      "Consultoria jurídica acessível e estratégica para evitar prejuízos futuros, revisar contratos civis e solucionar conflitos antes que virem processos demorados.",
+      "Garantia do sustento digno e do padrão de vida dos seus filhos, com fixação realista e cobrança incisiva de pensões atrasadas por prisão civil ou penhora.",
     details:
-      "Uma orientação jurídica preventiva evita anos de disputas judiciais e prejuízos financeiros vultosos. A Dra. Michaely Pereira Silva oferece pareceres claros, elaboração e análise minuciosa de contratos civis e imobiliários, além de mediação para que você tome decisões sempre com segurança e respaldo legal.",
+      "A pensão alimentícia é um direito inegociável para garantir alimentação, educação, saúde e dignidade aos seus filhos. A Dra. Francielle analisa meticulosamente as reais necessidades das crianças e a capacidade financeira real do genitor — inclusive investigando sinais exteriores de riqueza em casos de renda oculta ou empresas em nome de terceiros. Atuamos também com extrema agilidade na cobrança de valores em atraso sob rito de prisão e bloqueio patrimonial.",
     topics: [
-      "Elaboração e revisão segura de contratos de compra e venda de imóveis e locações",
-      "Envio de notificações extrajudiciais com validade jurídica formal para resolução amigável",
-      "Consultoria jurídica personalizada com respostas diretas e descomplicadas para suas dúvidas",
-      "Análise prévia de riscos em transações patrimoniais e acordos comerciais",
-      "Mediação entre partes para obtenção de acordos extrajudiciais rápidos e seguros",
-      "Acompanhamento em assinaturas de escrituras, contratos e registros públicos",
+      "Ação de alimentos: fixação de pensão provisória imediata e definitiva conforme o padrão de vida real da família",
+      "Execução de alimentos célere sob pena de prisão civil do devedor e penhora de veículos, contas e imóveis",
+      "Investigação de sinais exteriores de riqueza em redes sociais e empresas para comprovação de renda informal",
+      "Ação revisional de pensão alimentícia para majoração ou minoração diante de alterações financeiras comprovadas",
+      "Fixação de alimentos gravídicos durante o período gestacional para assegurar assistência médica e parto",
+      "Exoneração legítima de pensão alimentícia quando atingida a maturidade civil e independência financeira",
     ],
     whatsAppText:
-      "Olá, Dra. Michaely! Gostaria de agendar uma consulta para orientação jurídica preventiva e análise do meu caso.",
+      "Olá, Dra. Francielle! Gostaria de ajuda jurídica para fixar, revisar ou cobrar pensão alimentícia atrasada.",
+  },
+  {
+    id: "inventario-cartorio-sucessoes",
+    title: "Inventário Extrajudicial em Cartório & Judicial",
+    icon: FileCheck2,
+    tag: "Cartório Rápido em até 3 Meses · Economia de ITCD · Partilha Amigável · Desconto Tributário",
+    summary:
+      "Regularização e partilha ágil de heranças, reduzindo burocracias e economizando milhares de reais em impostos (ITCD) para que a família receba seus bens em paz.",
+    details:
+      "A perda de um familiar é um momento doloroso e não deve ser agravada por disputas ou inventários que se arrastam por anos nos tribunais. Com experiência comprovada — concluindo inventários em cartório em até 3 meses e conquistando descontos expressivos no imposto estadual (ITCD em Minas Gerais) —, a Dra. Francielle Gonçalves Barbosa conduz partilhas com extrema agilidade técnica, garantindo a cota legítima de cada herdeiro com segurança documental total.",
+    topics: [
+      "Inventário Extrajudicial em Cartório: procedimento célere finalizado em até 3 meses havendo consenso",
+      "Planejamento fiscal estratégico com obtenção de descontos legítimos no imposto sobre herança (ITCD Minas Gerais)",
+      "Inventário Judicial ágil para casos com herdeiros menores, testamento ou patrimônios complexos",
+      "Expedição rápida de alvarás judiciais para levantamento de saldos em contas bancárias, FGTS e previdências",
+      "Cessão formal de direitos hereditários, sobrepartilhas e regularização registral de imóveis herdados",
+      "Mediação pacificadora entre herdeiros para eliminar atritos e viabilizar a divisão amigável do patrimônio",
+    ],
+    whatsAppText:
+      "Olá, Dra. Francielle! Gostaria de uma avaliação para dar entrada em um inventário em cartório ou judicial.",
+  },
+  {
+    id: "uniao-estavel-planejamento",
+    title: "União Estável & Planejamento Familiar",
+    icon: Users2,
+    tag: "Pactos Antenupciais · Contratos de Convivência · Blindagem Patrimonial · Testamentos",
+    summary:
+      "Segurança jurídica preventiva para casais, estruturando pactos antenupciais, formalização de união estável e planejamento sucessório antecipado.",
+    details:
+      "Casais conscientes protegem sua relação e seu patrimônio antes que surjam divergências. Elaboramos pactos antenupciais personalizados, escrituras de união estável com escolha fundamentada do regime de bens mais vantajoso (comunhão parcial, separação total com pacto de aquestos) e contratos de namoro qualificados, além de estruturas de doação em vida com usufruto que evitam desgastes entre sucessores.",
+    topics: [
+      "Formalização e registro de união estável em cartório com cláusulas protetivas personalizadas",
+      "Elaboração de pactos antenupciais estratégicos para proteção de patrimônio familiar e empresarial",
+      "Contratos de namoro qualificados para prevenir reconhecimento indevido de união estável e partilha retroativa",
+      "Planejamento sucessório antecipado: doação de imóveis em vida com cláusula de reserva de usufruto vitalício",
+      "Elaboração e validação formal de testamentos públicos perante tabelião de notas",
+      "Dissolução amigável de união estável com partilha clara e imediata de bens",
+    ],
+    whatsAppText:
+      "Olá, Dra. Francielle! Gostaria de consultar sobre união estável, pacto antenupcial ou planejamento sucessório.",
+  },
+  {
+    id: "violencia-patrimonial-segura",
+    title: "Proteção Patrimonial da Mulher & Método S.E.G.U.R.A",
+    icon: Lock,
+    tag: "Método Exclusivo · Defesa das Mulheres · Bloqueio de Ocultação · Medidas Protetivas",
+    summary:
+      "Aplicação da metodologia exclusiva S.E.G.U.R.A para proteger mulheres contra abusos econômicos, desvios de patrimônio e fraudes conjugais.",
+    details:
+      "Muitas mulheres enfrentam abusos econômicos silenciosos durante o casamento ou no término da união: controle abusivo do dinheiro, empresas registradas em nome de parentes ou 'laranjas', esvaziamento premeditado de contas e ameaças veladas. Através do método exclusivo S.E.G.U.R.A, a Dra. Francielle atua com rapidez jurídica e medidas cautelares para quebrar blindagens fraudulentas, restituir a independência financeira e assegurar tudo o que a mulher construiu com sua dedicação.",
+    topics: [
+      "Aplicação de medidas protetivas judiciais urgentes contra a violência patrimonial e chantagens econômicas",
+      "Investigação aprofundada de blindagens patrimoniais, laranjas e empresas ocultas para fins de partilha",
+      "Desconsideração da personalidade jurídica para incluir bens da empresa do cônjuge na divisão do casal",
+      "Garantia imediata de fixação de alimentos provisórios para manutenção da mulher e dos filhos",
+      "Acolhimento jurídico humanizado, empático e totalmente confidencial do início ao fim do processo",
+      "Reivindicação de indenizações compensatórias por perdas patrimoniais decorrentes de abusos na união",
+    ],
+    whatsAppText:
+      "Olá, Dra. Francielle! Gostaria de uma avaliação confidencial sobre proteção patrimonial e o método S.E.G.U.R.A.",
   },
 ];
 
 const clientReviews = [
   {
-    name: "Soane Ferreira",
-    reviewsCount: "1 avaliação no Google",
-    badge: "Empatia, Conhecimento & Clareza",
+    name: "Indalecio Gonçalves",
+    reviewsCount: "Avaliação Verificada no Google (5,0 ★)",
+    badge: "Inventário em 3 Meses & Economia de R$ 4k",
     content:
-      "Atendimento excelente, a Dra demonstra muito conhecimento é empática, soube esclarecer minhas dúvidas de forma fácil pra eu entender. Adorei o atendimento super recomendo.",
+      "Ela fez o inventário do meu pai e mãe em 2026, disse que ficaria pronto com 6 meses e finalizou tudo em 3 meses, fiquei muito satisfeito, ainda conseguiu 4 mil de desconto no imposto, sempre explicando tudo, muito educada e atenciosa Dra Francielle, só tenho agradecer a ela e sua equipe.",
   },
   {
-    name: "Kauã Gomes",
-    reviewsCount: "1 avaliação no Google",
-    badge: "Dedicação & Indicação Constante",
+    name: "Tatiana Jesus",
+    reviewsCount: "Avaliação Verificada no Google (5,0 ★)",
+    badge: "Divórcio Conduzido com Sucesso",
     content:
-      "Excelente profissional e muito dedicada, indico sempre.",
+      "Uma excelente profissional, advogada de muita competência! Super indico! Trabalhou muito no meu processo de divórcio! Resultado positivo super indico Dra Francielle Gonçalves.",
   },
   {
-    name: "Rodrigo Ferreira",
-    reviewsCount: "3 avaliações · 6 fotos no Google",
-    badge: "A Melhor de João Pinheiro",
+    name: "Denise Martins Santos",
+    reviewsCount: "3 avaliações no Google (5,0 ★)",
+    badge: "Agilidade, Prazos & Total Confiança",
     content:
-      "Excelente profissional!!! Recomendo, a melhor de joao pinheiro.",
+      "A Dra. Franciele é uma profissional extremamente competente, atenciosa e comprometida. Sempre foi muito clara nas orientações, cumpriu todos os prazos estabelecidos e conduziu tudo com agilidade e eficiência. Além de ser muito resolutiva, demonstra cuidado e atenção em cada atendimento, transmitindo segurança e confiança. Recomendo seu trabalho com certeza!",
   },
   {
-    name: "Luciene Pereira",
-    reviewsCount: "2 avaliações no Google",
-    badge: "Ética, Compromisso & Excelência",
+    name: "Luciene Santos",
+    reviewsCount: "Avaliação Verificada no Google (5,0 ★)",
+    badge: "Guarda, Pensão & Regulamentação de Visitas",
     content:
-      "Advoga com excelência! Profissional com ética e comprometimento. Sucesso!",
+      "Sempre indicarei a Dra Franciele Gonçalves, ela é uma pessoa dedicada com sua profissão e um carinho com o que faz, no meu caso foi guarda pensão alimentícia, regularizar das visitas. Sou muito grata com cada orientação e paciência que teve comigo.",
   },
   {
-    name: "Casamagrao Magrao",
-    reviewsCount: "1 avaliação no Google",
-    badge: "Ótima Profissional",
+    name: "Marlei Teresinha",
+    reviewsCount: "2 avaliações no Google (5,0 ★)",
+    badge: "Pensão de Filho Resolvida Rápido",
     content:
-      "Ótima profissional.",
+      "Muito boa advogada, indiquei ela pra uma amiga pedir a pensão do seu filho, ela foi muito atenciosa, resolveu o caso dela muito rápido, indico de olhos fechados.",
   },
   {
-    name: "Fátima Pereira Alves",
-    reviewsCount: "1 avaliação no Google",
-    badge: "Atendimento Excelente",
+    name: "Diuly Cruz",
+    reviewsCount: "Avaliação Verificada no Google (5,0 ★)",
+    badge: "Melhor Advogada de Família da Região",
     content:
-      "Excelente o atendimento.",
+      "Melhor advogada de família da região! Muito competente e dedicada.",
+  },
+  {
+    name: "Marcela Leandro Ribeiro",
+    reviewsCount: "3 avaliações no Google (5,0 ★)",
+    badge: "Retorno Rápido & Disponibilidade",
+    content:
+      "Excelente profissional! Está sempre disponível para esclarecimentos, retorna rapidamente quando contactada.",
+  },
+  {
+    name: "Junior Pereira",
+    reviewsCount: "Avaliação Verificada no Google (5,0 ★)",
+    badge: "Notável Saber Jurídico",
+    content:
+      "Excelente advogada, extremamente competente e com notável saber jurídico!",
+  },
+  {
+    name: "Larissa Gonçalves",
+    reviewsCount: "3 avaliações no Google (5,0 ★)",
+    badge: "Paciente, Inteligente & Educada",
+    content:
+      "Excelente advogada. Super paciente, inteligente e sempre muito educada com os clientes.",
+  },
+  {
+    name: "Lorrane Cristina",
+    reviewsCount: "Avaliação Verificada no Google (5,0 ★)",
+    badge: "Atenciosa & Muito Dedicada",
+    content:
+      "Excelente profissional! Muito atenciosa, competente e dedicada. Recomendo muito o trabalho dela.",
+  },
+  {
+    name: "Victor Soares",
+    reviewsCount: "Avaliação Verificada no Google (5,0 ★)",
+    badge: "Recomendação 5 Estrelas",
+    content:
+      "Ótima advogada. Recomendo!",
   },
 ];
 
@@ -327,21 +360,27 @@ function Heading({
   eyebrow,
   children,
   description,
-  light = true,
+  light = false,
 }: {
-  eyebrow: string;
+  eyebrow?: string;
   children: React.ReactNode;
   description?: string;
   light?: boolean;
 }) {
   return (
-    <div>
-      <p className={light ? "eyebrow-light" : "eyebrow"}>{eyebrow}</p>
-      <h2 className="mt-4 font-serif text-3xl leading-[1.14] tracking-[-0.02em] text-[#14110e] sm:text-4xl lg:text-[3.15rem]">
+    <div className="max-w-2xl">
+      {eyebrow && (
+        <p className={light ? "eyebrow-light" : "eyebrow"}>{eyebrow}</p>
+      )}
+      <h2
+        className={`mt-4 font-serif text-3xl leading-[1.15] tracking-[-0.02em] sm:text-4xl lg:text-[2.75rem] ${
+          light ? "text-[#14110e]" : "text-[#14110e]"
+        }`}
+      >
         {children}
       </h2>
       {description && (
-        <p className="mt-4 text-[15px] leading-7 text-[#4c433a]">
+        <p className="mt-4 text-[15px] leading-7 text-[#4c433a] sm:text-base">
           {description}
         </p>
       )}
@@ -371,42 +410,38 @@ export default function Home() {
       <main className="overflow-hidden bg-[#faf8f5] text-[#14110e] selection:bg-[#f7e5a9] selection:text-[#14110e]">
         {/* Navigation Bar - Refined Light Luxury with Polished Gold Accents */}
         <header className="sticky top-0 z-40 border-b border-[#e8dfd2] bg-white/95 backdrop-blur-xl shadow-xs">
-          <div className="mx-auto flex h-[96px] max-w-7xl items-center justify-between gap-6 px-5 sm:h-[108px] sm:px-8 lg:px-12">
+          <div className="mx-auto flex h-[80px] max-w-7xl items-center justify-between gap-4 px-5 sm:h-[88px] sm:px-8 lg:h-[94px] lg:gap-6 lg:px-12">
             <a
               href="#inicio"
-              aria-label="Michaely Silva Advogada"
+              aria-label="Barbosa Advocacia e Consultoria — Dra. Francielle Gonçalves"
               onClick={closeMenu}
-              className="flex items-center gap-3.5 transition-opacity hover:opacity-90"
+              className="flex items-center transition-transform hover:scale-[1.01] shrink-0"
             >
-              <div className="relative size-[60px] shrink-0 overflow-hidden rounded-full border-2 border-[#deb753]/60 bg-[#120f0d] shadow-sm sm:size-[72px]">
+              <div className="relative h-10 w-32 sm:h-12 sm:w-36 lg:h-[58px] lg:w-[176px] shrink-0">
                 <Image
-                  src={LOGO_SEAL_SRC}
-                  alt="Selo Monograma Oficial Michaely Silva Advogada"
+                  src={LOGO_FULL_SRC}
+                  alt="Barbosa Advocacia e Consultoria — Dra. Francielle Gonçalves"
                   fill
                   priority
-                  sizes="72px"
-                  className="object-contain p-1"
+                  loading="eager"
+                  sizes="(max-width: 640px) 128px, (max-width: 1024px) 144px, 176px"
+                  className="object-contain object-left"
                 />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-cinzel text-lg font-bold tracking-wider text-[#14110e] sm:text-xl lg:text-2xl">
-                  MICHAELY SILVA
-                </span>
-                <span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#8e6318] sm:text-xs">
-                  Advogada · João Pinheiro - MG
-                </span>
               </div>
             </a>
 
             <nav
               aria-label="Navegação principal"
-              className="hidden items-center gap-7 lg:flex"
+              className="hidden items-center gap-5 xl:gap-7 lg:flex"
             >
               <a className="nav-link" href="#inicio">
                 Início
               </a>
               <a className="nav-link" href="#sobre">
-                Dra. Michaely
+                Dra. Francielle
+              </a>
+              <a className="nav-link" href="#metodo-segura">
+                Método S.E.G.U.R.A
               </a>
               <a className="nav-link" href="#atuacao">
                 Áreas de Atuação
@@ -427,9 +462,9 @@ export default function Home() {
                 href={GOOGLE_SEARCH_URL}
                 target="_blank"
                 rel="noreferrer"
-                aria-label="Avaliações da Dra. Michaely Silva no Google"
+                aria-label="Avaliações da Dra. Francielle Gonçalves no Google"
                 className="grid size-10 place-items-center rounded-lg border border-[#e8dfd2] bg-[#faf7f2] text-[#4c433a] transition-all hover:border-[#deb753] hover:bg-white hover:text-[#14110e] shadow-xs"
-                title="5,0 ★ no Google (17 avaliações)"
+                title="5,0 ★ no Google (13 avaliações)"
               >
                 <GoogleIcon size={16} />
               </a>
@@ -437,15 +472,15 @@ export default function Home() {
                 href={INSTAGRAM_URL}
                 target="_blank"
                 rel="noreferrer"
-                aria-label="Instagram da Dra. Michaely Silva"
+                aria-label="Instagram da Dra. Francielle Gonçalves"
                 className="grid size-10 place-items-center rounded-lg border border-[#e8dfd2] bg-[#faf7f2] text-[#4c433a] transition-all hover:border-[#deb753] hover:bg-white hover:text-[#14110e] shadow-xs"
-                title={`Instagram ${INSTAGRAM_HANDLE}`}
+                title={`Instagram ${INSTAGRAM_HANDLE} (10,5k seguidores)`}
               >
                 <InstagramIcon size={16} />
               </a>
               <a
                 href={`tel:+${WHATSAPP_NUMBER}`}
-                aria-label="Ligar para Michaely Silva Advogada"
+                aria-label="Ligar para Francielle Gonçalves Advogada"
                 className="grid size-10 place-items-center rounded-lg border border-[#e8dfd2] bg-[#faf7f2] text-[#4c433a] transition-all hover:border-[#deb753] hover:bg-white hover:text-[#14110e] shadow-xs"
                 title={`Ligar: ${PHONE_DISPLAY}`}
               >
@@ -455,7 +490,7 @@ export default function Home() {
                 href={getWhatsAppUrl()}
                 target="_blank"
                 rel="noreferrer"
-                aria-label="WhatsApp Dra. Michaely Silva"
+                aria-label="WhatsApp Dra. Francielle Gonçalves"
                 className="grid size-10 place-items-center rounded-lg border border-[#e8dfd2] bg-[#faf7f2] text-[#4c433a] transition-all hover:border-[#deb753] hover:bg-white hover:text-[#14110e] shadow-xs"
                 title="Atendimento no WhatsApp"
               >
@@ -463,7 +498,7 @@ export default function Home() {
               </a>
               <GlowingButton
                 href={getWhatsAppUrl(
-                  "Olá, Dra. Michaely! Gostaria de agendar uma consulta e receber orientação jurídica para o meu caso."
+                  "Olá, Dra. Francielle! Gostaria de agendar uma consulta e receber orientação jurídica para o meu caso."
                 )}
                 target="_blank"
                 size="sm"
@@ -500,7 +535,8 @@ export default function Home() {
                 <div className="mx-auto flex max-w-7xl flex-col gap-1 py-4">
                   {[
                     ["Início", "#inicio"],
-                    ["Dra. Michaely Silva", "#sobre"],
+                    ["Dra. Francielle", "#sobre"],
+                    ["Método S.E.G.U.R.A", "#metodo-segura"],
                     ["Áreas de Atuação", "#atuacao"],
                     ["Por Que Escolher", "#diferenciais"],
                     ["Avaliações (5,0 ★)", "#avaliacoes"],
@@ -519,7 +555,7 @@ export default function Home() {
                     <a
                       className="inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-[#8e6318] via-[#c59a3f] to-[#8e6318] px-5 py-3.5 text-xs font-bold uppercase tracking-[0.13em] text-white shadow-md transition-all hover:brightness-105"
                       href={getWhatsAppUrl(
-                        "Olá, Dra. Michaely! Gostaria de falar sobre o meu caso e receber orientação jurídica."
+                        "Olá, Dra. Francielle! Gostaria de falar sobre o meu caso e receber orientação jurídica."
                       )}
                       target="_blank"
                       rel="noreferrer"
@@ -534,7 +570,7 @@ export default function Home() {
                       rel="noreferrer"
                       onClick={closeMenu}
                     >
-                      <GoogleIcon size={15} /> 5,0 ★ no Google (17 avaliações)
+                      <GoogleIcon size={15} /> 5,0 ★ no Google (13 avaliações)
                     </a>
                   </div>
                 </div>
@@ -564,16 +600,16 @@ export default function Home() {
                 className="mb-6 inline-flex items-center gap-2.5 rounded-lg border border-[#deb753]/40 bg-white px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-[#8e6318] shadow-xs"
               >
                 <span className="size-2 shrink-0 rounded-full bg-[#8e6318]" />
-                <span>MICHAELY SILVA | ADVOGADA · JOÃO PINHEIRO - MG</span>
+                <span>FRANCIELLE GONÇALVES | ADVOGADA · PATOS DE MINAS - MG</span>
               </motion.div>
 
               <motion.h1
                 variants={reveal}
                 className="max-w-[760px] font-serif text-[2.5rem] leading-[1.1] tracking-[-0.02em] text-[#14110e] sm:text-5xl lg:text-[3.75rem]"
               >
-                Defesa Firme dos Seus Direitos e Cuidado Real com a Sua Família:{" "}
+                Proteção Jurídica Especializada para Mulheres, Famílias e Patrimônio:{" "}
                 <span className="font-serif italic text-transparent bg-clip-text bg-gradient-to-r from-[#8e6318] via-[#c59a3f] to-[#5a3c08]">
-                  Atuação Jurídica Estratégica, Humanizada e Resolutiva.
+                  Atuação Estratégica, Humanizada e Resolutiva.
                 </span>
               </motion.h1>
 
@@ -583,13 +619,17 @@ export default function Home() {
               >
                 Liderado pela{" "}
                 <strong className="font-semibold text-[#14110e]">
-                  Dra. Michaely Pereira Silva
+                  Dra. Francielle Gonçalves Barbosa
                 </strong>
-                , advogada civil em João Pinheiro - MG com pós-graduação em Direito Bancário e Direito do Trabalho. Foco especializado em{" "}
+                , advogada especialista em Direito de Família e Sucessões em Patos de Minas - MG e criadora do{" "}
                 <strong className="font-semibold text-[#14110e]">
-                  Direito do Consumidor, Direito de Família e Inventários (Judiciais e Extrajudiciais)
+                  Método S.E.G.U.R.A
                 </strong>
-                , oferecendo orientação jurídica transparente, acolhimento empático e soluções ágeis para você e sua família.
+                . Atuação resolutiva em{" "}
+                <strong className="font-semibold text-[#14110e]">
+                  Divórcio, Partilha de Bens, Guarda, Pensão Alimentícia e Inventários Rápidos em Cartório
+                </strong>
+                , oferecendo orientação jurídica transparente, acolhimento empático e firmeza técnica para defender você e seus filhos.
               </motion.p>
 
               <motion.div
@@ -598,14 +638,14 @@ export default function Home() {
               >
                 <GlowingButton
                   href={getWhatsAppUrl(
-                    "Olá, Dra. Michaely! Gostaria de agendar uma consulta sobre Direito de Família / Consumidor / Inventário."
+                    "Olá, Dra. Francielle! Gostaria de agendar uma consulta sobre Direito de Família / Divórcio / Pensão / Inventário."
                   )}
                   target="_blank"
                   size="lg"
                   variant="gold"
                   className="rounded-lg shadow-md"
                 >
-                  <WhatsAppIcon size={16} /> Falar no WhatsApp com a Dra. Michaely
+                  <WhatsAppIcon size={16} /> Falar no WhatsApp com a Dra. Francielle
                 </GlowingButton>
                 <a
                   href="#atuacao"
@@ -629,13 +669,13 @@ export default function Home() {
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 font-medium text-[#14110e] transition-colors hover:text-[#8e6318]"
                 >
-                  <Star size={15} className="fill-[#deb753] text-[#deb753]" /> 5,0 estrelas no Google (17 avaliações autênticas)
+                  <Star size={15} className="fill-[#deb753] text-[#deb753]" /> 5,0 estrelas no Google (13 avaliações autênticas)
                 </a>
                 <span className="inline-flex items-center gap-2 font-medium">
-                  <Award size={15} className="text-[#8e6318]" /> Aprovada no 9º Período
+                  <Award size={15} className="text-[#8e6318]" /> Método S.E.G.U.R.A
                 </span>
                 <span className="inline-flex items-center gap-2 font-medium">
-                  <MapPin size={15} className="text-[#8e6318]" /> R. Astolfo Moreira, 305 A · Centro
+                  <MapPin size={15} className="text-[#8e6318]" /> R. Lagamar, 98 · Copacabana · Patos de Minas
                 </span>
                 <a
                   href={INSTAGRAM_URL}
@@ -643,12 +683,12 @@ export default function Home() {
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 font-medium text-[#14110e] transition-colors hover:text-[#8e6318]"
                 >
-                  <InstagramIcon size={15} className="text-[#8e6318]" /> {INSTAGRAM_HANDLE}
+                  <InstagramIcon size={15} className="text-[#8e6318]" /> {INSTAGRAM_HANDLE} (10,5k seguidores)
                 </a>
               </motion.div>
             </motion.div>
 
-            {/* Hero Visual Presentation - Dra. Michaely Silva Portrait */}
+            {/* Hero Visual Presentation - Dra. Francielle Gonçalves Portrait */}
             <motion.div
               initial={{ opacity: 0, scale: 0.97, y: 18 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -662,7 +702,7 @@ export default function Home() {
               <div className="relative aspect-[4/4.9] overflow-hidden rounded-2xl border-2 border-[#e8dfd2] bg-white shadow-xl ring-1 ring-[#deb753]/20">
                 <Image
                   src={FOTO_HERO_SRC}
-                  alt="Dra. Michaely Pereira Silva — Advogada em João Pinheiro - MG"
+                  alt="Dra. Francielle Gonçalves Barbosa — Advogada em Patos de Minas - MG"
                   fill
                   priority
                   unoptimized
@@ -672,10 +712,10 @@ export default function Home() {
                 <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between gap-3 text-white sm:bottom-8 sm:left-8 sm:right-8">
                   <div>
                     <p className="font-serif text-2xl font-normal tracking-wide text-white">
-                      Dra. Michaely Pereira Silva
+                      Dra. Francielle Gonçalves Barbosa
                     </p>
                     <p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-[#deb753]">
-                      Consumidor · Família · Inventários
+                      Família · Divórcio · Guarda · Inventários
                     </p>
                   </div>
                   <span className="grid size-11 shrink-0 place-items-center rounded-lg border border-[#deb753]/40 bg-[#14110e]/85 text-[#f7e5a9] backdrop-blur-sm">
@@ -686,7 +726,7 @@ export default function Home() {
 
               {/* Floating authority badge */}
               <div className="absolute -left-3 top-6 z-10 rounded-lg border border-[#deb753]/40 bg-white/95 px-4 py-2 text-[10px] font-bold tracking-[0.14em] text-[#8e6318] shadow-md backdrop-blur-md sm:-left-5">
-                JOÃO PINHEIRO - MG · ATENDIMENTO ON-LINE EM TODO O BRASIL
+                PATOS DE MINAS - MG · ATENDIMENTO ON-LINE EM TODO O BRASIL
               </div>
 
               {/* Floating Google 5.0 Star Rating */}
@@ -711,7 +751,7 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="mt-1 text-[9px] font-semibold uppercase tracking-wider text-[#5c5042]">
-                  17 Avaliações no Google
+                  13 Avaliações no Google
                 </p>
               </a>
             </motion.div>
@@ -727,19 +767,19 @@ export default function Home() {
             {[
               [
                 "5,0 ★ no Google",
-                "nota máxima com 17 avaliações autênticas destacando empatia e clareza didática",
+                "nota máxima com 13 avaliações autênticas destacando competência, agilidade e acolhimento",
               ],
               [
-                "Família & Inventários",
-                "soluções céleres para divórcio, pensão, guarda e partilha de herança em cartório",
+                "Método S.E.G.U.R.A",
+                "metodologia exclusiva para proteger mulheres, filhos e patrimônio em divórcios e partilhas",
               ],
               [
-                "Consumidor & Bancário",
-                "combate a negativas indevidas, golpes digitais e abusos do sistema financeiro",
+                "Inventário Célere",
+                "casos concluídos em até 3 meses em cartório e economia tributária de R$ 4 mil em impostos",
               ],
               [
-                "João Pinheiro - MG",
-                "sede no Centro da cidade e atendimento digital disponível para todo o Brasil",
+                "Patos de Minas - MG",
+                "sede acolhedora no bairro Copacabana e atendimento digital estruturado para todo o Brasil",
               ],
             ].map(([value, label], index) => (
               <div
@@ -761,13 +801,13 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Sobre a Dra. Michaely Silva - Editorial Canvas */}
+        {/* Sobre a Dra. Francielle Gonçalves Barbosa - Editorial Canvas */}
         <section
           id="sobre"
           className="scroll-mt-24 border-y border-[#e8dfd2] bg-[#faf7f2] py-20 text-[#14110e] sm:py-28 lg:py-32"
         >
           <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 sm:px-8 lg:grid-cols-[0.95fr_1.05fr] lg:gap-20 lg:px-12">
-            {/* Visual presentation - Infográfico "Quem sou eu" */}
+            {/* Visual presentation - Dra. Francielle Full Portrait */}
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -775,14 +815,19 @@ export default function Home() {
               variants={reveal}
               className="relative mx-auto w-full max-w-[480px]"
             >
-              <div className="relative aspect-[9/14] overflow-hidden rounded-2xl border-2 border-[#e8dfd2] bg-white shadow-2xl">
+              <div className="relative aspect-[3/4.2] overflow-hidden rounded-2xl border-2 border-[#e8dfd2] bg-white shadow-2xl ring-1 ring-[#deb753]/20">
                 <Image
-                  src={FOTO_INFOGRAFICO_SRC}
-                  alt="Apresentação Quem Sou Eu — Dra. Michaely Pereira Silva"
+                  src={FOTO_SOBRE_SRC}
+                  alt="Dra. Francielle Gonçalves Barbosa — Advocacia e Consultoria"
                   fill
                   unoptimized
-                  className="object-contain bg-white"
+                  className="object-cover object-center"
                 />
+                <div className="absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-[#14110e]/80 via-transparent to-transparent" />
+                <div className="absolute bottom-5 left-5 right-5 text-white">
+                  <p className="font-serif text-xl font-medium">Dra. Francielle Gonçalves Barbosa</p>
+                  <p className="text-[10px] uppercase tracking-[0.2em] text-[#deb753]">Advogada de Família · Patos de Minas - MG</p>
+                </div>
               </div>
 
               {/* Authority badge card */}
@@ -794,13 +839,13 @@ export default function Home() {
                   </p>
                 </div>
                 <p className="mt-1 font-serif text-lg leading-snug text-[#14110e]">
-                  Dra. Michaely Pereira Silva
+                  Dra. Francielle Gonçalves Barbosa
                 </p>
                 <p className="mt-0.5 text-[11px] font-medium text-[#8e6318]">
-                  Pós-Graduada: Bancário • Trabalho
+                  Especialista em Família · Método S.E.G.U.R.A
                 </p>
                 <p className="mt-1 text-[11px] leading-4 text-[#5c5042]">
-                  R. Astolfo Moreira, 305 A - Centro · João Pinheiro - MG
+                  R. Lagamar, 98 - Copacabana · Patos de Minas - MG
                 </p>
               </div>
 
@@ -819,16 +864,16 @@ export default function Home() {
                 className="mb-4 inline-flex items-center gap-2.5 rounded-md border border-[#deb753]/40 bg-white px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-[#8e6318] shadow-xs"
               >
                 <span className="size-2 shrink-0 rounded-full bg-[#8e6318]" />
-                <span>QUEM É A DRA. MICHAELY PEREIRA SILVA</span>
+                <span>QUEM É A DRA. FRANCIELLE GONÇALVES</span>
               </motion.div>
 
               <motion.h2
                 variants={reveal}
                 className="font-serif text-3xl leading-[1.14] tracking-[-0.02em] text-[#14110e] sm:text-4xl lg:text-[3.25rem]"
               >
-                Uma advocacia que escuta, acolhe e resolve:{" "}
+                Uma advocacia que acolhe, protege e resolve:{" "}
                 <span className="italic text-[#8e6318]">
-                  clareza que traz segurança e técnica firme para proteger seus direitos.
+                  segurança real para a sua família e firmeza técnica para proteger seu patrimônio.
                 </span>
               </motion.h2>
 
@@ -836,26 +881,26 @@ export default function Home() {
                 variants={reveal}
                 className="mt-6 max-w-xl text-[15px] leading-7 text-[#4c433a]"
               >
-                Com sede no Centro de{" "}
+                Com sede no bairro Copacabana em{" "}
                 <strong className="font-bold text-[#14110e]">
-                  João Pinheiro - MG
+                  Patos de Minas - MG
                 </strong>{" "}
-                e atendimento on-line em todo o território nacional, a Dra. Michaely Pereira Silva representa uma advocacia dinâmica, moderna e verdadeiramente humana. Com 25 anos e aprovação na OAB conquistada com destaque precoce ainda durante o{" "}
+                e atuação on-line em todo o Brasil, a Dra. Francielle Gonçalves Barbosa é referência em Direito de Família e Sucessões. Criadora do método{" "}
                 <strong className="font-bold text-[#14110e]">
-                  9º período da faculdade
+                  S.E.G.U.R.A
                 </strong>
-                , ela alia dedicação incansável e sólida base acadêmica.
+                , ela construiu uma carreira sólida pautada na proteção integral das mulheres, das crianças e do patrimônio construído com anos de dedicação.
               </motion.p>
 
               <motion.p
                 variants={reveal}
                 className="mt-4 max-w-xl text-[15px] leading-7 text-[#4c433a]"
               >
-                Com pós-graduação nas áreas de{" "}
+                Reconhecida com nota máxima{" "}
                 <strong className="font-bold text-[#14110e]">
-                  Direito Bancário e Direito do Trabalho
+                  5,0 ★ no Google Meu Negócio
                 </strong>
-                , seu trabalho é amplamente reconhecido pela clareza didática. Em vez de termos incompreensíveis, ela explica cada alternativa de forma simples e acolhedora, garantindo que você compreenda seus direitos e participe com confiança de cada decisão sobre seu patrimônio e sua família.
+                , seu trabalho se destaca pela clareza, empatia e velocidade. Em vez de jargões jurídicos confusos ou processos que se arrastam indefinidamente, ela oferece um acompanhamento próximo e transparente, explicando cada etapa com didática e buscando sempre a via mais rápida, econômica e segura para você.
               </motion.p>
 
               {/* Client Quote Card from real reviews */}
@@ -864,34 +909,34 @@ export default function Home() {
                 className="mt-6 rounded-xl border border-[#e8dfd2] bg-white p-5 shadow-xs"
               >
                 <blockquote className="font-serif text-sm italic leading-relaxed text-[#14110e]">
-                  &ldquo;Atendimento excelente, a Dra demonstra muito conhecimento é empática, soube esclarecer minhas dúvidas de forma fácil pra eu entender. Adorei o atendimento super recomendo.&rdquo;
+                  &ldquo;Ela fez o inventário do meu pai e mãe em 2026, disse que ficaria pronto com 6 meses e finalizou tudo em 3 meses, fiquei muito satisfeito, ainda conseguiu 4 mil de desconto no imposto, sempre explicando tudo, muito educada e atenciosa Dra Francielle, só tenho agradecer a ela e sua equipe.&rdquo;
                 </blockquote>
                 <p className="mt-2 text-[11px] font-semibold uppercase tracking-wider text-[#8e6318]">
-                  — Soane Ferreira · Avaliação Verificada no Google Meu Negócio (5,0 ★)
+                  — Indalecio Gonçalves · Avaliação Verificada no Google (5,0 ★)
                 </p>
               </motion.div>
 
-              {/* Personality & Profile Cards from the creative */}
+              {/* Personality & Profile Cards */}
               <motion.div
                 variants={reveal}
                 className="mt-6 grid grid-cols-2 gap-3 text-xs sm:grid-cols-3"
               >
                 <div className="rounded-lg border border-[#e8dfd2] bg-white p-3 shadow-xs">
-                  <p className="font-bold text-[#14110e]">25 Anos</p>
+                  <p className="font-bold text-[#14110e]">5,0 ★ no Google</p>
                   <p className="mt-0.5 text-[11px] text-[#6b5d50]">
-                    Dinamismo, agilidade & dedicação integral
+                    13 avaliações 100% positivas
                   </p>
                 </div>
                 <div className="rounded-lg border border-[#e8dfd2] bg-white p-3 shadow-xs">
-                  <p className="font-bold text-[#14110e]">Aprovada no 9º Período</p>
+                  <p className="font-bold text-[#14110e]">Método S.E.G.U.R.A</p>
                   <p className="mt-0.5 text-[11px] text-[#6b5d50]">
-                    Destaque acadêmico & rigor técnico precoce
+                    Proteção de mulheres e patrimônio
                   </p>
                 </div>
                 <div className="rounded-lg border border-[#e8dfd2] bg-white p-3 shadow-xs col-span-2 sm:col-span-1">
-                  <p className="font-bold text-[#14110e]">Pós-Graduada</p>
+                  <p className="font-bold text-[#14110e]">10,5k Seguidores</p>
                   <p className="mt-0.5 text-[11px] text-[#6b5d50]">
-                    Direito Bancário • Direito do Trabalho
+                    Autoridade digital no Instagram
                   </p>
                 </div>
               </motion.div>
@@ -902,11 +947,11 @@ export default function Home() {
               >
                 <div className="flex items-center gap-2">
                   <CheckCircle2 size={15} className="shrink-0 text-[#8e6318]" />
-                  <span>Sede na R. Astolfo Moreira, 305 A - Centro · João Pinheiro</span>
+                  <span>Sede na R. Lagamar, 98 - Copacabana · Patos de Minas</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 size={15} className="shrink-0 text-[#8e6318]" />
-                  <span>Nota máxima 5,0 ★ no Google com 17 avaliações</span>
+                  <span>Inventários em cartório concluídos em tempo recorde</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 size={15} className="shrink-0 text-[#8e6318]" />
@@ -924,14 +969,14 @@ export default function Home() {
               >
                 <GlowingButton
                   href={getWhatsAppUrl(
-                    "Olá, Dra. Michaely! Gostaria de agendar uma consulta para conversar diretamente sobre meu caso."
+                    "Olá, Dra. Francielle! Gostaria de agendar uma consulta para conversar diretamente sobre meu caso."
                   )}
                   target="_blank"
                   size="md"
                   variant="gold"
                   className="rounded-lg shadow-md"
                 >
-                  <WhatsAppIcon size={16} /> Falar com a Dra. Michaely
+                  <WhatsAppIcon size={16} /> Falar com a Dra. Francielle
                 </GlowingButton>
                 <a
                   href={`tel:+${WHATSAPP_NUMBER}`}
@@ -944,81 +989,187 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Seção Exclusiva: Método S.E.G.U.R.A */}
+        <section
+          id="metodo-segura"
+          className="scroll-mt-24 border-t border-[#deb753]/30 bg-gradient-to-b from-[#f8f5ee] to-[#f4efe6] py-20 text-[#14110e] sm:py-28 lg:py-32"
+        >
+          <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+            <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+              <Heading
+                light
+                eyebrow="METODOLOGIA EXCLUSIVA"
+                description="Como a Dra. Francielle Gonçalves protege mulheres, filhos e patrimônio através de uma abordagem estratégica desenvolvida na prática forense."
+              >
+                Conheça o Método{" "}
+                <span className="italic text-[#8e6318]">
+                  S.E.G.U.R.A
+                </span>
+              </Heading>
+              <GlowingButton
+                href={getWhatsAppUrl(
+                  "Olá, Dra. Francielle! Gostaria de entender como o método S.E.G.U.R.A pode ser aplicado para proteger meu caso."
+                )}
+                target="_blank"
+                size="md"
+                variant="gold"
+                className="rounded-lg shadow-sm"
+              >
+                <WhatsAppIcon size={16} /> Consultar Meu Caso no WhatsApp
+              </GlowingButton>
+            </div>
+
+            <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {[
+                {
+                  letter: "S",
+                  title: "Sensibilidade & Escuta Humanizada",
+                  description:
+                    "Acolhimento empático para ouvir seu relato sem julgamentos morais, compreendendo as nuances emocionais e as dores reais da sua família antes de qualquer medida processual.",
+                },
+                {
+                  letter: "E",
+                  title: "Estratégia Jurídica Blindada",
+                  description:
+                    "Investigação aprofundada de contas, imóveis, empresas e sinais exteriores de riqueza para impedir fraudes, dilapidação de patrimônio ou ocultação de ativos na partilha.",
+                },
+                {
+                  letter: "G",
+                  title: "Garantia dos Direitos dos Filhos",
+                  description:
+                    "Proteção integral das crianças e adolescentes: pensão alimentícia justa que condiz com o padrão de vida real e convivência saudável livre de alienação parental.",
+                },
+                {
+                  letter: "U",
+                  title: "Urgência & Celeridade Resolutiva",
+                  description:
+                    "Prioridade absoluta na busca por acordos céleres em cartório (divórcios e inventários) ou pedidos liminares imediatos na Justiça quando há risco ou desrespeito a direitos.",
+                },
+                {
+                  letter: "R",
+                  title: "Resolução Firme & Combate a Abusos",
+                  description:
+                    "Postura técnica intransigente contra a violência patrimonial, chantagens financeiras e tentativas de diminuir o papel da mulher na construção do patrimônio familiar.",
+                },
+                {
+                  letter: "A",
+                  title: "Acolhimento & Suporte Continuado",
+                  description:
+                    "Comunicação direta pelo WhatsApp com retorno ágil e sem 'juridiquês'. Você acompanha cada andamento com segurança, sabendo exatamente o que esperar.",
+                },
+              ].map((step) => (
+                <article
+                  key={step.letter}
+                  className="group relative flex flex-col justify-between rounded-xl border border-[#e8dfd2] bg-white p-7 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-[#deb753] hover:shadow-md"
+                >
+                  <div>
+                    <div className="flex items-center justify-between">
+                      <span className="grid size-12 place-items-center rounded-lg border border-[#deb753]/40 bg-gradient-to-br from-[#f8f5ee] to-white font-serif text-2xl font-bold text-[#8e6318] shadow-xs">
+                        {step.letter}
+                      </span>
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#8e6318]">
+                        MÉTODO S.E.G.U.R.A
+                      </span>
+                    </div>
+                    <h3 className="mt-5 font-serif text-xl font-semibold text-[#14110e]">
+                      {step.title}
+                    </h3>
+                    <p className="mt-3 text-[13px] leading-relaxed text-[#4c433a]">
+                      {step.description}
+                    </p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Pilares de Atuação / Especialidades */}
         <section
           id="atuacao"
           className="scroll-mt-24 border-t border-[#e8dfd2] bg-[#f8f5ee] py-20 sm:py-28 lg:py-32"
         >
           <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-              variants={reveal}
-              className="flex flex-col justify-between gap-6 md:flex-row md:items-end"
-            >
+            <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
               <Heading
                 light
-                eyebrow="ÁREAS DE ATUAÇÃO & ESPECIALIDADES"
-                description="Atuação jurídica minuciosa, preventiva e contenciosa nas principais áreas do Direito, com foco em resolver demandas com celeridade e segurança."
+                eyebrow="ÁREAS DE ESPECIALIZAÇÃO"
+                description="Clique em cada especialidade para abrir os detalhes, demandas atendidas e tirar suas dúvidas diretamente pelo WhatsApp."
               >
-                Soluções jurídicas estratégicas em{" "}
+                Atuação Jurídica{" "}
                 <span className="italic text-[#8e6318]">
-                  João Pinheiro, Noroeste de Minas e em todo o Brasil.
+                  Especializada em Direito de Família e Sucessões.
                 </span>
               </Heading>
-              <p className="max-w-[270px] pb-1 text-xs leading-6 text-[#5c5042]">
-                Clique em uma especialidade abaixo para conferir as demandas atendidas e iniciar uma conversa direta pelo WhatsApp.
-              </p>
-            </motion.div>
+              <div className="flex flex-col items-start gap-2 sm:flex-row sm:items-center">
+                <a
+                  href={WHATSAPP_DIRECT_LINK}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-lg border border-[#deb753]/40 bg-white px-4 py-2.5 text-[11px] font-bold uppercase tracking-wider text-[#8e6318] shadow-xs transition-all hover:border-[#8e6318] hover:bg-[#faf7f2]"
+                >
+                  <WhatsAppIcon size={14} /> Falar no WhatsApp Oficial
+                </a>
+              </div>
+            </div>
 
             <motion.div
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.12 }}
+              viewport={{ once: true, amount: 0.1 }}
               variants={stagger}
-              className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3"
+              className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
             >
-              {practiceAreas.map((area, index) => {
-                const Icon = area.icon;
+              {practiceAreas.map((area) => {
+                const IconComponent = area.icon;
                 return (
                   <motion.article
                     key={area.id}
                     variants={reveal}
-                    className="group flex min-h-[350px] flex-col rounded-xl border border-[#e8dfd2] bg-white p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-[#deb753] hover:shadow-lg sm:p-8"
+                    className="group flex flex-col justify-between rounded-xl border border-[#e8dfd2] bg-white p-7 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-[#deb753] hover:shadow-md sm:p-8"
                   >
-                    <div className="flex items-start justify-between">
-                      <span className="grid size-12 place-items-center rounded-lg border border-[#deb753]/30 bg-[#faf7f2] text-[#8e6318] shadow-xs transition-colors group-hover:bg-[#8e6318] group-hover:text-white">
-                        <Icon size={22} strokeWidth={1.5} />
-                      </span>
-                      <span className="font-serif text-2xl text-[#deb753]/60">
-                        0{index + 1}
-                      </span>
-                    </div>
+                    <div>
+                      <div className="flex items-center justify-between gap-3">
+                        <div className="grid size-12 place-items-center rounded-lg border border-[#deb753]/30 bg-[#faf7f2] text-[#8e6318] shadow-xs transition-colors group-hover:border-[#deb753] group-hover:bg-white group-hover:text-[#14110e]">
+                          <IconComponent size={22} />
+                        </div>
+                        <span className="rounded-md border border-[#deb753]/30 bg-[#f4efe6] px-2.5 py-1 text-[9px] font-bold uppercase tracking-wider text-[#322003]">
+                          Família & Sucessões
+                        </span>
+                      </div>
 
-                    <div className="mt-6">
-                      <span className="inline-block rounded-md border border-[#deb753]/30 bg-[#f4efe6] px-2.5 py-1 text-[9px] font-bold uppercase tracking-wider text-[#5a3c08] shadow-xs">
-                        {area.tag}
-                      </span>
-                      <h3 className="mt-3 font-serif text-[1.45rem] leading-tight text-[#14110e]">
+                      <h3 className="mt-6 font-serif text-2xl leading-tight text-[#14110e] transition-colors group-hover:text-[#8e6318]">
                         {area.title}
                       </h3>
-                      <p className="mt-3 text-[13px] leading-6 text-[#5c5042]">
+
+                      <p className="mt-2 text-[10px] font-semibold uppercase tracking-wider text-[#8e6318]">
+                        {area.tag}
+                      </p>
+
+                      <p className="mt-4 text-[13px] leading-relaxed text-[#4c433a]">
                         {area.summary}
                       </p>
                     </div>
 
-                    <button
-                      type="button"
-                      onClick={() => setActiveArea(area)}
-                      className="group/link mt-auto inline-flex w-fit items-center gap-2 pt-6 text-[10px] font-bold uppercase tracking-[0.16em] text-[#8e6318] hover:text-[#14110e]"
-                    >
-                      Ver detalhes e pedidos{" "}
-                      <ArrowRight
-                        size={14}
-                        className="transition-transform group/link:translate-x-1"
-                      />
-                    </button>
+                    <div className="mt-7 flex items-center justify-between border-t border-[#e8dfd2] pt-4">
+                      <button
+                        type="button"
+                        onClick={() => setActiveArea(area)}
+                        className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#8e6318] transition-colors hover:text-[#14110e] cursor-pointer"
+                      >
+                        Ver detalhes & pedidos <ArrowRight size={13} />
+                      </button>
+                      <a
+                        href={getWhatsAppUrl(area.whatsAppText)}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={`Consultar sobre ${area.title}`}
+                        className="grid size-9 place-items-center rounded-lg border border-[#deb753]/30 bg-[#faf7f2] text-[#14110e] transition-colors hover:border-[#8e6318] hover:bg-[#8e6318] hover:text-white"
+                        title="Tirar dúvidas no WhatsApp"
+                      >
+                        <WhatsAppIcon size={15} />
+                      </a>
+                    </div>
                   </motion.article>
                 );
               })}
@@ -1026,7 +1177,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Por Que Escolher a Dra. Michaely Silva - Diferenciais */}
+        {/* Por Que Escolher a Dra. Francielle Gonçalves - Diferenciais */}
         <section
           id="diferenciais"
           className="scroll-mt-24 border-t border-[#e8dfd2] bg-[#faf7f2] py-20 text-[#14110e] sm:py-28 lg:py-32"
@@ -1036,16 +1187,16 @@ export default function Home() {
               <Heading
                 light
                 eyebrow="NOSSOS PILARES DE EXCELÊNCIA"
-                description="Seu patrimônio, sua família e seus direitos são preciosos demais para ficarem em mãos desatentas ou presos em burocracias sem resposta."
+                description="Seu patrimônio, sua família e seus filhos são preciosos demais para ficarem em mãos desatentas ou presos em burocracias sem resposta."
               >
                 Por que confiar seu caso à{" "}
                 <span className="italic text-[#8e6318]">
-                  Dra. Michaely Pereira Silva?
+                  Dra. Francielle Gonçalves Barbosa?
                 </span>
               </Heading>
               <GlowingButton
                 href={getWhatsAppUrl(
-                  "Olá, Dra. Michaely! Gostaria de uma avaliação para a minha situação jurídica."
+                  "Olá, Dra. Francielle! Gostaria de uma avaliação para a minha situação jurídica familiar."
                 )}
                 target="_blank"
                 size="md"
@@ -1078,7 +1229,7 @@ export default function Home() {
                     Você Entende Cada Passo do Seu Processo com Tranquilidade
                   </h3>
                   <p className="mt-3 text-[14px] leading-relaxed text-[#4c433a]">
-                    Muitas pessoas chegam ao advogado com medo da complexidade das leis. Aqui, a Dra. Michaely explica cada detalhe com paciência e didática, garantindo que você tenha plena ciência dos seus direitos e saiba exatamente o que está acontecendo.
+                    Muitas pessoas chegam com receio da complexidade das leis ou medo de julgamentos morais. Aqui, a Dra. Francielle explica cada detalhe com paciência e didática, garantindo que você tenha plena ciência dos seus direitos e participe com confiança de cada decisão.
                   </p>
                   <ul className="mt-5 space-y-2 text-xs font-medium text-[#14110e]">
                     <li className="flex items-center gap-2">
@@ -1087,7 +1238,7 @@ export default function Home() {
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle2 size={15} className="shrink-0 text-[#8e6318]" />
-                      <span>Empatia com as dores e ansiedades em momentos delicados da vida</span>
+                      <span>Empatia profunda com as dores e ansiedades em momentos delicados da vida</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle2 size={15} className="shrink-0 text-[#8e6318]" />
@@ -1098,14 +1249,14 @@ export default function Home() {
                 <div className="mt-7 border-t border-[#e8dfd2] pt-4">
                   <a
                     href={getWhatsAppUrl(
-                      "Olá, Dra. Michaely! Gostaria de tirar dúvidas sobre o meu caso em uma conversa sem burocracia."
+                      "Olá, Dra. Francielle! Gostaria de tirar dúvidas sobre o meu caso em uma conversa sem burocracia."
                     )}
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex w-full items-center justify-between rounded-lg border border-[#deb753]/40 bg-[#faf7f2] px-4 py-3.5 text-[11px] font-bold uppercase tracking-[0.12em] text-[#14110e] transition-all hover:border-[#8e6318] hover:bg-[#14110e] hover:text-[#f7e5a9]"
                   >
                     <span className="inline-flex items-center gap-2">
-                      <WhatsAppIcon size={15} /> Conversar no WhatsApp com a Dra. Michaely
+                      <WhatsAppIcon size={15} /> Conversar no WhatsApp com a Dra. Francielle
                     </span>
                     <ArrowUpRight size={15} />
                   </a>
@@ -1138,22 +1289,22 @@ export default function Home() {
                   <ul className="mt-5 space-y-2 text-xs font-medium text-[#14110e]">
                     <li className="flex items-center gap-2">
                       <CheckCircle2 size={15} className="shrink-0 text-[#8e6318]" />
-                      <span>Inventários extrajudiciais céleres sem arrastar processos por anos</span>
+                      <span>Inventários extrajudiciais céleres concluídos em até 3 meses sem arrastar processos por anos</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle2 size={15} className="shrink-0 text-[#8e6318]" />
-                      <span>Acompanhamento direto pelo WhatsApp com retornos ágeis</span>
+                      <span>Acompanhamento direto pelo WhatsApp com retornos ágeis e esclarecimentos pontuais</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle2 size={15} className="shrink-0 text-[#8e6318]" />
-                      <span>Planejamento financeiro e tributário para reduzir custos com ITCD e taxas</span>
+                      <span>Planejamento financeiro e tributário para reduzir custos com ITCD e taxas cartorárias</span>
                     </li>
                   </ul>
                 </div>
                 <div className="mt-7 border-t border-[#e8dfd2] pt-4">
                   <a
                     href={getWhatsAppUrl(
-                      "Olá, Dra. Michaely! Gostaria de consultar sobre a possibilidade de um inventário ou divórcio rápido em cartório."
+                      "Olá, Dra. Francielle! Gostaria de consultar sobre a possibilidade de um inventário ou divórcio rápido em cartório."
                     )}
                     target="_blank"
                     rel="noreferrer"
@@ -1184,14 +1335,14 @@ export default function Home() {
               >
                 Três etapas claras para{" "}
                 <span className="italic text-[#8e6318]">
-                  proteger seu patrimônio e defender seus direitos.
+                  proteger seu patrimônio e defender seus filhos.
                 </span>
               </Heading>
 
               <blockquote className="mt-8 rounded-xl border border-[#e8dfd2] bg-white p-6 font-serif text-base italic leading-7 text-[#14110e] shadow-xs">
-                &ldquo;Cada caso envolve vidas, famílias e expectativas reais. Meu compromisso é garantir que você se sinta acolhido e seguro, sabendo que sua causa está sendo cuidada com o máximo rigor técnico e atenção pessoal.&rdquo;
+                &ldquo;Cada caso envolve vidas, famílias e expectativas reais. Meu compromisso é garantir que você se sinta acolhida e segura, sabendo que sua causa está sendo cuidada com o máximo rigor técnico e atenção pessoal.&rdquo;
                 <footer className="mt-3 font-sans text-[11px] font-semibold not-italic uppercase tracking-wider text-[#8e6318]">
-                  — Dra. Michaely Pereira Silva · Advogada
+                  — Dra. Francielle Gonçalves Barbosa · Advogada
                 </footer>
               </blockquote>
             </div>
@@ -1207,17 +1358,17 @@ export default function Home() {
                 [
                   "01",
                   "Escuta Atenta & Diagnóstico Documental",
-                  "Conversa inicial presencial no escritório em João Pinheiro ou via WhatsApp para compreender a fundo seu relato, recolher os documentos necessários e avaliar detalhadamente os fatos.",
+                  "Conversa inicial presencial no escritório em Patos de Minas ou via WhatsApp para compreender a fundo seu relato, recolher os documentos necessários e avaliar detalhadamente os fatos.",
                 ],
                 [
                   "02",
                   "Definição da Estratégia Mais Rápida e Econômica",
-                  "Análise minuciosa para verificar se a causa pode ser resolvida de maneira extrajudicial (acordo ou cartório) com menor custo e tempo, ou se é indispensável uma ação judicial com pedido liminar.",
+                  "Análise minuciosa para verificar se a causa pode ser resolvida de maneira extrajudicial (acordo ou cartório) com menor custo e tempo, ou se é indispensável uma ação judicial com pedido liminar de urgência.",
                 ],
                 [
                   "03",
                   "Acompanhamento Firme & Feedback Constante",
-                  "Protocolo técnico com forte fundamentação jurisprudencial, diligência constante perante os juízos e cartórios e retorno contínuo para mantê-lo sempre informado sobre cada andamento.",
+                  "Protocolo técnico com forte fundamentação jurisprudencial, diligência constante perante juízos e cartórios e retorno contínuo para mantê-la sempre informada sobre cada andamento.",
                 ],
               ].map(([number, title, description]) => (
                 <motion.div
@@ -1250,11 +1401,11 @@ export default function Home() {
               <Heading
                 light
                 eyebrow="PROVA SOCIAL VERIFICADA · GOOGLE MEU NEGÓCIO"
-                description="Veja avaliações autênticas e espontâneas deixadas por clientes no Google sobre o atendimento e a dedicação da Dra. Michaely Pereira Silva em João Pinheiro - MG."
+                description="Veja avaliações autênticas e espontâneas deixadas por clientes no Google sobre o atendimento e a dedicação da Dra. Francielle Gonçalves Barbosa em Patos de Minas - MG."
               >
                 Avaliada com nota máxima 5,0 ★ com{" "}
                 <span className="italic text-[#8e6318]">
-                  17 avaliações no Google pela dedicação, empatia e excelência profissional.
+                  13 avaliações no Google pela dedicação, empatia e excelência profissional.
                 </span>
               </Heading>
 
@@ -1279,7 +1430,7 @@ export default function Home() {
                     </div>
                   </div>
                   <p className="mt-1 text-[11px] font-semibold uppercase tracking-wider text-[#4c433a]">
-                    Michaely Pereira Silva — Advogada
+                    Francielle Gonçalves — Advogada
                   </p>
                   <a
                     href={GOOGLE_SEARCH_URL}
@@ -1287,7 +1438,7 @@ export default function Home() {
                     rel="noreferrer"
                     className="mt-1 inline-flex items-center gap-1 text-[11px] font-bold text-[#8e6318] transition-colors hover:text-[#14110e]"
                   >
-                    17 avaliações no Google <ArrowUpRight size={13} />
+                    13 avaliações no Google <ArrowUpRight size={13} />
                   </a>
                 </div>
               </div>
@@ -1345,14 +1496,14 @@ export default function Home() {
             <div className="mt-12 flex flex-col items-center justify-between gap-6 border-t border-[#e8dfd2] pt-8 sm:flex-row">
               <div className="flex flex-wrap items-center gap-2">
                 {[
-                  "Advogada em João Pinheiro - MG",
+                  "Advogada em Patos de Minas - MG",
                   "Atendimento Digital para Todo o Brasil",
-                  "Nota 5,0 ★ no Google (17 avaliações)",
-                  "Direito do Consumidor & SPC/Serasa",
+                  "Nota 5,0 ★ no Google (13 avaliações)",
+                  "Método S.E.G.U.R.A Exclusivo",
                   "Divórcio, Guarda & Pensão Alimentícia",
-                  "Inventário Judicial & Extrajudicial em Cartório",
-                  "Pós-Graduação: Bancário • Trabalho",
-                  "Aprovada no 9º Período com Excelência",
+                  "Inventário Extrajudicial em até 3 Meses",
+                  "Economia Comprovada no ITCD Minas Gerais",
+                  "Mais de 10,5k Seguidores no Instagram",
                 ].map((tag) => (
                   <span
                     key={tag}
@@ -1380,7 +1531,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Contato & Localização da Sede em João Pinheiro - MG */}
+        {/* Contato & Localização da Sede em Patos de Minas - MG */}
         <section
           id="contato"
           className="scroll-mt-24 border-t border-[#deb753]/30 bg-[#faf7f2] py-20 text-[#14110e] sm:py-28 lg:py-32"
@@ -1389,8 +1540,8 @@ export default function Home() {
             <div>
               <Heading
                 light
-                eyebrow="CONTATO & ATENDIMENTO EM JOÃO PINHEIRO"
-                description="Agende uma consulta presencial no escritório no Centro de João Pinheiro ou inicie seu atendimento imediatamente pelo WhatsApp para relatar seu caso com sigilo e rapidez."
+                eyebrow="CONTATO & ATENDIMENTO EM PATOS DE MINAS"
+                description="Agende uma consulta presencial no escritório no bairro Copacabana ou inicie seu atendimento imediatamente pelo WhatsApp para relatar seu caso com sigilo absoluto e rapidez."
               >
                 Estamos prontos para{" "}
                 <span className="italic text-[#8e6318]">
@@ -1401,7 +1552,7 @@ export default function Home() {
               <div className="mt-9 flex flex-col items-start gap-4">
                 <GlowingButton
                   href={getWhatsAppUrl(
-                    "Olá, Dra. Michaely! Gostaria de agendar um atendimento para análise jurídica do meu caso."
+                    "Olá, Dra. Francielle! Gostaria de agendar um atendimento para análise jurídica do meu caso."
                   )}
                   target="_blank"
                   size="lg"
@@ -1427,10 +1578,10 @@ export default function Home() {
                       Horário de Funcionamento
                     </p>
                     <p className="mt-0.5 text-[#14110e]">
-                      Segunda a Sexta-feira das 09:00 às 18:00
+                      Aberto 24 horas · Atendimento com agendamento prévio e plantão de acolhimento
                     </p>
                     <p className="text-[11px] text-[#786b5e]">
-                      Atendimento presencial no Centro de João Pinheiro - MG e atendimento digital para clientes em todo o Brasil
+                      Atendimento presencial em Patos de Minas - MG e atendimento digital para clientes em todo o Brasil
                     </p>
                   </div>
                 </div>
@@ -1453,7 +1604,7 @@ export default function Home() {
                     rel="noreferrer"
                     className="transition-colors hover:text-[#8e6318] text-[#14110e]"
                   >
-                    {INSTAGRAM_HANDLE} (Instagram Oficial)
+                    {INSTAGRAM_HANDLE} (Instagram Oficial · 10,5k seguidores)
                   </a>
                 </div>
 
@@ -1492,39 +1643,37 @@ export default function Home() {
             <div className="relative overflow-hidden rounded-xl border border-[#e8dfd2] bg-white p-7 shadow-sm sm:p-10">
               <div className="absolute right-0 top-0 h-1.5 w-32 bg-gradient-to-r from-[#8e6318] to-[#deb753]" />
 
-              <div className="flex items-center gap-4">
-                <div className="relative size-[64px] shrink-0 overflow-hidden rounded-full border-2 border-[#deb753]/60 bg-[#120f0d] shadow-sm sm:size-[76px]">
-                  <Image
-                    src={LOGO_SEAL_SRC}
-                    alt="Selo Michaely Silva Advogada"
-                    fill
-                    sizes="76px"
-                    className="object-contain p-1"
-                  />
-                </div>
-                <div>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#8e6318]">
-                    Sede do Escritório
-                  </p>
-                  <p className="mt-0.5 font-cinzel text-xl font-bold text-[#14110e] sm:text-2xl">
-                    MICHAELY SILVA
-                  </p>
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#8e6318]">
-                    Advogada
-                  </p>
-                </div>
+              <div className="relative h-16 w-52 sm:h-20 sm:w-64">
+                <Image
+                  src={LOGO_FULL_SRC}
+                  alt="Barbosa Advocacia e Consultoria"
+                  fill
+                  sizes="260px"
+                  className="object-contain object-left"
+                />
+              </div>
+              <div className="mt-4">
+                <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#8e6318]">
+                  Sede do Escritório
+                </p>
+                <p className="mt-0.5 font-cinzel text-xl font-bold text-[#14110e] sm:text-2xl">
+                  BARBOSA ADVOCACIA E CONSULTORIA
+                </p>
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#8e6318]">
+                  Dra. Francielle Gonçalves Barbosa · Patos de Minas - MG
+                </p>
               </div>
 
               <address className="mt-7 max-w-md text-[14px] not-italic leading-7 text-[#4c433a]">
                 <strong className="font-semibold text-[#14110e]">
-                  Dra. Michaely Pereira Silva
+                  Dra. Francielle Gonçalves Barbosa
                 </strong>
                 <br />
-                Advogada Civil em João Pinheiro - MG
+                Advogada Especialista em Direito de Família e Sucessões
                 <br />
-                Direito do Consumidor · Família · Inventários
+                Criadora do Método S.E.G.U.R.A
                 <br />
-                Pós-Graduação: Direito Bancário • Direito do Trabalho
+                Divórcio · Guarda · Pensão · Inventários
                 <br />
                 {ADDRESS_TEXT}
               </address>
@@ -1532,21 +1681,21 @@ export default function Home() {
               {/* Weekly schedule table */}
               <div className="mt-6 rounded-lg border border-[#e8dfd2] bg-[#faf7f2] p-4 text-xs">
                 <p className="mb-2.5 text-[10px] font-bold uppercase tracking-[0.15em] text-[#8e6318]">
-                  Atendimento & Horários
+                  Atendimento & Informações
                 </p>
                 <div className="grid grid-cols-2 gap-y-1.5 text-[#4c433a]">
-                  <span>Segunda a Sexta</span>
+                  <span>Funcionamento</span>
                   <span className="text-right font-semibold text-[#14110e]">
-                    09:00 às 18:00
+                    Aberto 24 horas
                   </span>
                   <span>Atendimento Presencial</span>
                   <span className="text-right font-medium text-[#8e6318]">
-                    João Pinheiro - MG
+                    Patos de Minas - MG
                   </span>
                   <span>Endereço</span>
-                  <span className="text-right text-[#14110e]">R. Astolfo Moreira, 305 A</span>
+                  <span className="text-right text-[#14110e]">R. Lagamar, 98 - Copacabana</span>
                   <span>Avaliações Google</span>
-                  <span className="text-right font-semibold text-[#8e6318]">5,0 ★ (17 avaliações)</span>
+                  <span className="text-right font-semibold text-[#8e6318]">5,0 ★ (13 avaliações)</span>
                   <span>Atendimento Digital</span>
                   <span className="text-right text-[#14110e]">Todo o Brasil</span>
                 </div>
@@ -1560,7 +1709,7 @@ export default function Home() {
                 </p>
                 <a
                   href={getWhatsAppUrl(
-                    "Olá, Dra. Michaely! Gostaria de agendar um atendimento no escritório."
+                    "Olá, Dra. Francielle! Gostaria de agendar um atendimento no escritório."
                   )}
                   target="_blank"
                   rel="noreferrer"
@@ -1578,15 +1727,15 @@ export default function Home() {
           <div className="mx-auto flex max-w-7xl flex-col justify-between gap-7 sm:flex-row sm:items-center">
             <div>
               <p className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#8e6318]">
-                <Sparkles size={13} /> MICHAELY SILVA ADVOGADA · JOÃO PINHEIRO & MINAS GERAIS
+                <Sparkles size={13} /> FRANCIELLE GONÇALVES ADVOGADA · PATOS DE MINAS & MINAS GERAIS
               </p>
               <h2 className="mt-3 max-w-2xl font-serif text-3xl leading-tight text-[#14110e] sm:text-4xl">
-                Precisa de uma advogada que realmente ouve você e defende seus interesses com firmeza e clareza?
+                Precisa de uma advogada que realmente ouve você e defende sua família com firmeza e sensibilidade?
               </h2>
             </div>
             <a
               href={getWhatsAppUrl(
-                "Olá, Dra. Michaely! Gostaria de uma avaliação para a minha situação jurídica."
+                "Olá, Dra. Francielle! Gostaria de uma avaliação para a minha situação jurídica familiar."
               )}
               target="_blank"
               rel="noreferrer"
@@ -1604,24 +1753,24 @@ export default function Home() {
             <div>
               <a
                 href="#inicio"
-                aria-label="Michaely Silva Advogada"
+                aria-label="Francielle Gonçalves Advogada"
                 className="inline-block transition-transform hover:scale-[1.01]"
               >
-                <div className="relative h-14 w-52 sm:h-16 sm:w-60">
+                <div className="relative h-16 w-60 sm:h-20 sm:w-72 lg:h-24 lg:w-80">
                   <Image
                     src={LOGO_FULL_SRC}
-                    alt="Michaely Silva Advogada"
+                    alt="Barbosa Advocacia e Consultoria — Dra. Francielle Gonçalves"
                     fill
-                    sizes="240px"
+                    sizes="(max-width: 640px) 240px, (max-width: 1024px) 288px, 320px"
                     className="object-contain object-left"
                   />
                 </div>
               </a>
               <p className="mt-4 max-w-xs text-xs leading-6 text-[#5c5042]">
-                ⚖️ Advocacia de excelência com atendimento humanizado, ética e rigor técnico. Atuação focada em Direito do Consumidor, Direito de Família, Inventários, Direito Bancário e do Trabalho em João Pinheiro - MG e em todo o Brasil.
+                ⚖️ Advocacia de excelência com atendimento humanizado, ética e rigor técnico. Protegendo mulheres e seu patrimônio com o Método S.E.G.U.R.A em Patos de Minas - MG e em todo o Brasil.
               </p>
               <p className="mt-3 text-[11px] font-semibold text-[#8e6318]">
-                Dra. Michaely Pereira Silva · Advogada
+                Dra. Francielle Gonçalves Barbosa · Advogada
               </p>
             </div>
 
@@ -1634,7 +1783,10 @@ export default function Home() {
                   Início
                 </a>
                 <a className="footer-link" href="#sobre">
-                  Dra. Michaely Silva
+                  Dra. Francielle
+                </a>
+                <a className="footer-link" href="#metodo-segura">
+                  Método S.E.G.U.R.A
                 </a>
                 <a className="footer-link" href="#atuacao">
                   Áreas de Atuação
@@ -1658,7 +1810,7 @@ export default function Home() {
               <div className="mt-4 flex flex-col items-start gap-2.5 text-xs text-[#5c5042]">
                 <a
                   href={getWhatsAppUrl(
-                    "Olá, Dra. Michaely! Gostaria de falar com o escritório."
+                    "Olá, Dra. Francielle! Gostaria de falar com o escritório."
                   )}
                   target="_blank"
                   rel="noreferrer"
@@ -1696,7 +1848,7 @@ export default function Home() {
                   <span>{ADDRESS_TEXT}</span>
                 </a>
                 <p className="inline-flex items-center gap-2 pt-1 text-[11px] text-[#8e6318]">
-                  <Clock size={14} className="shrink-0" /> Seg a Sex: 09:00 às 18:00
+                  <Clock size={14} className="shrink-0" /> Aberto 24 horas · Plantão & Agendamento
                 </p>
               </div>
             </div>
@@ -1704,7 +1856,7 @@ export default function Home() {
 
           <div className="mx-auto mt-12 flex max-w-7xl flex-col gap-3 border-t border-[#e8dfd2] pt-6 text-[10px] text-stone-500 sm:flex-row sm:items-center sm:justify-between">
             <p>
-              © {new Date().getFullYear()} MICHAELY PEREIRA SILVA ADVOCACIA. Todos os direitos reservados.
+              © {new Date().getFullYear()} BARBOSA ADVOCACIA E CONSULTORIA. Todos os direitos reservados.
             </p>
             <p>
               Conteúdo informativo, em estrita conformidade com o Código de Ética e Disciplina da OAB.
@@ -1719,16 +1871,16 @@ export default function Home() {
         >
           <a
             href={getWhatsAppUrl(
-              "Olá, Dra. Michaely! Gostaria de consultar sobre meu caso e tirar dúvidas pelo WhatsApp."
+              "Olá, Dra. Francielle! Gostaria de consultar sobre meu caso e tirar dúvidas pelo WhatsApp."
             )}
             target="_blank"
             rel="noreferrer"
-            aria-label="Falar agora pelo WhatsApp com a Dra. Michaely Silva"
+            aria-label="Falar agora pelo WhatsApp com a Dra. Francielle Gonçalves"
             className="group relative flex size-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl transition-all duration-300 hover:scale-110 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-[#25D366]/40"
           >
             <WhatsAppIcon size={28} />
             <span className="pointer-events-none absolute right-16 hidden whitespace-nowrap rounded-lg bg-[#14110e] border border-[#deb753]/30 px-3.5 py-1.5 text-xs font-semibold text-white shadow-lg transition-opacity group-hover:block">
-              Falar com a Dra. Michaely Silva
+              Falar com a Dra. Francielle Gonçalves
             </span>
           </a>
         </aside>
@@ -1758,7 +1910,7 @@ export default function Home() {
                   type="button"
                   aria-label="Fechar detalhes da especialidade"
                   onClick={() => setActiveArea(null)}
-                  className="absolute right-5 top-5 grid size-10 place-items-center rounded-lg border border-[#e8dfd2] bg-[#faf7f2] text-[#14110e] transition-colors hover:border-[#deb753] hover:text-[#8e6318]"
+                  className="absolute right-5 top-5 grid size-10 place-items-center rounded-lg border border-[#e8dfd2] bg-[#faf7f2] text-[#14110e] transition-colors hover:border-[#deb753] hover:text-[#8e6318] cursor-pointer"
                 >
                   <X size={18} />
                 </button>
@@ -1806,7 +1958,7 @@ export default function Home() {
                   <button
                     type="button"
                     onClick={() => setActiveArea(null)}
-                    className="px-5 py-3 text-xs font-semibold text-stone-500 transition-colors hover:text-[#14110e]"
+                    className="px-5 py-3 text-xs font-semibold text-stone-500 transition-colors hover:text-[#14110e] cursor-pointer"
                   >
                     Fechar
                   </button>
