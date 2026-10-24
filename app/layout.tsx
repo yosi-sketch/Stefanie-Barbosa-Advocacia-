@@ -36,35 +36,35 @@ const bodyFont = Plus_Jakarta_Sans({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#faf8f5",
+  themeColor: "#faf7f8",
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.franciellegoncalves.adv.br"),
+  metadataBase: new URL("https://www.stefaniebarbosa.adv.br"),
   title:
-    "Francielle Gonçalves | Advogada de Família & Sucessões · Patos de Minas - MG",
+    "Stefanie Barbosa Advocacia Previdenciária | Aposentadorias & Benefícios INSS · Jacutinga - MG",
   description:
-    "⚖️ Dra. Francielle Gonçalves Barbosa — Advogada especialista em Direito de Família, Divórcio, Partilha de Bens, Guarda, Pensão Alimentícia e Inventários em Patos de Minas - MG. Criadora do Método S.E.G.U.R.A. Nota máxima de 5,0 ★ com 13 avaliações no Google. 📍 R. Lagamar, 98 - Copacabana, Patos de Minas - MG.",
+    "⚖️ Dra. Stefanie Barbosa (OAB/MG 184.682) — Advogada Especialista em Direito Previdenciário em Jacutinga - MG. Conquiste sua Aposentadoria, BPC/LOAS, Auxílio-Doença, Pensão por Morte e Planejamento Previdenciário com segurança e rapidez. Avaliação 4,8 ★ com 12 avaliações no Google. 📍 R. das Acácias, 267 - Jacutinga, MG.",
   keywords: [
-    "Francielle Gonçalves Advogada",
-    "Francielle Gonçalves Barbosa",
-    "Barbosa Advocacia e Consultoria",
-    "Advogada de Família Patos de Minas",
-    "Advogada Patos de Minas MG",
-    "Advocacia Patos de Minas",
-    "Divórcio em Patos de Minas",
-    "Pensão Alimentícia Patos de Minas",
-    "Guarda de Filhos Patos de Minas",
-    "Inventário em Cartório Patos de Minas",
-    "Inventário Judicial Patos de Minas",
-    "Partilha de Bens Divórcio",
-    "Método SEGURA Advocacia",
-    "Proteção Patrimonial Mulheres",
-    "Advogada Direito de Família Minas Gerais",
+    "Stefanie Barbosa Advogada",
+    "Stefanie Barbosa Advocacia Previdenciária",
+    "Advogada Previdenciária Jacutinga",
+    "Advogada Jacutinga MG",
+    "Advogado em Jacutinga Minas Gerais",
+    "Aposentadoria Jacutinga MG",
+    "Aposentadoria por Idade Jacutinga",
+    "Aposentadoria Especial INSS",
+    "BPC LOAS Jacutinga",
+    "Auxílio Doença Jacutinga",
+    "Pensão por Morte INSS",
+    "Planejamento Previdenciário Sul de Minas",
+    "Revisão de Benefício INSS",
+    "OAB MG 184682",
+    "Advocacia Previdenciária Minas Gerais",
   ],
-  authors: [{ name: "Dra. Francielle Gonçalves Barbosa" }],
-  creator: "Barbosa Advocacia e Consultoria",
-  publisher: "Francielle Gonçalves Advocacia",
+  authors: [{ name: "Dra. Stefanie Barbosa" }],
+  creator: "Stefanie Barbosa Advocacia Previdenciária",
+  publisher: "Stefanie Barbosa Advocacia",
   formatDetection: {
     telephone: true,
     address: true,
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
-      { url: "/icon.png", type: "image/png", sizes: "512x512" },
+      { url: "/icon.png", type: "image/png", sizes: "320x320" },
     ],
     shortcut: "/favicon.ico",
     apple: [{ url: "/apple-icon.png", sizes: "180x180" }],
@@ -80,18 +80,18 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    url: "https://www.franciellegoncalves.adv.br",
+    url: "https://www.stefaniebarbosa.adv.br",
     title:
-      "Francielle Gonçalves | Advogada de Família & Sucessões · Patos de Minas - MG",
+      "Stefanie Barbosa Advocacia Previdenciária | Especialista em INSS · Jacutinga - MG",
     description:
-      "⚖️ Advocacia de excelência, acolhimento humano e rigor técnico em Patos de Minas - MG. Protegendo mulheres e seu patrimônio com o Método S.E.G.U.R.A. Avaliação máxima de 5,0 ★ no Google.",
-    siteName: "Barbosa Advocacia e Consultoria",
+      "⚖️ Advocacia previdenciária de excelência, transparência e rigor técnico em Jacutinga - MG e todo o Brasil. Defesa firme do seu direito à aposentadoria e benefícios do INSS. Avaliação 4,8 ★ no Google.",
+    siteName: "Stefanie Barbosa Advocacia Previdenciária",
     images: [
       {
-        url: "/logo-barbosa-gold.png",
+        url: "/logo.png",
         width: 1024,
         height: 341,
-        alt: "Barbosa Advocacia e Consultoria — Dra. Francielle Gonçalves",
+        alt: "Stefanie Barbosa Advocacia Previdenciária — Dra. Stefanie Barbosa",
       },
     ],
   },
@@ -105,47 +105,47 @@ export default function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LegalService",
-    name: "Francielle Gonçalves | Advogada",
-    alternateName: "Barbosa Advocacia e Consultoria — Dra. Francielle Gonçalves Barbosa",
-    legalName: "Barbosa Advocacia e Consultoria",
+    name: "Stefanie Barbosa Advocacia Previdenciária",
+    alternateName: "Stefanie Barbosa — Advocacia e Consultoria",
+    legalName: "Stefanie Barbosa Advocacia Previdenciária",
     founder: [
       {
         "@type": "Person",
-        name: "Dra. Francielle Gonçalves Barbosa",
+        name: "Dra. Stefanie Barbosa",
         jobTitle:
-          "Advogada Especialista em Direito de Família, Sucessões e Proteção Patrimonial",
+          "Advogada Especialista em Direito Previdenciário, Ciências Criminais e Família / OAB/MG 184.682",
       },
     ],
-    telephone: "+55-34-99290-6297",
-    email: "contato@franciellegoncalves.adv.br",
-    url: "https://www.franciellegoncalves.adv.br",
-    image: "https://www.franciellegoncalves.adv.br/logo-barbosa-gold.png",
+    telephone: "+55-35-99950-6434",
+    email: "sb.advocacia@hotmail.com",
+    url: "https://www.stefaniebarbosa.adv.br",
+    image: "https://www.stefaniebarbosa.adv.br/logo.png",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "R. Lagamar, 98 - Copacabana",
-      addressLocality: "Patos de Minas",
+      streetAddress: "R. das Acácias, 267",
+      addressLocality: "Jacutinga",
       addressRegion: "MG",
-      postalCode: "38701-184",
+      postalCode: "37590-000",
       addressCountry: "BR",
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: -18.5789,
-      longitude: -46.5181,
+      latitude: -22.2858,
+      longitude: -46.6111,
     },
     priceRange: "$$",
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: "5.0",
-      reviewCount: "13",
+      ratingValue: "4.8",
+      reviewCount: "12",
     },
     areaServed: [
-      "Patos de Minas",
-      "Presidente Olegário",
-      "Lagoa Formosa",
-      "Carmo do Paranaíba",
-      "Guimarânia",
-      "Alto Paranaíba",
+      "Jacutinga",
+      "Albertina",
+      "Monte Sião",
+      "Ouro Fino",
+      "Andradas",
+      "Sul de Minas Gerais",
       "Minas Gerais",
       "Brasil",
     ],
@@ -158,17 +158,14 @@ export default function RootLayout({
           "Wednesday",
           "Thursday",
           "Friday",
-          "Saturday",
-          "Sunday",
         ],
-        opens: "00:00",
-        closes: "23:59",
+        opens: "08:00",
+        closes: "18:00",
       },
     ],
     sameAs: [
-      "https://www.instagram.com/franciellegoncalves.adv",
-      "https://wa.me/message/74EKQ3CEL5UQH1",
-      "https://wa.me/5534992906297",
+      "https://www.instagram.com/sb.advogada",
+      "https://wa.me/5535999506434",
     ],
   };
 
@@ -186,7 +183,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-screen overflow-x-clip bg-[#faf8f5] font-sans text-[#14110e] antialiased selection:bg-[#f7e5a9] selection:text-[#14110e]">
+      <body className="min-h-screen overflow-x-clip bg-[#faf7f8] font-sans text-[#141316] antialiased selection:bg-[#f5d3d8] selection:text-[#26060e]">
         {children}
       </body>
     </html>

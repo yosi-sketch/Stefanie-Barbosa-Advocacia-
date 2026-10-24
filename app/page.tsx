@@ -7,11 +7,13 @@ import {
   ArrowRight,
   ArrowUpRight,
   Award,
+  CalendarCheck,
   CheckCircle2,
   Clock,
-  FileCheck2,
+  Coins,
+  FileSearch,
+  GraduationCap,
   HeartHandshake,
-  Lock,
   Mail,
   MapPin,
   Menu,
@@ -25,27 +27,30 @@ import {
 } from "lucide-react";
 import GlowingButton from "./components/GlowingButton";
 
-const WHATSAPP_NUMBER = "5534992906297";
-const PHONE_DISPLAY = "(34) 99290-6297";
-const WHATSAPP_DIRECT_LINK = "https://wa.me/message/74EKQ3CEL5UQH1";
-const EMAIL_CONTACT = "contato@franciellegoncalves.adv.br";
-const INSTAGRAM_URL = "https://www.instagram.com/franciellegoncalves.adv";
-const INSTAGRAM_HANDLE = "@franciellegoncalves.adv";
+const WHATSAPP_NUMBER = "5535999506434";
+const PHONE_DISPLAY = "(35) 99950-6434";
+const EMAIL_CONTACT = "sb.advocacia@hotmail.com";
+const INSTAGRAM_URL = "https://www.instagram.com/sb.advogada";
+const INSTAGRAM_HANDLE = "@sb.advogada";
+const OAB_REGISTRY = "OAB/MG 184.682";
 
-const ADDRESS_TEXT = "R. Lagamar, 98 - Copacabana, Patos de Minas - MG, 38701-184";
+const ADDRESS_TEXT = "R. das Acácias, 267 - Jacutinga, MG, 37590-000, Brasil";
 const GOOGLE_SEARCH_URL =
-  "https://www.google.com/search?q=Francielle+Gon%C3%A7alves+%E2%80%94+Advogada+Patos+de+Minas+%C2%B7+MG";
+  "https://www.google.com/search?q=Stefanie+Barbosa+%E2%80%94+Advocacia+Previdenci%C3%A1ria%0AJacutinga+%C2%B7+MG";
+const GOOGLE_MAPS_URL =
+  "https://www.google.com/maps/search/?api=1&query=R.+das+Ac%C3%A1cias,+267+-+Jacutinga,+MG,+37590-000";
 
-const LOGO_FULL_SRC = "/logo-barbosa-gold.png";
-const FOTO_HERO_SRC = "/francielle-portrait.png";
-const FOTO_SOBRE_SRC = "/francielle-full.jpg";
+const LOGO_FULL_SRC = "/logo.png";
+const FOTO_HERO_SRC = "/dra-stefanie-barbosa.png";
+const FOTO_SOBRE_SRC = "/dra-stefanie-barbosa.png";
+const FOTO_FACHADA_SRC = "/sede-fachada-jacutinga.png";
 
 function getWhatsAppUrl(
   message?: string,
   number: string = WHATSAPP_NUMBER
 ) {
   const defaultText =
-    "Olá, Dra. Francielle Gonçalves! Gostaria de agendar uma consulta jurídica e tirar dúvidas sobre o meu caso.";
+    "Olá, Dra. Stefanie Barbosa! Gostaria de agendar uma consulta jurídica e tirar dúvidas sobre a minha situação previdenciária / aposentadoria.";
   return `https://wa.me/${number}?text=${encodeURIComponent(
     message || defaultText
   )}`;
@@ -155,204 +160,221 @@ interface PracticeArea {
 
 const practiceAreas: PracticeArea[] = [
   {
-    id: "divorcio-partilha-bens",
-    title: "Divórcio Humanizado & Partilha de Bens",
-    icon: Scale,
-    tag: "Consensual em Cartório · Litigioso · Partilha de Bens · Empresas & Imóveis",
+    id: "planejamento-previdenciario",
+    title: "Planejamento Previdenciário Estratégico",
+    icon: FileSearch,
+    tag: "Simulação de Aposentadoria · Análise do CNIS · Regras de Transição · Maior Valor",
     summary:
-      "Condução estratégica e acolhedora de divórcios, priorizando acordos céleres em cartório e blindando seu patrimônio contra divisões injustas ou ocultações.",
+      "Estudo detalhado de toda a sua vida contributiva para garantir que você se aposente na melhor data possível e receba o valor máximo a que tem direito.",
     details:
-      "O divórcio marca o encerramento de um ciclo e não precisa se transformar em uma guerra de desgaste emocional e prejuízo financeiro. A Dra. Francielle Gonçalves Barbosa atua com técnica apurada e sensibilidade para conduzir divórcios consensuais com rapidez diretamente em cartório ou ações contenciosas firmes perante o Poder Judiciário. Com olhar investigativo, identificamos manobras patrimoniais, blindamos cotas empresariais e asseguramos a partilha justa de cada conquista do casal.",
+      "A Reforma da Previdência (EC 103/2019) criou dezenas de regras de transição complexas. Quem dá entrada sem um planejamento detalhado corre o sério risco de se aposentar cedo demais com perdas de até 40% no valor mensal pelo resto da vida. A Dra. Stefanie Barbosa realiza uma auditoria rigorosa de cada vínculo no CNIS, carteiras de trabalho antigas, carnês e guias, projetando cenários futuros para identificar exatamente quando pedir o benefício e quanto investir para obter o melhor retorno financeiro.",
     topics: [
-      "Divórcio consensual ágil em cartório (extrajudicial) com economia tributária e sigilo absoluto",
-      "Divórcio contencioso estratégico com pedidos liminares urgentes de separação de corpos e afastamento do lar",
-      "Partilha equilibrada de patrimônio complexo: imóveis urbanos e rurais, veículos, empresas e cotas societárias",
-      "Bloqueio judicial preventivo de contas bancárias e investimentos para evitar dilapidação e ocultação de bens",
-      "Reconhecimento e dissolução de união estável com resguardo patrimonial integral",
-      "Arbitramento de aluguel em favor do cônjuge prejudicado pelo uso exclusivo do imóvel comum",
+      "Auditoria completa do CNIS (Cadastro Nacional de Informações Sociais) com correção de pendências e vínculos extintos",
+      "Simulação comparativa entre todas as regras de transição: pedágio 50%, pedágio 100%, pontos e idade mínima",
+      "Cálculo do ROI Previdenciário: vale a pena continuar contribuindo sobre o teto ou manter o recolhimento mínimo?",
+      "Prevenção contra 'buracos' no tempo de serviço e complementação estratégica de contribuições em atraso",
+      "Planejamento personalizado para autônomos, empresários, servidores públicos e trabalhadores com múltiplos vínculos",
+      "Parecer jurídico completo por escrito com o mapa da sua aposentadoria segura e rentável",
     ],
     whatsAppText:
-      "Olá, Dra. Francielle! Gostaria de agendar uma consulta sobre divórcio e partilha de bens.",
+      "Olá, Dra. Stefanie! Gostaria de agendar uma consulta para fazer meu Planejamento Previdenciário.",
   },
   {
-    id: "guarda-filhos-convivencia",
-    title: "Guarda dos Filhos & Regime de Convivência",
+    id: "aposentadorias-inss",
+    title: "Aposentadorias do INSS (Idade, Tempo & Rural)",
+    icon: CalendarCheck,
+    tag: "Aposentadoria por Idade · Tempo de Contribuição · Aposentadoria Rural · Regime Especial",
+    summary:
+      "Concessão célere e segura da sua aposentadoria, com resgate de períodos rurais, trabalho informal e períodos especiais não reconhecidos pelo INSS.",
+    details:
+      "Muitos trabalhadores têm seus pedidos de aposentadoria indevidamente negados ou concedidos com valores inferiores porque o INSS não reconhece períodos trabalhados na juventude, trabalho na roça (rural) ou atividades especiais. Com profunda experiência prática, a Dra. Stefanie Barbosa reúne o acervo probatório necessário perante cartórios, sindicatos e órgãos públicos para fazer valer cada ano trabalhado, seja pela via administrativa ou judicial.",
+    topics: [
+      "Aposentadoria por Idade Urbana e Híbrida (combinação de tempo urbano com tempo rural trabalhado na infância/juventude)",
+      "Aposentadoria do Trabalhador Rural e Segurado Especial com comprovação testemunhal e documental robusta",
+      "Aposentadoria por Tempo de Contribuição pelas regras de transição mais vantajosas",
+      "Reconhecimento de vínculos empregatícios sem registro na carteira ou empresas que faliram sem recolher o INSS",
+      "Cômputo de período de serviço militar obrigatório e tempo como aluno-aprendiz em escolas técnicas",
+      "Desbloqueio de processos travados e pedidos parados há meses na fila do INSS",
+    ],
+    whatsAppText:
+      "Olá, Dra. Stefanie! Gostaria de tirar dúvidas e dar entrada na minha aposentadoria no INSS.",
+  },
+  {
+    id: "bpc-loas",
+    title: "BPC / LOAS (Idoso 65+ & Pessoa com Deficiência)",
     icon: HeartHandshake,
-    tag: "Guarda Compartilhada · Convivência Saudável · Proteção dos Filhos · Alienação Parental",
+    tag: "1 Salário Mínimo Mensal · Sem Contribuição Prévia · Idosos · Deficiências & Autismo (TEA)",
     summary:
-      "Proteção irrestrita dos vínculos de afeto e do bem-estar dos filhos, estruturando planos de convivência harmoniosos e combatendo a alienação parental.",
+      "Garantia de 1 salário mínimo mensal para idosos com mais de 65 anos e pessoas com impedimentos de longo prazo que vivem em vulnerabilidade social.",
     details:
-      "Os filhos nunca devem ser instrumentos de disputa ou chantagem entre os genitores. A Dra. Francielle Gonçalves atua com olhar acolhedor e humanizado para defender o melhor interesse da criança ou adolescente, estabelecendo rotinas claras, definição equilibrada do lar de referência e regras transparentes de convivência em férias e datas comemorativas. Havendo situações de risco ou alienação parental, ingressamos com medidas judiciais imediatas.",
+      "O Benefício de Prestação Continuada (BPC/LOAS) é um direito fundamental assegurado pela Constituição, que não exige nenhuma contribuição anterior ao INSS. É destinado a idosos a partir de 65 anos e pessoas de qualquer idade com deficiência ou impedimentos físicos, mentais, intelectuais ou sensoriais de longo prazo (incluindo Transtorno do Espectro Autista - TEA, sequelas graves e doenças crônicas). A Dra. Stefanie, que possui formação pedagógica e neuropsicopedagógica, acolhe cada família com didática e sensibilidade, estruturando laudos e comprovações de renda para reverter negativas frequentes do INSS.",
     topics: [
-      "Regulamentação de guarda compartilhada com definição segura do lar de referência e rotinas saudáveis",
-      "Elaboração de planos minuciosos de convivência para fins de semana, férias escolares, aniversários e feriados",
-      "Ações judiciais de urgência para alteração de guarda em virtude de negligência, risco moral ou violência",
-      "Combate enérgico a atos de alienação parental e restrições indevidas de contato com as crianças",
-      "Autorização judicial para viagens internacionais ou mudança definitiva de cidade/estado",
-      "Mediação preventiva para pacificação de divergências entre os pais e preservação da saúde emocional dos filhos",
+      "BPC Idoso: concessão direta a partir dos 65 anos de idade com análise da composição do grupo familiar",
+      "BPC Pessoa com Deficiência: suporte completo para crianças, jovens e adultos com deficiência ou TEA (Autismo)",
+      "Superação de limites de renda per capita através da exclusão legal de gastos contínuos com remédios, fraldas e tratamentos",
+      "Reversão de indeferimentos indevidos do INSS em ações judiciais perante a Justiça Federal",
+      "Preparação minuciosa para a avaliação social e perícia médica do INSS",
+      "Restabelecimento imediato de BPC/LOAS bloqueado ou cancelado por divergências no CadÚnico",
     ],
     whatsAppText:
-      "Olá, Dra. Francielle! Gostaria de uma avaliação jurídica sobre guarda dos meus filhos e regulamentação de convivência.",
+      "Olá, Dra. Stefanie! Gostaria de uma avaliação para solicitar o BPC/LOAS para mim ou para um familiar.",
   },
   {
-    id: "pensao-alimenticia-execucao",
-    title: "Pensão Alimentícia Justa & Cobrança Rápida",
+    id: "beneficios-por-incapacidade",
+    title: "Benefícios por Incapacidade (Auxílio-Doença & Invalidez)",
     icon: ShieldCheck,
-    tag: "Fixação Justa · Revisão Proporcional · Execução de Atrasados · Prisão & Penhora",
+    tag: "Auxílio por Incapacidade Temporária · Invalidez Permanente · Adicional de 25% · Auxílio-Acidente",
     summary:
-      "Garantia do sustento digno e do padrão de vida dos seus filhos, com fixação realista e cobrança incisiva de pensões atrasadas por prisão civil ou penhora.",
+      "Proteção financeira quando um problema de saúde impede você de trabalhar: preparação médica, recursos e ações contra perícias injustas do INSS.",
     details:
-      "A pensão alimentícia é um direito inegociável para garantir alimentação, educação, saúde e dignidade aos seus filhos. A Dra. Francielle analisa meticulosamente as reais necessidades das crianças e a capacidade financeira real do genitor — inclusive investigando sinais exteriores de riqueza em casos de renda oculta ou empresas em nome de terceiros. Atuamos também com extrema agilidade na cobrança de valores em atraso sob rito de prisão e bloqueio patrimonial.",
+      "Receber 'Não Concedido' na perícia do INSS quando você está doente e incapaz de trabalhar é uma das maiores injustiças que um cidadão pode enfrentar. A Dra. Stefanie Barbosa orienta a organização estratégica de laudos, prontuários, receitas e atestados médicos, formulando quesitos periciais específicos para demonstrar ao perito ou ao Juiz Federal a impossibilidade real de exercer sua atividade profissional, além de pleitear o adicional de 25% na aposentadoria por invalidez para quem necessita de acompanhante.",
     topics: [
-      "Ação de alimentos: fixação de pensão provisória imediata e definitiva conforme o padrão de vida real da família",
-      "Execução de alimentos célere sob pena de prisão civil do devedor e penhora de veículos, contas e imóveis",
-      "Investigação de sinais exteriores de riqueza em redes sociais e empresas para comprovação de renda informal",
-      "Ação revisional de pensão alimentícia para majoração ou minoração diante de alterações financeiras comprovadas",
-      "Fixação de alimentos gravídicos durante o período gestacional para assegurar assistência médica e parto",
-      "Exoneração legítima de pensão alimentícia quando atingida a maturidade civil e independência financeira",
+      "Auxílio por Incapacidade Temporária (antigo Auxílio-Doença) para problemas ortopédicos, psiquiátricos, oncológicos e cirúrgicos",
+      "Aposentadoria por Incapacidade Permanente (Invalidez) com pedido liminar na Justiça Federal",
+      "Adicional de 25% na aposentadoria para segurados que necessitam da assistência permanente de cuidadores ou familiares",
+      "Auxílio-Acidente: benefício indenizatório mensal pago pelo INSS que permite continuar trabalhando após sequela",
+      "Reativação de benefícios cortados na 'Operação Pente-Fino' do INSS",
+      "Isenção de carência para doenças graves previstas na legislação previdenciária",
     ],
     whatsAppText:
-      "Olá, Dra. Francielle! Gostaria de ajuda jurídica para fixar, revisar ou cobrar pensão alimentícia atrasada.",
+      "Olá, Dra. Stefanie! Tive meu auxílio-doença negado pelo INSS e preciso de ajuda para recorrer.",
   },
   {
-    id: "inventario-cartorio-sucessoes",
-    title: "Inventário Extrajudicial em Cartório & Judicial",
-    icon: FileCheck2,
-    tag: "Cartório Rápido em até 3 Meses · Economia de ITCD · Partilha Amigável · Desconto Tributário",
-    summary:
-      "Regularização e partilha ágil de heranças, reduzindo burocracias e economizando milhares de reais em impostos (ITCD) para que a família receba seus bens em paz.",
-    details:
-      "A perda de um familiar é um momento doloroso e não deve ser agravada por disputas ou inventários que se arrastam por anos nos tribunais. Com experiência comprovada — concluindo inventários em cartório em até 3 meses e conquistando descontos expressivos no imposto estadual (ITCD em Minas Gerais) —, a Dra. Francielle Gonçalves Barbosa conduz partilhas com extrema agilidade técnica, garantindo a cota legítima de cada herdeiro com segurança documental total.",
-    topics: [
-      "Inventário Extrajudicial em Cartório: procedimento célere finalizado em até 3 meses havendo consenso",
-      "Planejamento fiscal estratégico com obtenção de descontos legítimos no imposto sobre herança (ITCD Minas Gerais)",
-      "Inventário Judicial ágil para casos com herdeiros menores, testamento ou patrimônios complexos",
-      "Expedição rápida de alvarás judiciais para levantamento de saldos em contas bancárias, FGTS e previdências",
-      "Cessão formal de direitos hereditários, sobrepartilhas e regularização registral de imóveis herdados",
-      "Mediação pacificadora entre herdeiros para eliminar atritos e viabilizar a divisão amigável do patrimônio",
-    ],
-    whatsAppText:
-      "Olá, Dra. Francielle! Gostaria de uma avaliação para dar entrada em um inventário em cartório ou judicial.",
-  },
-  {
-    id: "uniao-estavel-planejamento",
-    title: "União Estável & Planejamento Familiar",
+    id: "pensao-por-morte",
+    title: "Pensão por Morte & Direitos dos Dependentes",
     icon: Users2,
-    tag: "Pactos Antenupciais · Contratos de Convivência · Blindagem Patrimonial · Testamentos",
+    tag: "Viúvos e Cônjuges · União Estável · Filhos Menores · Auxílio-Reclusão",
     summary:
-      "Segurança jurídica preventiva para casais, estruturando pactos antenupciais, formalização de união estável e planejamento sucessório antecipado.",
+      "Concessão ágil de pensão por morte para proteger financeiramente sua família após a perda de quem garantia o sustento do lar.",
     details:
-      "Casais conscientes protegem sua relação e seu patrimônio antes que surjam divergências. Elaboramos pactos antenupciais personalizados, escrituras de união estável com escolha fundamentada do regime de bens mais vantajoso (comunhão parcial, separação total com pacto de aquestos) e contratos de namoro qualificados, além de estruturas de doação em vida com usufruto que evitam desgastes entre sucessores.",
+      "O falecimento de um cônjuge ou pai/mãe de família já impõe uma dor imensa, que não pode ser agravada pela falta de renda. Muitas vezes, o INSS nega a pensão alegando perda da qualidade de segurado do falecido ou falta de provas de união estável. Atuamos com extrema agilidade para comprovar documentalmente a convivência e restabelecer o amparo econômico dos dependentes legítimos.",
     topics: [
-      "Formalização e registro de união estável em cartório com cláusulas protetivas personalizadas",
-      "Elaboração de pactos antenupciais estratégicos para proteção de patrimônio familiar e empresarial",
-      "Contratos de namoro qualificados para prevenir reconhecimento indevido de união estável e partilha retroativa",
-      "Planejamento sucessório antecipado: doação de imóveis em vida com cláusula de reserva de usufruto vitalício",
-      "Elaboração e validação formal de testamentos públicos perante tabelião de notas",
-      "Dissolução amigável de união estável com partilha clara e imediata de bens",
+      "Comprovação rigorosa de união estável mesmo sem certidão formal de casamento em cartório",
+      "Habilitação e concessão de pensão por morte para filhos menores de 21 anos ou filhos inválidos de qualquer idade",
+      "Resgate da 'qualidade de segurado' do falecido através do período de graça e contribuições pretéritas",
+      "Divisão justa de cotas entre dependentes legais e tutela dos direitos de menores",
+      "Auxílio-Reclusão para os dependentes do segurado de baixa renda recolhido à prisão",
+      "Cobrança integral de valores retroativos desde a data do falecimento ou da entrada do pedido",
     ],
     whatsAppText:
-      "Olá, Dra. Francielle! Gostaria de consultar sobre união estável, pacto antenupcial ou planejamento sucessório.",
+      "Olá, Dra. Stefanie! Gostaria de assistência jurídica para dar entrada em pensão por morte no INSS.",
   },
   {
-    id: "violencia-patrimonial-segura",
-    title: "Proteção Patrimonial da Mulher & Método S.E.G.U.R.A",
-    icon: Lock,
-    tag: "Método Exclusivo · Defesa das Mulheres · Bloqueio de Ocultação · Medidas Protetivas",
+    id: "revisao-beneficios-atrasados",
+    title: "Revisão de Benefícios & Cobrança de Atrasados",
+    icon: Coins,
+    tag: "Revisão da Vida Toda · Erro de Cálculo · Período Especial · RPV e Precatórios Retroativos",
     summary:
-      "Aplicação da metodologia exclusiva S.E.G.U.R.A para proteger mulheres contra abusos econômicos, desvios de patrimônio e fraudes conjugais.",
+      "Identificação de falhas no cálculo do seu benefício para aumentar o valor recebido mensalmente e cobrar todos os atrasados devidos pelo INSS.",
     details:
-      "Muitas mulheres enfrentam abusos econômicos silenciosos durante o casamento ou no término da união: controle abusivo do dinheiro, empresas registradas em nome de parentes ou 'laranjas', esvaziamento premeditado de contas e ameaças veladas. Através do método exclusivo S.E.G.U.R.A, a Dra. Francielle atua com rapidez jurídica e medidas cautelares para quebrar blindagens fraudulentas, restituir a independência financeira e assegurar tudo o que a mulher construiu com sua dedicação.",
+      "Milhares de aposentados e pensionistas recebem todo mês um valor bem menor do que deveriam simplesmente porque o INSS desconsiderou períodos com salários mais altos, não aplicou a regra mais vantajosa ou cometeu erros na conversão de moeda. Analisamos minuciosamente a Carta de Concessão e a Memória de Cálculo do seu benefício para buscar o reajuste mensal e a expedição de RPV (Requisição de Pequeno Valor) com os retroativos dos últimos 5 anos.",
     topics: [
-      "Aplicação de medidas protetivas judiciais urgentes contra a violência patrimonial e chantagens econômicas",
-      "Investigação aprofundada de blindagens patrimoniais, laranjas e empresas ocultas para fins de partilha",
-      "Desconsideração da personalidade jurídica para incluir bens da empresa do cônjuge na divisão do casal",
-      "Garantia imediata de fixação de alimentos provisórios para manutenção da mulher e dos filhos",
-      "Acolhimento jurídico humanizado, empático e totalmente confidencial do início ao fim do processo",
-      "Reivindicação de indenizações compensatórias por perdas patrimoniais decorrentes de abusos na união",
+      "Revisão da Vida Toda e Revisão das Melhores Contribuições para inclusão de salários anteriores a julho de 1994",
+      "Revisão para inclusão de períodos trabalhados em condições insalubres ou perigosas não convertidos",
+      "Revisão com base em Reclamatória Trabalhista com reconhecimento de horas extras e diferenças salariais",
+      "Revisão do Teto Previdenciário e do Buraco Negro",
+      "Cobrança judicial de parcelas atrasadas retroativas devidas desde a Data de Entrada do Requerimento (DER)",
+      "Correção monetária e juros legítimos sobre valores que o INSS demorou para pagar",
     ],
     whatsAppText:
-      "Olá, Dra. Francielle! Gostaria de uma avaliação confidencial sobre proteção patrimonial e o método S.E.G.U.R.A.",
+      "Olá, Dra. Stefanie! Gostaria que você analisasse a concessão da minha aposentadoria para verificar se tenho direito a revisão.",
+  },
+  {
+    id: "ciencias-criminais-puc",
+    title: "Direito Criminal & Ciências Criminais (Especialista PUC-MG)",
+    icon: Scale,
+    tag: "Especialista PUC-MG · Audiências de Custódia · Defesa Estratégica · Inquéritos e Recursos",
+    summary:
+      "Defesa intransigente da liberdade e garantias individuais com rigor técnico, presença célere em audiências de custódia e tribunal do júri.",
+    details:
+      "Com pós-graduação e especialização em Ciências Criminais pela conceituada PUC-MG, a Dra. Stefanie Barbosa oferece atuação combativa, discreta e fundamentada para assegurar o devido processo legal, combater prisões ilegais, produzir provas em favor do cliente e sustentar defesas técnicas perante o Poder Judiciário estadual e federal.",
+    topics: [
+      "Atuação urgente em Audiências de Custódia e pedidos liminares de liberdade provisória",
+      "Acompanhamento em flagrantes, delegacias e inquéritos policiais com preservação de direitos",
+      "Defesa estratégica em ações penais, instrução probatória e sustentação oral",
+      "Impetração célere de Habeas Corpus perante Tribunais de Justiça e Tribunais Superiores",
+      "Crimes contra o patrimônio, honra, ambientais, trânsito e execução penal",
+      "Atendimento humanizado, ético e totalmente confidencial à família do assistido",
+    ],
+    whatsAppText:
+      "Olá, Dra. Stefanie! Gostaria de consultar sobre um caso na área criminal com urgência.",
+  },
+  {
+    id: "direito-familia-sucessoes",
+    title: "Direito de Família & Sucessões",
+    icon: GraduationCap,
+    tag: "Pós-Graduada em Família e Sucessões · Divórcios · Guarda & Pensão · Inventários em Cartório",
+    summary:
+      "Acolhimento sensível e resolução jurídica pacífica em inventários ágeis, divórcios, partilha de bens e proteção dos direitos dos seus filhos.",
+    details:
+      "Conflitos familiares e a perda de entes queridos exigem uma advogada que alie conhecimento técnico profundo com empatia e equilíbrio emocional. A Dra. Stefanie conduz inventários extrajudiciais rápidos diretamente em cartório, divórcios e regulamentações de guarda e pensão alimentícia, priorizando sempre a pacificação das relações e a segurança patrimonial da família.",
+    topics: [
+      "Inventário Extrajudicial em Cartório com agilidade e redução de custos cartorários e tributários",
+      "Divórcio Consensual e Litigioso com partilha justa de bens e proteção patrimonial",
+      "Fixação, revisão e execução de pensão alimentícia para garantia do sustento dos filhos",
+      "Regulamentação de guarda compartilhada e plano de convivência saudável",
+      "Planejamento sucessório prévio e elaboração de testamentos",
+      "Dissolução de união estável com separação amigável de patrimônio",
+    ],
+    whatsAppText:
+      "Olá, Dra. Stefanie! Gostaria de agendar uma consulta sobre inventário / direito de família.",
   },
 ];
 
 const clientReviews = [
   {
-    name: "Indalecio Gonçalves",
+    name: "Ana Claudia Moreira",
     reviewsCount: "Avaliação Verificada no Google (5,0 ★)",
-    badge: "Inventário em 3 Meses & Economia de R$ 4k",
+    badge: "Transparência & Profissionalismo",
     content:
-      "Ela fez o inventário do meu pai e mãe em 2026, disse que ficaria pronto com 6 meses e finalizou tudo em 3 meses, fiquei muito satisfeito, ainda conseguiu 4 mil de desconto no imposto, sempre explicando tudo, muito educada e atenciosa Dra Francielle, só tenho agradecer a ela e sua equipe.",
+      "Uma excelente profissional, com muita transparência e profissionalismo no seu trabalho eu e minha família somos muito gratos pela Dra Stefanie.",
+    response: "Gratidão",
   },
   {
-    name: "Tatiana Jesus",
+    name: "Edna Santiago",
     reviewsCount: "Avaliação Verificada no Google (5,0 ★)",
-    badge: "Divórcio Conduzido com Sucesso",
-    content:
-      "Uma excelente profissional, advogada de muita competência! Super indico! Trabalhou muito no meu processo de divórcio! Resultado positivo super indico Dra Francielle Gonçalves.",
+    badge: "Ótima Advogada Nota 10",
+    content: "Ótimo advogada maravilhosa nota 10",
+    response: "Obrigada pela avaliação",
   },
   {
-    name: "Denise Martins Santos",
-    reviewsCount: "3 avaliações no Google (5,0 ★)",
-    badge: "Agilidade, Prazos & Total Confiança",
-    content:
-      "A Dra. Franciele é uma profissional extremamente competente, atenciosa e comprometida. Sempre foi muito clara nas orientações, cumpriu todos os prazos estabelecidos e conduziu tudo com agilidade e eficiência. Além de ser muito resolutiva, demonstra cuidado e atenção em cada atendimento, transmitindo segurança e confiança. Recomendo seu trabalho com certeza!",
-  },
-  {
-    name: "Luciene Santos",
+    name: "Luciana Becaletto",
     reviewsCount: "Avaliação Verificada no Google (5,0 ★)",
-    badge: "Guarda, Pensão & Regulamentação de Visitas",
+    badge: "Maravilhosa, Atenciosa & Dedicada",
     content:
-      "Sempre indicarei a Dra Franciele Gonçalves, ela é uma pessoa dedicada com sua profissão e um carinho com o que faz, no meu caso foi guarda pensão alimentícia, regularizar das visitas. Sou muito grata com cada orientação e paciência que teve comigo.",
+      "Uma profissional maravilhosa atenciosa. Quem dera eu tivesse conhecido a Dr. Stefanie antes não tinha passado oq passei no fórum tá de parabéns Dr. Deus abençoe sempre 🙏🙌",
+    response: "Eu agradeço a confiança no meu trabalho !",
   },
   {
-    name: "Marlei Teresinha",
+    name: "Otacilio Albino da silva",
+    reviewsCount: "Avaliação Verificada no Google (5,0 ★)",
+    badge: "Trabalho Nota Mil",
+    content:
+      "Uma excelente profissional parabéns dra seu trabalho e nota mil obrigado por tudo que a dra fez por mim que Deus te abençoe sempre",
+    response: "Obrigada ! Grande abraço !",
+  },
+  {
+    name: "Nice Puccini",
+    reviewsCount: "Avaliação Verificada no Google (5,0 ★)",
+    badge: "Competência em Caso Complexo",
+    content:
+      "Ótima advogada criminalista. Ganhamos um caso que perante os olhos humanos parecia impossível. Mas a sua competência juntamente com o Dr.Emerson e Deus saímos vitoriosos 🙏",
+    response: "Obrigada Nice ! Agradecemos a confiança !",
+  },
+  {
+    name: "Flavia Alves",
     reviewsCount: "2 avaliações no Google (5,0 ★)",
-    badge: "Pensão de Filho Resolvida Rápido",
+    badge: "Agilidade, Clareza & Simpatia",
     content:
-      "Muito boa advogada, indiquei ela pra uma amiga pedir a pensão do seu filho, ela foi muito atenciosa, resolveu o caso dela muito rápido, indico de olhos fechados.",
+      "Muito atenciosa e prestativa. Serviço com muita agilidade e clareza. Simpática. Recomendo",
+    response: "Eu agradeço demais Flávia ! Estamos a disposição !",
   },
   {
-    name: "Diuly Cruz",
-    reviewsCount: "Avaliação Verificada no Google (5,0 ★)",
-    badge: "Melhor Advogada de Família da Região",
-    content:
-      "Melhor advogada de família da região! Muito competente e dedicada.",
-  },
-  {
-    name: "Marcela Leandro Ribeiro",
-    reviewsCount: "3 avaliações no Google (5,0 ★)",
-    badge: "Retorno Rápido & Disponibilidade",
-    content:
-      "Excelente profissional! Está sempre disponível para esclarecimentos, retorna rapidamente quando contactada.",
-  },
-  {
-    name: "Junior Pereira",
-    reviewsCount: "Avaliação Verificada no Google (5,0 ★)",
-    badge: "Notável Saber Jurídico",
-    content:
-      "Excelente advogada, extremamente competente e com notável saber jurídico!",
-  },
-  {
-    name: "Larissa Gonçalves",
-    reviewsCount: "3 avaliações no Google (5,0 ★)",
-    badge: "Paciente, Inteligente & Educada",
-    content:
-      "Excelente advogada. Super paciente, inteligente e sempre muito educada com os clientes.",
-  },
-  {
-    name: "Lorrane Cristina",
-    reviewsCount: "Avaliação Verificada no Google (5,0 ★)",
-    badge: "Atenciosa & Muito Dedicada",
-    content:
-      "Excelente profissional! Muito atenciosa, competente e dedicada. Recomendo muito o trabalho dela.",
-  },
-  {
-    name: "Victor Soares",
-    reviewsCount: "Avaliação Verificada no Google (5,0 ★)",
-    badge: "Recomendação 5 Estrelas",
-    content:
-      "Ótima advogada. Recomendo!",
+    name: "Caroline Correa",
+    reviewsCount: "2 avaliações no Google (5,0 ★)",
+    badge: "Excelente Profissional",
+    content: "Excelente profissional! Recomendo!",
+    response: "Obrigada !",
   },
 ];
 
@@ -374,13 +396,13 @@ function Heading({
       )}
       <h2
         className={`mt-4 font-serif text-3xl leading-[1.15] tracking-[-0.02em] sm:text-4xl lg:text-[2.75rem] ${
-          light ? "text-[#14110e]" : "text-[#14110e]"
+          light ? "text-[#141316]" : "text-[#141316]"
         }`}
       >
         {children}
       </h2>
       {description && (
-        <p className="mt-4 text-[15px] leading-7 text-[#4c433a] sm:text-base">
+        <p className="mt-4 text-[15px] leading-7 text-[#4b4650] sm:text-base">
           {description}
         </p>
       )}
@@ -407,24 +429,24 @@ export default function Home() {
 
   return (
     <MotionConfig reducedMotion="user">
-      <main className="overflow-hidden bg-[#faf8f5] text-[#14110e] selection:bg-[#f7e5a9] selection:text-[#14110e]">
-        {/* Navigation Bar - Refined Light Luxury with Polished Gold Accents */}
-        <header className="sticky top-0 z-40 border-b border-[#e8dfd2] bg-white/95 backdrop-blur-xl shadow-xs">
-          <div className="mx-auto flex h-[80px] max-w-7xl items-center justify-between gap-4 px-5 sm:h-[88px] sm:px-8 lg:h-[94px] lg:gap-6 lg:px-12">
+      <main className="overflow-hidden bg-[#faf7f8] text-[#141316] selection:bg-[#f5d3d8] selection:text-[#26060e]">
+        {/* Navigation Bar - Refined Silk & Marsala Luxury */}
+        <header className="sticky top-0 z-40 border-b border-[#e8dde0] bg-white/95 backdrop-blur-xl shadow-xs">
+          <div className="mx-auto flex h-[86px] max-w-7xl items-center justify-between gap-4 px-5 sm:h-[96px] sm:px-8 lg:h-[104px] lg:gap-6 lg:px-12">
             <a
               href="#inicio"
-              aria-label="Barbosa Advocacia e Consultoria — Dra. Francielle Gonçalves"
+              aria-label="Stefanie Barbosa Advocacia Previdenciária"
               onClick={closeMenu}
               className="flex items-center transition-transform hover:scale-[1.01] shrink-0"
             >
-              <div className="relative h-10 w-32 sm:h-12 sm:w-36 lg:h-[58px] lg:w-[176px] shrink-0">
+              <div className="relative h-[58px] w-[180px] sm:h-[73px] sm:w-[225px] lg:h-[81px] lg:w-[250px] shrink-0">
                 <Image
                   src={LOGO_FULL_SRC}
-                  alt="Barbosa Advocacia e Consultoria — Dra. Francielle Gonçalves"
+                  alt="Stefanie Barbosa Advocacia Previdenciária"
                   fill
                   priority
                   loading="eager"
-                  sizes="(max-width: 640px) 128px, (max-width: 1024px) 144px, 176px"
+                  sizes="(max-width: 640px) 180px, (max-width: 1024px) 225px, 250px"
                   className="object-contain object-left"
                 />
               </div>
@@ -438,19 +460,19 @@ export default function Home() {
                 Início
               </a>
               <a className="nav-link" href="#sobre">
-                Dra. Francielle
-              </a>
-              <a className="nav-link" href="#metodo-segura">
-                Método S.E.G.U.R.A
+                Dra. Stefanie
               </a>
               <a className="nav-link" href="#atuacao">
-                Áreas de Atuação
+                Especialidades
+              </a>
+              <a className="nav-link" href="#como-funciona">
+                Como Funciona
               </a>
               <a className="nav-link" href="#diferenciais">
                 Por Que Escolher
               </a>
               <a className="nav-link" href="#avaliacoes">
-                Avaliações (5,0 ★)
+                Avaliações (4,8 ★)
               </a>
               <a className="nav-link" href="#contato">
                 Contato & Sede
@@ -462,9 +484,9 @@ export default function Home() {
                 href={GOOGLE_SEARCH_URL}
                 target="_blank"
                 rel="noreferrer"
-                aria-label="Avaliações da Dra. Francielle Gonçalves no Google"
-                className="grid size-10 place-items-center rounded-lg border border-[#e8dfd2] bg-[#faf7f2] text-[#4c433a] transition-all hover:border-[#deb753] hover:bg-white hover:text-[#14110e] shadow-xs"
-                title="5,0 ★ no Google (13 avaliações)"
+                aria-label="Avaliações da Dra. Stefanie Barbosa no Google"
+                className="grid size-10 place-items-center rounded-lg border border-[#e8dde0] bg-[#faf7f8] text-[#4b4650] transition-all hover:border-[#b5455f] hover:bg-white hover:text-[#741f34] shadow-xs"
+                title="4,8 ★ no Google (12 avaliações)"
               >
                 <GoogleIcon size={16} />
               </a>
@@ -472,16 +494,16 @@ export default function Home() {
                 href={INSTAGRAM_URL}
                 target="_blank"
                 rel="noreferrer"
-                aria-label="Instagram da Dra. Francielle Gonçalves"
-                className="grid size-10 place-items-center rounded-lg border border-[#e8dfd2] bg-[#faf7f2] text-[#4c433a] transition-all hover:border-[#deb753] hover:bg-white hover:text-[#14110e] shadow-xs"
-                title={`Instagram ${INSTAGRAM_HANDLE} (10,5k seguidores)`}
+                aria-label="Instagram da Dra. Stefanie Barbosa"
+                className="grid size-10 place-items-center rounded-lg border border-[#e8dde0] bg-[#faf7f8] text-[#4b4650] transition-all hover:border-[#b5455f] hover:bg-white hover:text-[#741f34] shadow-xs"
+                title={`Instagram ${INSTAGRAM_HANDLE} (1.743 seguidores)`}
               >
                 <InstagramIcon size={16} />
               </a>
               <a
                 href={`tel:+${WHATSAPP_NUMBER}`}
-                aria-label="Ligar para Francielle Gonçalves Advogada"
-                className="grid size-10 place-items-center rounded-lg border border-[#e8dfd2] bg-[#faf7f2] text-[#4c433a] transition-all hover:border-[#deb753] hover:bg-white hover:text-[#14110e] shadow-xs"
+                aria-label="Ligar para Stefanie Barbosa Advocacia"
+                className="grid size-10 place-items-center rounded-lg border border-[#e8dde0] bg-[#faf7f8] text-[#4b4650] transition-all hover:border-[#b5455f] hover:bg-white hover:text-[#741f34] shadow-xs"
                 title={`Ligar: ${PHONE_DISPLAY}`}
               >
                 <Phone size={16} />
@@ -490,15 +512,15 @@ export default function Home() {
                 href={getWhatsAppUrl()}
                 target="_blank"
                 rel="noreferrer"
-                aria-label="WhatsApp Dra. Francielle Gonçalves"
-                className="grid size-10 place-items-center rounded-lg border border-[#e8dfd2] bg-[#faf7f2] text-[#4c433a] transition-all hover:border-[#deb753] hover:bg-white hover:text-[#14110e] shadow-xs"
+                aria-label="WhatsApp Dra. Stefanie Barbosa"
+                className="grid size-10 place-items-center rounded-lg border border-[#e8dde0] bg-[#faf7f8] text-[#4b4650] transition-all hover:border-[#b5455f] hover:bg-white hover:text-[#741f34] shadow-xs"
                 title="Atendimento no WhatsApp"
               >
                 <WhatsAppIcon size={18} />
               </a>
               <GlowingButton
                 href={getWhatsAppUrl(
-                  "Olá, Dra. Francielle! Gostaria de agendar uma consulta e receber orientação jurídica para o meu caso."
+                  "Olá, Dra. Stefanie! Gostaria de agendar uma consulta para analisar a minha aposentadoria / benefício no INSS."
                 )}
                 target="_blank"
                 size="sm"
@@ -514,7 +536,7 @@ export default function Home() {
               aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
               aria-expanded={menuOpen}
               aria-controls="mobile-navigation"
-              className="grid size-11 place-items-center rounded-lg border border-[#e8dfd2] bg-[#faf7f2] text-[#14110e] lg:hidden shadow-xs"
+              className="grid size-11 place-items-center rounded-lg border border-[#e8dde0] bg-[#faf7f8] text-[#141316] lg:hidden shadow-xs"
               onClick={() => setMenuOpen((open) => !open)}
             >
               {menuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -530,32 +552,32 @@ export default function Home() {
                 animate={{ opacity: 1, height: "auto" }}
                 exit={{ opacity: 0, height: 0 }}
                 transition={{ duration: 0.22 }}
-                className="overflow-hidden border-t border-[#e8dfd2] bg-white px-6 text-[#14110e] lg:hidden"
+                className="overflow-hidden border-t border-[#e8dde0] bg-white px-6 text-[#141316] lg:hidden"
               >
                 <div className="mx-auto flex max-w-7xl flex-col gap-1 py-4">
                   {[
                     ["Início", "#inicio"],
-                    ["Dra. Francielle", "#sobre"],
-                    ["Método S.E.G.U.R.A", "#metodo-segura"],
-                    ["Áreas de Atuação", "#atuacao"],
+                    ["Dra. Stefanie", "#sobre"],
+                    ["Especialidades", "#atuacao"],
+                    ["Como Funciona", "#como-funciona"],
                     ["Por Que Escolher", "#diferenciais"],
-                    ["Avaliações (5,0 ★)", "#avaliacoes"],
+                    ["Avaliações (4,8 ★)", "#avaliacoes"],
                     ["Contato & Sede", "#contato"],
                   ].map(([label, href]) => (
                     <a
                       key={label}
                       href={href}
                       onClick={closeMenu}
-                      className="py-3 text-sm font-medium text-[#4c433a] hover:text-[#8e6318]"
+                      className="py-3 text-sm font-medium text-[#4b4650] hover:text-[#741f34]"
                     >
                       {label}
                     </a>
                   ))}
                   <div className="mt-3 flex flex-col gap-2">
                     <a
-                      className="inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-[#8e6318] via-[#c59a3f] to-[#8e6318] px-5 py-3.5 text-xs font-bold uppercase tracking-[0.13em] text-white shadow-md transition-all hover:brightness-105"
+                      className="inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-[#571424] via-[#8c2a41] to-[#571424] px-5 py-3.5 text-xs font-bold uppercase tracking-[0.13em] text-white shadow-md transition-all hover:brightness-110"
                       href={getWhatsAppUrl(
-                        "Olá, Dra. Francielle! Gostaria de falar sobre o meu caso e receber orientação jurídica."
+                        "Olá, Dra. Stefanie! Gostaria de falar sobre o meu caso e receber orientação jurídica para meu benefício."
                       )}
                       target="_blank"
                       rel="noreferrer"
@@ -564,13 +586,13 @@ export default function Home() {
                       <WhatsAppIcon size={16} /> WhatsApp: {PHONE_DISPLAY}
                     </a>
                     <a
-                      className="inline-flex items-center justify-center gap-2 rounded-lg border border-[#e8dfd2] bg-[#faf7f2] px-5 py-3 text-xs font-semibold uppercase tracking-[0.13em] text-[#14110e] transition-all hover:border-[#deb753]"
+                      className="inline-flex items-center justify-center gap-2 rounded-lg border border-[#e8dde0] bg-[#faf7f8] px-5 py-3 text-xs font-semibold uppercase tracking-[0.13em] text-[#141316] transition-all hover:border-[#b5455f]"
                       href={GOOGLE_SEARCH_URL}
                       target="_blank"
                       rel="noreferrer"
                       onClick={closeMenu}
                     >
-                      <GoogleIcon size={15} /> 5,0 ★ no Google (13 avaliações)
+                      <GoogleIcon size={15} /> 4,8 ★ no Google (12 avaliações)
                     </a>
                   </div>
                 </div>
@@ -579,14 +601,14 @@ export default function Home() {
           </AnimatePresence>
         </header>
 
-        {/* Hero Section - Warm Ivory & Travertine Canvas with Polished Gold Lighting */}
+        {/* Hero Section - Silk Pearl & Deep Velvet Marsala Ambience */}
         <section
           id="inicio"
-          className="relative isolate scroll-mt-24 border-b border-[#e8dfd2] bg-gradient-to-b from-white via-[#faf8f5] to-[#f4efe6]"
+          className="relative isolate scroll-mt-24 border-b border-[#e8dde0] bg-gradient-to-b from-white via-[#faf7f8] to-[#f4eef0]"
         >
-          {/* Subtle warm gold ambient aura */}
-          <div className="pointer-events-none absolute -right-32 top-8 -z-10 size-[36rem] rounded-full bg-[#deb753]/12 blur-3xl" />
-          <div className="pointer-events-none absolute -left-20 bottom-10 -z-10 size-[28rem] rounded-full bg-[#c59a3f]/10 blur-3xl" />
+          {/* Velvet Marsala ambient aura matching Stefanie's makeup and executive palette */}
+          <div className="pointer-events-none absolute -right-32 top-8 -z-10 size-[36rem] rounded-full bg-[#8c2a41]/8 blur-3xl" />
+          <div className="pointer-events-none absolute -left-20 bottom-10 -z-10 size-[28rem] rounded-full bg-[#571424]/6 blur-3xl" />
 
           <div className="mx-auto grid min-h-[660px] max-w-7xl items-center gap-12 px-5 py-16 sm:px-8 sm:py-20 lg:min-h-[720px] lg:grid-cols-[1.1fr_0.9fr] lg:gap-12 lg:px-12 lg:py-20">
             <motion.div
@@ -597,39 +619,35 @@ export default function Home() {
             >
               <motion.div
                 variants={reveal}
-                className="mb-6 inline-flex items-center gap-2.5 rounded-lg border border-[#deb753]/40 bg-white px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-[#8e6318] shadow-xs"
+                className="mb-6 inline-flex items-center gap-2.5 rounded-lg border border-[#ecadb7] bg-white px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-[#741f34] shadow-xs"
               >
-                <span className="size-2 shrink-0 rounded-full bg-[#8e6318]" />
-                <span>FRANCIELLE GONÇALVES | ADVOGADA · PATOS DE MINAS - MG</span>
+                <span className="size-2 shrink-0 rounded-full bg-[#741f34]" />
+                <span>DRA. STEFANIE BARBOSA · {OAB_REGISTRY} · JACUTINGA - MG</span>
               </motion.div>
 
               <motion.h1
                 variants={reveal}
-                className="max-w-[760px] font-serif text-[2.5rem] leading-[1.1] tracking-[-0.02em] text-[#14110e] sm:text-5xl lg:text-[3.75rem]"
+                className="max-w-[760px] font-serif text-[2.5rem] leading-[1.1] tracking-[-0.02em] text-[#141316] sm:text-5xl lg:text-[3.75rem]"
               >
-                Proteção Jurídica Especializada para Mulheres, Famílias e Patrimônio:{" "}
-                <span className="font-serif italic text-transparent bg-clip-text bg-gradient-to-r from-[#8e6318] via-[#c59a3f] to-[#5a3c08]">
-                  Atuação Estratégica, Humanizada e Resolutiva.
+                Advocacia Especializada em Direito Previdenciário:{" "}
+                <span className="font-serif italic text-transparent bg-clip-text bg-gradient-to-r from-[#741f34] via-[#9c354e] to-[#4e1322]">
+                  Conquiste Sua Aposentadoria e Benefícios do INSS com Segurança e Rapidez.
                 </span>
               </motion.h1>
 
               <motion.p
                 variants={reveal}
-                className="mt-7 max-w-xl text-[15px] leading-7 text-[#4c433a] sm:text-base sm:leading-8"
+                className="mt-7 max-w-xl text-[15px] leading-7 text-[#4b4650] sm:text-base sm:leading-8"
               >
                 Liderado pela{" "}
-                <strong className="font-semibold text-[#14110e]">
-                  Dra. Francielle Gonçalves Barbosa
+                <strong className="font-semibold text-[#141316]">
+                  Dra. Stefanie Barbosa ({OAB_REGISTRY})
                 </strong>
-                , advogada especialista em Direito de Família e Sucessões em Patos de Minas - MG e criadora do{" "}
-                <strong className="font-semibold text-[#14110e]">
-                  Método S.E.G.U.R.A
+                , advogada especialista em Direito Previdenciário, Ciências Criminais (PUC-MG) e Família/Sucessões, pedagoga e neuropsicopedagoga. Atuação técnica, humanizada e firme em{" "}
+                <strong className="font-semibold text-[#141316]">
+                  Planejamento Previdenciário, Aposentadorias (Idade, Tempo, Especial e Rural), BPC/LOAS, Auxílio-Doença, Pensão por Morte e Revisões do INSS
                 </strong>
-                . Atuação resolutiva em{" "}
-                <strong className="font-semibold text-[#14110e]">
-                  Divórcio, Partilha de Bens, Guarda, Pensão Alimentícia e Inventários Rápidos em Cartório
-                </strong>
-                , oferecendo orientação jurídica transparente, acolhimento empático e firmeza técnica para defender você e seus filhos.
+                , garantindo o benefício correto e o valor máximo que você construiu durante toda a sua vida de trabalho.
               </motion.p>
 
               <motion.div
@@ -638,18 +656,18 @@ export default function Home() {
               >
                 <GlowingButton
                   href={getWhatsAppUrl(
-                    "Olá, Dra. Francielle! Gostaria de agendar uma consulta sobre Direito de Família / Divórcio / Pensão / Inventário."
+                    "Olá, Dra. Stefanie! Gostaria de agendar uma consulta sobre Direito Previdenciário / Aposentadoria / BPC / Benefício do INSS."
                   )}
                   target="_blank"
                   size="lg"
                   variant="gold"
                   className="rounded-lg shadow-md"
                 >
-                  <WhatsAppIcon size={16} /> Falar no WhatsApp com a Dra. Francielle
+                  <WhatsAppIcon size={16} /> Falar no WhatsApp com a Dra. Stefanie
                 </GlowingButton>
                 <a
                   href="#atuacao"
-                  className="group inline-flex items-center gap-2 rounded-lg border border-[#e8dfd2] bg-white px-5 py-3.5 text-xs font-semibold uppercase tracking-[0.14em] text-[#14110e] shadow-xs transition-all hover:border-[#deb753] hover:bg-[#faf7f2]"
+                  className="group inline-flex items-center gap-2 rounded-lg border border-[#e8dde0] bg-white px-5 py-3.5 text-xs font-semibold uppercase tracking-[0.14em] text-[#141316] shadow-xs transition-all hover:border-[#b5455f] hover:bg-[#fdf7f8]"
                 >
                   Conhecer Especialidades{" "}
                   <ArrowRight
@@ -661,34 +679,34 @@ export default function Home() {
 
               <motion.div
                 variants={reveal}
-                className="mt-12 flex flex-wrap items-center gap-x-7 gap-y-4 border-t border-[#e8dfd2] pt-6 text-xs text-[#5c5042]"
+                className="mt-12 flex flex-wrap items-center gap-x-7 gap-y-4 border-t border-[#e8dde0] pt-6 text-xs text-[#5c5560]"
               >
                 <a
                   href={GOOGLE_SEARCH_URL}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 font-medium text-[#14110e] transition-colors hover:text-[#8e6318]"
+                  className="inline-flex items-center gap-2 font-medium text-[#141316] transition-colors hover:text-[#741f34]"
                 >
-                  <Star size={15} className="fill-[#deb753] text-[#deb753]" /> 5,0 estrelas no Google (13 avaliações autênticas)
+                  <Star size={15} className="fill-[#f59e0b] text-[#f59e0b]" /> 4,8 estrelas no Google (12 avaliações autênticas)
                 </a>
                 <span className="inline-flex items-center gap-2 font-medium">
-                  <Award size={15} className="text-[#8e6318]" /> Método S.E.G.U.R.A
+                  <Award size={15} className="text-[#741f34]" /> {OAB_REGISTRY}
                 </span>
                 <span className="inline-flex items-center gap-2 font-medium">
-                  <MapPin size={15} className="text-[#8e6318]" /> R. Lagamar, 98 · Copacabana · Patos de Minas
+                  <MapPin size={15} className="text-[#741f34]" /> R. das Acácias, 267 · Jacutinga - MG
                 </span>
                 <a
                   href={INSTAGRAM_URL}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 font-medium text-[#14110e] transition-colors hover:text-[#8e6318]"
+                  className="inline-flex items-center gap-2 font-medium text-[#141316] transition-colors hover:text-[#741f34]"
                 >
-                  <InstagramIcon size={15} className="text-[#8e6318]" /> {INSTAGRAM_HANDLE} (10,5k seguidores)
+                  <InstagramIcon size={15} className="text-[#741f34]" /> {INSTAGRAM_HANDLE} (1.743 seguidores)
                 </a>
               </motion.div>
             </motion.div>
 
-            {/* Hero Visual Presentation - Dra. Francielle Gonçalves Portrait */}
+            {/* Hero Visual Presentation - Dra. Stefanie Barbosa Portrait */}
             <motion.div
               initial={{ opacity: 0, scale: 0.97, y: 18 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -699,59 +717,59 @@ export default function Home() {
               }}
               className="relative mx-auto w-full max-w-[490px] lg:ml-auto lg:mr-2"
             >
-              <div className="relative aspect-[4/4.9] overflow-hidden rounded-2xl border-2 border-[#e8dfd2] bg-white shadow-xl ring-1 ring-[#deb753]/20">
+              <div className="relative aspect-[4/4.9] overflow-hidden rounded-2xl border-2 border-[#e8dde0] bg-white shadow-xl ring-1 ring-[#b5455f]/20">
                 <Image
                   src={FOTO_HERO_SRC}
-                  alt="Dra. Francielle Gonçalves Barbosa — Advogada em Patos de Minas - MG"
+                  alt="Dra. Stefanie Barbosa — Advogada Previdenciária em Jacutinga - MG"
                   fill
                   priority
                   unoptimized
                   className="object-cover object-top"
                 />
-                <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#14110e] via-[#14110e]/75 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#141316] via-[#141316]/75 to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between gap-3 text-white sm:bottom-8 sm:left-8 sm:right-8">
                   <div>
                     <p className="font-serif text-2xl font-normal tracking-wide text-white">
-                      Dra. Francielle Gonçalves Barbosa
+                      Dra. Stefanie Barbosa
                     </p>
-                    <p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-[#deb753]">
-                      Família · Divórcio · Guarda · Inventários
+                    <p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-[#ecadb7]">
+                      {OAB_REGISTRY} · Advocacia Previdenciária
                     </p>
                   </div>
-                  <span className="grid size-11 shrink-0 place-items-center rounded-lg border border-[#deb753]/40 bg-[#14110e]/85 text-[#f7e5a9] backdrop-blur-sm">
+                  <span className="grid size-11 shrink-0 place-items-center rounded-lg border border-[#b5455f]/40 bg-[#141316]/85 text-[#fdf7f8] backdrop-blur-sm">
                     <Scale size={18} />
                   </span>
                 </div>
               </div>
 
               {/* Floating authority badge */}
-              <div className="absolute -left-3 top-6 z-10 rounded-lg border border-[#deb753]/40 bg-white/95 px-4 py-2 text-[10px] font-bold tracking-[0.14em] text-[#8e6318] shadow-md backdrop-blur-md sm:-left-5">
-                PATOS DE MINAS - MG · ATENDIMENTO ON-LINE EM TODO O BRASIL
+              <div className="absolute -left-3 top-6 z-10 rounded-lg border border-[#ecadb7] bg-white/95 px-4 py-2 text-[10px] font-bold tracking-[0.14em] text-[#741f34] shadow-md backdrop-blur-md sm:-left-5">
+                JACUTINGA - MG · ATENDIMENTO ON-LINE EM TODO O BRASIL
               </div>
 
-              {/* Floating Google 5.0 Star Rating */}
+              {/* Floating Google 4.8 Star Rating */}
               <a
                 href={GOOGLE_SEARCH_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="group absolute -bottom-5 -right-3 z-10 rounded-xl border border-[#deb753]/40 bg-white/95 p-3.5 shadow-md backdrop-blur-md transition-all hover:border-[#8e6318] hover:bg-white sm:-right-5"
+                className="group absolute -bottom-5 -right-3 z-10 rounded-xl border border-[#ecadb7] bg-white/95 p-3.5 shadow-md backdrop-blur-md transition-all hover:border-[#741f34] hover:bg-white sm:-right-5"
               >
                 <div className="flex items-center gap-2">
                   <GoogleIcon size={17} />
                   <div className="flex items-center gap-1.5">
-                    <div className="flex gap-0.5 text-[#deb753]">
-                      <Star size={13} className="fill-[#deb753] text-[#deb753]" />
+                    <div className="flex gap-0.5 text-[#f59e0b]">
+                      <Star size={13} className="fill-[#f59e0b] text-[#f59e0b]" />
                     </div>
-                    <span className="font-serif text-base font-bold text-[#14110e]">
-                      5,0
+                    <span className="font-serif text-base font-bold text-[#141316]">
+                      4,8
                     </span>
-                    <span className="text-[10px] uppercase tracking-wider text-[#8e6318]">
+                    <span className="text-[10px] uppercase tracking-wider text-[#741f34]">
                       / 5,0
                     </span>
                   </div>
                 </div>
-                <p className="mt-1 text-[9px] font-semibold uppercase tracking-wider text-[#5c5042]">
-                  13 Avaliações no Google
+                <p className="mt-1 text-[9px] font-semibold uppercase tracking-wider text-[#5c5560]">
+                  12 Avaliações no Google
                 </p>
               </a>
             </motion.div>
@@ -761,39 +779,39 @@ export default function Home() {
         {/* Highlights Banner - Authority Metrics */}
         <section
           aria-label="Credenciais e Destaques"
-          className="border-b border-[#e8dfd2] bg-white"
+          className="border-b border-[#e8dde0] bg-white"
         >
           <div className="mx-auto grid max-w-7xl gap-7 px-5 py-8 sm:grid-cols-4 sm:gap-4 sm:px-8 lg:px-12">
             {[
               [
-                "5,0 ★ no Google",
-                "nota máxima com 13 avaliações autênticas destacando competência, agilidade e acolhimento",
+                "4,8 ★ no Google",
+                "nota excelente com 12 avaliações comprovando transparência, clareza e dedicação",
               ],
               [
-                "Método S.E.G.U.R.A",
-                "metodologia exclusiva para proteger mulheres, filhos e patrimônio em divórcios e partilhas",
+                "Previdenciário & INSS",
+                "atuação técnica focada em aposentadorias, BPC/LOAS, auxílios e planejamento detalhado",
               ],
               [
-                "Inventário Célere",
-                "casos concluídos em até 3 meses em cartório e economia tributária de R$ 4 mil em impostos",
+                "PUC-MG & Interdisciplinar",
+                "especialização em Ciências Criminais PUC-MG, Pós em Família e Neuropsicopedagoga",
               ],
               [
-                "Patos de Minas - MG",
-                "sede acolhedora no bairro Copacabana e atendimento digital estruturado para todo o Brasil",
+                "Sede em Jacutinga - MG",
+                "escritório estruturado na R. das Acácias, 267 e atendimento digital para todo o país",
               ],
             ].map(([value, label], index) => (
               <div
                 key={label}
                 className={
                   index > 0
-                    ? "flex items-center gap-4 sm:justify-center sm:border-l sm:border-[#e8dfd2]"
+                    ? "flex items-center gap-4 sm:justify-center sm:border-l sm:border-[#e8dde0]"
                     : "flex items-center gap-4 sm:justify-center"
                 }
               >
-                <span className="font-serif text-xl font-semibold text-[#8e6318] sm:text-2xl">
+                <span className="font-serif text-xl font-semibold text-[#741f34] sm:text-2xl">
                   {value}
                 </span>
-                <span className="max-w-[165px] text-[11px] leading-5 text-[#5c5042]">
+                <span className="max-w-[165px] text-[11px] leading-5 text-[#5c5560]">
                   {label}
                 </span>
               </div>
@@ -801,13 +819,13 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Sobre a Dra. Francielle Gonçalves Barbosa - Editorial Canvas */}
+        {/* Sobre a Dra. Stefanie Barbosa - Editorial Canvas */}
         <section
           id="sobre"
-          className="scroll-mt-24 border-y border-[#e8dfd2] bg-[#faf7f2] py-20 text-[#14110e] sm:py-28 lg:py-32"
+          className="scroll-mt-24 border-y border-[#e8dde0] bg-[#faf7f8] py-20 text-[#141316] sm:py-28 lg:py-32"
         >
           <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 sm:px-8 lg:grid-cols-[0.95fr_1.05fr] lg:gap-20 lg:px-12">
-            {/* Visual presentation - Dra. Francielle Full Portrait */}
+            {/* Visual presentation - Dra. Stefanie Full Portrait with Facade preview */}
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -815,41 +833,64 @@ export default function Home() {
               variants={reveal}
               className="relative mx-auto w-full max-w-[480px]"
             >
-              <div className="relative aspect-[3/4.2] overflow-hidden rounded-2xl border-2 border-[#e8dfd2] bg-white shadow-2xl ring-1 ring-[#deb753]/20">
+              <div className="relative aspect-[3/4.2] overflow-hidden rounded-2xl border-2 border-[#e8dde0] bg-white shadow-2xl ring-1 ring-[#b5455f]/20">
                 <Image
                   src={FOTO_SOBRE_SRC}
-                  alt="Dra. Francielle Gonçalves Barbosa — Advocacia e Consultoria"
+                  alt="Dra. Stefanie Barbosa — Advocacia Previdenciária"
                   fill
                   unoptimized
                   className="object-cover object-center"
                 />
-                <div className="absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-[#14110e]/80 via-transparent to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-[#141316]/85 via-transparent to-transparent" />
                 <div className="absolute bottom-5 left-5 right-5 text-white">
-                  <p className="font-serif text-xl font-medium">Dra. Francielle Gonçalves Barbosa</p>
-                  <p className="text-[10px] uppercase tracking-[0.2em] text-[#deb753]">Advogada de Família · Patos de Minas - MG</p>
+                  <p className="font-serif text-xl font-medium">Dra. Stefanie Barbosa</p>
+                  <p className="text-[10px] uppercase tracking-[0.2em] text-[#ecadb7]">
+                    Advogada Previdenciária · {OAB_REGISTRY} · Jacutinga - MG
+                  </p>
+                </div>
+              </div>
+
+              {/* Sede física photo badge */}
+              <div className="absolute -bottom-8 -left-3 flex items-center gap-3 rounded-xl border border-[#ecadb7] bg-white p-3 shadow-xl sm:-left-6">
+                <div className="relative h-16 w-14 overflow-hidden rounded-lg border border-[#e8dde0] bg-stone-100 shrink-0">
+                  <Image
+                    src={FOTO_FACHADA_SRC}
+                    alt="Fachada do Escritório Stefanie Barbosa em Jacutinga - MG"
+                    fill
+                    unoptimized
+                    className="object-cover"
+                  />
+                </div>
+                <div className="pr-2">
+                  <p className="text-[9px] font-bold uppercase tracking-[0.16em] text-[#741f34]">
+                    Sede Própria Oficial
+                  </p>
+                  <p className="font-serif text-xs font-bold text-[#141316]">
+                    R. das Acácias, 267
+                  </p>
+                  <p className="text-[10px] text-[#5c5560]">
+                    Jacutinga, MG · 37590-000
+                  </p>
                 </div>
               </div>
 
               {/* Authority badge card */}
-              <div className="absolute -bottom-6 right-3 max-w-[340px] rounded-xl border border-[#deb753]/40 bg-white px-5 py-4 shadow-xl sm:-right-6 sm:px-6">
-                <div className="flex items-center gap-2 text-[#8e6318]">
-                  <Sparkles size={16} />
-                  <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#8e6318]">
-                    Dedicação · Ética · Acolhimento
+              <div className="absolute -top-6 right-3 max-w-[280px] rounded-xl border border-[#ecadb7] bg-white px-4 py-3 shadow-xl sm:-right-6 sm:px-5">
+                <div className="flex items-center gap-2 text-[#741f34]">
+                  <Sparkles size={15} />
+                  <p className="text-[9px] font-bold uppercase tracking-[0.16em] text-[#741f34]">
+                    Formação Interdisciplinar
                   </p>
                 </div>
-                <p className="mt-1 font-serif text-lg leading-snug text-[#14110e]">
-                  Dra. Francielle Gonçalves Barbosa
+                <p className="mt-1 font-serif text-sm font-semibold text-[#141316]">
+                  Esp. Ciências Criminais PUC-MG
                 </p>
-                <p className="mt-0.5 text-[11px] font-medium text-[#8e6318]">
-                  Especialista em Família · Método S.E.G.U.R.A
-                </p>
-                <p className="mt-1 text-[11px] leading-4 text-[#5c5042]">
-                  R. Lagamar, 98 - Copacabana · Patos de Minas - MG
+                <p className="text-[10px] text-[#6b6270]">
+                  Pedagoga & Neuropsicopedagoga
                 </p>
               </div>
 
-              <span className="absolute -left-4 -top-4 -z-10 size-24 border-l-2 border-t-2 border-[#deb753]/40 sm:-left-7 sm:-top-7 sm:size-32" />
+              <span className="absolute -left-4 -top-4 -z-10 size-24 border-l-2 border-t-2 border-[#ecadb7] sm:-left-7 sm:-top-7 sm:size-32" />
             </motion.div>
 
             {/* Story & Biography */}
@@ -861,58 +902,58 @@ export default function Home() {
             >
               <motion.div
                 variants={reveal}
-                className="mb-4 inline-flex items-center gap-2.5 rounded-md border border-[#deb753]/40 bg-white px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-[#8e6318] shadow-xs"
+                className="mb-4 inline-flex items-center gap-2.5 rounded-md border border-[#ecadb7] bg-white px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-[#741f34] shadow-xs"
               >
-                <span className="size-2 shrink-0 rounded-full bg-[#8e6318]" />
-                <span>QUEM É A DRA. FRANCIELLE GONÇALVES</span>
+                <span className="size-2 shrink-0 rounded-full bg-[#741f34]" />
+                <span>QUEM É A DRA. STEFANIE BARBOSA</span>
               </motion.div>
 
               <motion.h2
                 variants={reveal}
-                className="font-serif text-3xl leading-[1.14] tracking-[-0.02em] text-[#14110e] sm:text-4xl lg:text-[3.25rem]"
+                className="font-serif text-3xl leading-[1.14] tracking-[-0.02em] text-[#141316] sm:text-4xl lg:text-[3.25rem]"
               >
-                Uma advocacia que acolhe, protege e resolve:{" "}
-                <span className="italic text-[#8e6318]">
-                  segurança real para a sua família e firmeza técnica para proteger seu patrimônio.
+                Uma advocacia transparente, humana e resolutiva:{" "}
+                <span className="italic text-[#741f34]">
+                  a garantia do seu benefício com rigor técnico e respeito à sua história.
                 </span>
               </motion.h2>
 
               <motion.p
                 variants={reveal}
-                className="mt-6 max-w-xl text-[15px] leading-7 text-[#4c433a]"
+                className="mt-6 max-w-xl text-[15px] leading-7 text-[#4b4650]"
               >
-                Com sede no bairro Copacabana em{" "}
-                <strong className="font-bold text-[#14110e]">
-                  Patos de Minas - MG
+                Com sede estabelecida na Rua das Acácias, 267 em{" "}
+                <strong className="font-bold text-[#141316]">
+                  Jacutinga - MG
                 </strong>{" "}
-                e atuação on-line em todo o Brasil, a Dra. Francielle Gonçalves Barbosa é referência em Direito de Família e Sucessões. Criadora do método{" "}
-                <strong className="font-bold text-[#14110e]">
-                  S.E.G.U.R.A
-                </strong>
-                , ela construiu uma carreira sólida pautada na proteção integral das mulheres, das crianças e do patrimônio construído com anos de dedicação.
+                e atendimento digital para segurados em todo o Brasil, a{" "}
+                <strong className="font-bold text-[#141316]">
+                  Dra. Stefanie Barbosa ({OAB_REGISTRY})
+                </strong>{" "}
+                dedica sua atuação a proteger o futuro de trabalhadores, idosos, segurados especiais e pessoas em situação de vulnerabilidade.
               </motion.p>
 
               <motion.p
                 variants={reveal}
-                className="mt-4 max-w-xl text-[15px] leading-7 text-[#4c433a]"
+                className="mt-4 max-w-xl text-[15px] leading-7 text-[#4b4650]"
               >
-                Reconhecida com nota máxima{" "}
-                <strong className="font-bold text-[#14110e]">
-                  5,0 ★ no Google Meu Negócio
-                </strong>
-                , seu trabalho se destaca pela clareza, empatia e velocidade. Em vez de jargões jurídicos confusos ou processos que se arrastam indefinidamente, ela oferece um acompanhamento próximo e transparente, explicando cada etapa com didática e buscando sempre a via mais rápida, econômica e segura para você.
+                Sua trajetória reúne uma combinação formativa singular: especialista em{" "}
+                <strong className="font-semibold text-[#141316]">Direito Previdenciário</strong>, pós-graduada em{" "}
+                <strong className="font-semibold text-[#141316]">Ciências Criminais pela conceituada PUC-MG</strong>, pós-graduada em{" "}
+                <strong className="font-semibold text-[#141316]">Direito de Família e Sucessões</strong>, e com formação em{" "}
+                <strong className="font-semibold text-[#141316]">Pedagogia e Neuropsicopedagogia</strong>. Essa bagagem confere à Dra. Stefanie uma sensibilidade ímpar para escutar, acolher e explicar direitos complexos sem termos técnicos herméticos, garantindo que você compreenda com tranquilidade cada passo do seu pedido.
               </motion.p>
 
               {/* Client Quote Card from real reviews */}
               <motion.div
                 variants={reveal}
-                className="mt-6 rounded-xl border border-[#e8dfd2] bg-white p-5 shadow-xs"
+                className="mt-6 rounded-xl border border-[#e8dde0] bg-white p-5 shadow-xs"
               >
-                <blockquote className="font-serif text-sm italic leading-relaxed text-[#14110e]">
-                  &ldquo;Ela fez o inventário do meu pai e mãe em 2026, disse que ficaria pronto com 6 meses e finalizou tudo em 3 meses, fiquei muito satisfeito, ainda conseguiu 4 mil de desconto no imposto, sempre explicando tudo, muito educada e atenciosa Dra Francielle, só tenho agradecer a ela e sua equipe.&rdquo;
+                <blockquote className="font-serif text-sm italic leading-relaxed text-[#141316]">
+                  &ldquo;Uma excelente profissional, com muita transparência e profissionalismo no seu trabalho eu e minha família somos muito gratos pela Dra Stefanie.&rdquo;
                 </blockquote>
-                <p className="mt-2 text-[11px] font-semibold uppercase tracking-wider text-[#8e6318]">
-                  — Indalecio Gonçalves · Avaliação Verificada no Google (5,0 ★)
+                <p className="mt-2 text-[11px] font-semibold uppercase tracking-wider text-[#741f34]">
+                  — Ana Claudia Moreira · Avaliação Verificada no Google (5,0 ★)
                 </p>
               </motion.div>
 
@@ -921,45 +962,45 @@ export default function Home() {
                 variants={reveal}
                 className="mt-6 grid grid-cols-2 gap-3 text-xs sm:grid-cols-3"
               >
-                <div className="rounded-lg border border-[#e8dfd2] bg-white p-3 shadow-xs">
-                  <p className="font-bold text-[#14110e]">5,0 ★ no Google</p>
-                  <p className="mt-0.5 text-[11px] text-[#6b5d50]">
-                    13 avaliações 100% positivas
+                <div className="rounded-lg border border-[#e8dde0] bg-white p-3 shadow-xs">
+                  <p className="font-bold text-[#141316]">4,8 ★ no Google</p>
+                  <p className="mt-0.5 text-[11px] text-[#6b6270]">
+                    12 avaliações autênticas
                   </p>
                 </div>
-                <div className="rounded-lg border border-[#e8dfd2] bg-white p-3 shadow-xs">
-                  <p className="font-bold text-[#14110e]">Método S.E.G.U.R.A</p>
-                  <p className="mt-0.5 text-[11px] text-[#6b5d50]">
-                    Proteção de mulheres e patrimônio
+                <div className="rounded-lg border border-[#e8dde0] bg-white p-3 shadow-xs">
+                  <p className="font-bold text-[#141316]">{OAB_REGISTRY}</p>
+                  <p className="mt-0.5 text-[11px] text-[#6b6270]">
+                    Registro Oficial na OAB/MG
                   </p>
                 </div>
-                <div className="rounded-lg border border-[#e8dfd2] bg-white p-3 shadow-xs col-span-2 sm:col-span-1">
-                  <p className="font-bold text-[#14110e]">10,5k Seguidores</p>
-                  <p className="mt-0.5 text-[11px] text-[#6b5d50]">
-                    Autoridade digital no Instagram
+                <div className="rounded-lg border border-[#e8dde0] bg-white p-3 shadow-xs col-span-2 sm:col-span-1">
+                  <p className="font-bold text-[#141316]">1.743 Seguidores</p>
+                  <p className="mt-0.5 text-[11px] text-[#6b6270]">
+                    Instagram @sb.advogada
                   </p>
                 </div>
               </motion.div>
 
               <motion.div
                 variants={reveal}
-                className="mt-6 grid grid-cols-1 gap-2.5 text-xs font-semibold text-[#14110e] sm:grid-cols-2"
+                className="mt-6 grid grid-cols-1 gap-2.5 text-xs font-semibold text-[#141316] sm:grid-cols-2"
               >
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 size={15} className="shrink-0 text-[#8e6318]" />
-                  <span>Sede na R. Lagamar, 98 - Copacabana · Patos de Minas</span>
+                  <CheckCircle2 size={15} className="shrink-0 text-[#741f34]" />
+                  <span>Sede física na R. das Acácias, 267 - Jacutinga · MG</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 size={15} className="shrink-0 text-[#8e6318]" />
-                  <span>Inventários em cartório concluídos em tempo recorde</span>
+                  <CheckCircle2 size={15} className="shrink-0 text-[#741f34]" />
+                  <span>Análise detalhada do CNIS e simulação do maior valor</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 size={15} className="shrink-0 text-[#8e6318]" />
-                  <span>Contato direto pelo WhatsApp, sem robôs ou intermediários</span>
+                  <CheckCircle2 size={15} className="shrink-0 text-[#741f34]" />
+                  <span>Atendimento direto pelo WhatsApp, sem intermediários</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 size={15} className="shrink-0 text-[#8e6318]" />
-                  <span>Atendimento presencial em Minas Gerais e digital para o Brasil</span>
+                  <CheckCircle2 size={15} className="shrink-0 text-[#741f34]" />
+                  <span>Atendimento presencial no Sul de Minas e on-line para o Brasil</span>
                 </div>
               </motion.div>
 
@@ -969,18 +1010,18 @@ export default function Home() {
               >
                 <GlowingButton
                   href={getWhatsAppUrl(
-                    "Olá, Dra. Francielle! Gostaria de agendar uma consulta para conversar diretamente sobre meu caso."
+                    "Olá, Dra. Stefanie! Gostaria de agendar uma consulta para conversar diretamente sobre meu caso."
                   )}
                   target="_blank"
                   size="md"
                   variant="gold"
                   className="rounded-lg shadow-md"
                 >
-                  <WhatsAppIcon size={16} /> Falar com a Dra. Francielle
+                  <WhatsAppIcon size={16} /> Falar com a Dra. Stefanie
                 </GlowingButton>
                 <a
                   href={`tel:+${WHATSAPP_NUMBER}`}
-                  className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#14110e] transition-colors hover:text-[#8e6318]"
+                  className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#141316] transition-colors hover:text-[#741f34]"
                 >
                   <Phone size={15} /> {PHONE_DISPLAY}
                 </a>
@@ -989,124 +1030,29 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Seção Exclusiva: Método S.E.G.U.R.A */}
-        <section
-          id="metodo-segura"
-          className="scroll-mt-24 border-t border-[#deb753]/30 bg-gradient-to-b from-[#f8f5ee] to-[#f4efe6] py-20 text-[#14110e] sm:py-28 lg:py-32"
-        >
-          <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
-            <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-              <Heading
-                light
-                eyebrow="METODOLOGIA EXCLUSIVA"
-                description="Como a Dra. Francielle Gonçalves protege mulheres, filhos e patrimônio através de uma abordagem estratégica desenvolvida na prática forense."
-              >
-                Conheça o Método{" "}
-                <span className="italic text-[#8e6318]">
-                  S.E.G.U.R.A
-                </span>
-              </Heading>
-              <GlowingButton
-                href={getWhatsAppUrl(
-                  "Olá, Dra. Francielle! Gostaria de entender como o método S.E.G.U.R.A pode ser aplicado para proteger meu caso."
-                )}
-                target="_blank"
-                size="md"
-                variant="gold"
-                className="rounded-lg shadow-sm"
-              >
-                <WhatsAppIcon size={16} /> Consultar Meu Caso no WhatsApp
-              </GlowingButton>
-            </div>
-
-            <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {[
-                {
-                  letter: "S",
-                  title: "Sensibilidade & Escuta Humanizada",
-                  description:
-                    "Acolhimento empático para ouvir seu relato sem julgamentos morais, compreendendo as nuances emocionais e as dores reais da sua família antes de qualquer medida processual.",
-                },
-                {
-                  letter: "E",
-                  title: "Estratégia Jurídica Blindada",
-                  description:
-                    "Investigação aprofundada de contas, imóveis, empresas e sinais exteriores de riqueza para impedir fraudes, dilapidação de patrimônio ou ocultação de ativos na partilha.",
-                },
-                {
-                  letter: "G",
-                  title: "Garantia dos Direitos dos Filhos",
-                  description:
-                    "Proteção integral das crianças e adolescentes: pensão alimentícia justa que condiz com o padrão de vida real e convivência saudável livre de alienação parental.",
-                },
-                {
-                  letter: "U",
-                  title: "Urgência & Celeridade Resolutiva",
-                  description:
-                    "Prioridade absoluta na busca por acordos céleres em cartório (divórcios e inventários) ou pedidos liminares imediatos na Justiça quando há risco ou desrespeito a direitos.",
-                },
-                {
-                  letter: "R",
-                  title: "Resolução Firme & Combate a Abusos",
-                  description:
-                    "Postura técnica intransigente contra a violência patrimonial, chantagens financeiras e tentativas de diminuir o papel da mulher na construção do patrimônio familiar.",
-                },
-                {
-                  letter: "A",
-                  title: "Acolhimento & Suporte Continuado",
-                  description:
-                    "Comunicação direta pelo WhatsApp com retorno ágil e sem 'juridiquês'. Você acompanha cada andamento com segurança, sabendo exatamente o que esperar.",
-                },
-              ].map((step) => (
-                <article
-                  key={step.letter}
-                  className="group relative flex flex-col justify-between rounded-xl border border-[#e8dfd2] bg-white p-7 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-[#deb753] hover:shadow-md"
-                >
-                  <div>
-                    <div className="flex items-center justify-between">
-                      <span className="grid size-12 place-items-center rounded-lg border border-[#deb753]/40 bg-gradient-to-br from-[#f8f5ee] to-white font-serif text-2xl font-bold text-[#8e6318] shadow-xs">
-                        {step.letter}
-                      </span>
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#8e6318]">
-                        MÉTODO S.E.G.U.R.A
-                      </span>
-                    </div>
-                    <h3 className="mt-5 font-serif text-xl font-semibold text-[#14110e]">
-                      {step.title}
-                    </h3>
-                    <p className="mt-3 text-[13px] leading-relaxed text-[#4c433a]">
-                      {step.description}
-                    </p>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Pilares de Atuação / Especialidades */}
         <section
           id="atuacao"
-          className="scroll-mt-24 border-t border-[#e8dfd2] bg-[#f8f5ee] py-20 sm:py-28 lg:py-32"
+          className="scroll-mt-24 border-t border-[#e8dde0] bg-[#f4eef0] py-20 sm:py-28 lg:py-32"
         >
           <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
             <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
               <Heading
                 light
-                eyebrow="ÁREAS DE ESPECIALIZAÇÃO"
-                description="Clique em cada especialidade para abrir os detalhes, demandas atendidas e tirar suas dúvidas diretamente pelo WhatsApp."
+                eyebrow="ÁREAS DE ATUAÇÃO E ESPECIALIDADES"
+                description="Clique em cada especialidade para abrir os detalhes, demandas atendidas e tirar suas dúvidas diretamente pelo WhatsApp com a Dra. Stefanie."
               >
                 Atuação Jurídica{" "}
-                <span className="italic text-[#8e6318]">
-                  Especializada em Direito de Família e Sucessões.
+                <span className="italic text-[#741f34]">
+                  Especializada em Direito Previdenciário & Benefícios do INSS.
                 </span>
               </Heading>
               <div className="flex flex-col items-start gap-2 sm:flex-row sm:items-center">
                 <a
-                  href={WHATSAPP_DIRECT_LINK}
+                  href={getWhatsAppUrl()}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-lg border border-[#deb753]/40 bg-white px-4 py-2.5 text-[11px] font-bold uppercase tracking-wider text-[#8e6318] shadow-xs transition-all hover:border-[#8e6318] hover:bg-[#faf7f2]"
+                  className="inline-flex items-center gap-2 rounded-lg border border-[#ecadb7] bg-white px-4 py-2.5 text-[11px] font-bold uppercase tracking-wider text-[#741f34] shadow-xs transition-all hover:border-[#741f34] hover:bg-[#faf7f8]"
                 >
                   <WhatsAppIcon size={14} /> Falar no WhatsApp Oficial
                 </a>
@@ -1118,7 +1064,7 @@ export default function Home() {
               whileInView="visible"
               viewport={{ once: true, amount: 0.1 }}
               variants={stagger}
-              className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+              className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
             >
               {practiceAreas.map((area) => {
                 const IconComponent = area.icon;
@@ -1126,45 +1072,49 @@ export default function Home() {
                   <motion.article
                     key={area.id}
                     variants={reveal}
-                    className="group flex flex-col justify-between rounded-xl border border-[#e8dfd2] bg-white p-7 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-[#deb753] hover:shadow-md sm:p-8"
+                    className="group flex flex-col justify-between rounded-xl border border-[#e8dde0] bg-white p-7 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-[#b5455f] hover:shadow-md"
                   >
                     <div>
                       <div className="flex items-center justify-between gap-3">
-                        <div className="grid size-12 place-items-center rounded-lg border border-[#deb753]/30 bg-[#faf7f2] text-[#8e6318] shadow-xs transition-colors group-hover:border-[#deb753] group-hover:bg-white group-hover:text-[#14110e]">
+                        <div className="grid size-12 place-items-center rounded-lg border border-[#ecadb7] bg-[#fdf7f8] text-[#741f34] shadow-xs transition-colors group-hover:border-[#741f34] group-hover:bg-[#741f34] group-hover:text-white">
                           <IconComponent size={22} />
                         </div>
-                        <span className="rounded-md border border-[#deb753]/30 bg-[#f4efe6] px-2.5 py-1 text-[9px] font-bold uppercase tracking-wider text-[#322003]">
-                          Família & Sucessões
+                        <span className="rounded-md border border-[#f5d3d8] bg-[#fbebed] px-2.5 py-1 text-[9px] font-bold uppercase tracking-wider text-[#571424]">
+                          {area.id.includes("criminal")
+                            ? "Ciências Criminais"
+                            : area.id.includes("familia")
+                            ? "Família & Sucessões"
+                            : "Previdenciário"}
                         </span>
                       </div>
 
-                      <h3 className="mt-6 font-serif text-2xl leading-tight text-[#14110e] transition-colors group-hover:text-[#8e6318]">
+                      <h3 className="mt-5 font-serif text-xl font-bold leading-tight text-[#141316] transition-colors group-hover:text-[#741f34]">
                         {area.title}
                       </h3>
 
-                      <p className="mt-2 text-[10px] font-semibold uppercase tracking-wider text-[#8e6318]">
+                      <p className="mt-2 text-[10px] font-semibold uppercase tracking-wider text-[#741f34]">
                         {area.tag}
                       </p>
 
-                      <p className="mt-4 text-[13px] leading-relaxed text-[#4c433a]">
+                      <p className="mt-3 text-[13px] leading-relaxed text-[#4b4650]">
                         {area.summary}
                       </p>
                     </div>
 
-                    <div className="mt-7 flex items-center justify-between border-t border-[#e8dfd2] pt-4">
+                    <div className="mt-6 flex items-center justify-between border-t border-[#e8dde0] pt-4">
                       <button
                         type="button"
                         onClick={() => setActiveArea(area)}
-                        className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#8e6318] transition-colors hover:text-[#14110e] cursor-pointer"
+                        className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#741f34] transition-colors hover:text-[#141316] cursor-pointer"
                       >
-                        Ver detalhes & pedidos <ArrowRight size={13} />
+                        Ver detalhes <ArrowRight size={13} />
                       </button>
                       <a
                         href={getWhatsAppUrl(area.whatsAppText)}
                         target="_blank"
                         rel="noreferrer"
                         aria-label={`Consultar sobre ${area.title}`}
-                        className="grid size-9 place-items-center rounded-lg border border-[#deb753]/30 bg-[#faf7f2] text-[#14110e] transition-colors hover:border-[#8e6318] hover:bg-[#8e6318] hover:text-white"
+                        className="grid size-9 place-items-center rounded-lg border border-[#ecadb7] bg-[#faf7f8] text-[#141316] transition-colors hover:border-[#741f34] hover:bg-[#741f34] hover:text-white"
                         title="Tirar dúvidas no WhatsApp"
                       >
                         <WhatsAppIcon size={15} />
@@ -1177,26 +1127,113 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Por Que Escolher a Dra. Francielle Gonçalves - Diferenciais */}
+        {/* Como Funciona o Atendimento Previdenciário em 3 Passos */}
+        <section
+          id="como-funciona"
+          className="relative overflow-hidden border-t border-[#e8dde0] bg-[#faf7f8] py-20 text-[#141316] sm:py-24 lg:py-28"
+        >
+          <div className="pointer-events-none absolute -left-28 top-1/4 size-96 rounded-full bg-[#8c2a41]/6 blur-3xl" />
+          <div className="pointer-events-none absolute -right-28 bottom-1/4 size-96 rounded-full bg-[#571424]/5 blur-3xl" />
+
+          <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-[0.88fr_1.12fr] lg:gap-20 lg:px-12">
+            <div>
+              <Heading
+                light
+                eyebrow="COMO ATUAMOS NO SEU BENEFÍCIO"
+                description="Um método transparente, metódico e humanizado para analisar sua situação contributiva e conquistar o benefício mais rápido e vantajoso."
+              >
+                Três etapas claras para{" "}
+                <span className="italic text-[#741f34]">
+                  conquistar sua aposentadoria sem burocracias desnecessárias.
+                </span>
+              </Heading>
+
+              <blockquote className="mt-8 rounded-xl border border-[#e8dde0] bg-white p-6 font-serif text-base italic leading-7 text-[#141316] shadow-xs">
+                &ldquo;Cada benefício previdenciário representa anos de suor, trabalho e sacrifício. Meu compromisso é garantir que cada cliente seja ouvido com respeito, transparência e que receba exatamente cada centavo a que tem direito.&rdquo;
+                <footer className="mt-3 font-sans text-[11px] font-semibold not-italic uppercase tracking-wider text-[#741f34]">
+                  — Dra. Stefanie Barbosa · Advogada Previdenciária ({OAB_REGISTRY})
+                </footer>
+              </blockquote>
+
+              <div className="mt-7">
+                <GlowingButton
+                  href={getWhatsAppUrl(
+                    "Olá, Dra. Stefanie! Gostaria de fazer uma análise prévia do meu extrato CNIS para aposentadoria."
+                  )}
+                  target="_blank"
+                  size="md"
+                  variant="gold"
+                  className="rounded-lg shadow-md"
+                >
+                  <WhatsAppIcon size={16} /> Enviar Meu Caso no WhatsApp
+                </GlowingButton>
+              </div>
+            </div>
+
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              variants={stagger}
+              className="divide-y divide-[#e8dde0]"
+            >
+              {[
+                [
+                  "01",
+                  "Diagnóstico e Coleta de Documentos",
+                  "Análise preliminar do seu extrato CNIS, carteiras de trabalho (CTPS), carnês, laudos médicos ou documentos rurais. Atendimento no escritório em Jacutinga ou de forma 100% digital e segura pelo WhatsApp.",
+                ],
+                [
+                  "02",
+                  "Cálculo Rigoroso e Estratégia Mais Vantajosa",
+                  "Simulação minuciosa entre as regras de transição da Reforma. Verificamos se há períodos não computados pelo INSS (rural, militar, especial) para elevar a média dos seus proventos mensais.",
+                ],
+                [
+                  "03",
+                  "Requerimento, Diligência e Ação Judicial",
+                  "Protocolo técnico com petição fundamentada no INSS. Se houver demora abusiva, exigência indevida ou negativa injusta, ingressamos imediatamente com Ação perante a Justiça Federal para destravar seu benefício.",
+                ],
+              ].map(([number, title, description]) => (
+                <motion.div
+                  key={number}
+                  variants={reveal}
+                  className="grid gap-3 py-6 first:pt-0 sm:grid-cols-[70px_1fr] sm:gap-6 sm:py-7"
+                >
+                  <span className="font-serif text-2xl font-semibold text-[#741f34]">
+                    {number}
+                  </span>
+                  <div>
+                    <h3 className="font-serif text-2xl text-[#141316]">{title}</h3>
+                    <p className="mt-2 max-w-lg text-[13px] leading-6 text-[#4b4650]">
+                      {description}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Por Que Escolher a Dra. Stefanie Barbosa - Diferenciais */}
         <section
           id="diferenciais"
-          className="scroll-mt-24 border-t border-[#e8dfd2] bg-[#faf7f2] py-20 text-[#14110e] sm:py-28 lg:py-32"
+          className="scroll-mt-24 border-t border-[#e8dde0] bg-[#faf7f8] py-20 text-[#141316] sm:py-28 lg:py-32"
         >
           <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
             <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
               <Heading
                 light
                 eyebrow="NOSSOS PILARES DE EXCELÊNCIA"
-                description="Seu patrimônio, sua família e seus filhos são preciosos demais para ficarem em mãos desatentas ou presos em burocracias sem resposta."
+                description="O sustento da sua velhice e a segurança da sua família são preciosos demais para ficarem à mercê de erros do INSS ou atendimentos impessoais."
               >
                 Por que confiar seu caso à{" "}
-                <span className="italic text-[#8e6318]">
-                  Dra. Francielle Gonçalves Barbosa?
+                <span className="italic text-[#741f34]">
+                  Dra. Stefanie Barbosa Advocacia?
                 </span>
               </Heading>
               <GlowingButton
                 href={getWhatsAppUrl(
-                  "Olá, Dra. Francielle! Gostaria de uma avaliação para a minha situação jurídica familiar."
+                  "Olá, Dra. Stefanie! Gostaria de uma avaliação para a minha situação previdenciária."
                 )}
                 target="_blank"
                 size="md"
@@ -1208,237 +1245,167 @@ export default function Home() {
             </div>
 
             <div className="mt-12 grid gap-8 lg:grid-cols-2">
-              {/* Card 1: Comunicação Clara e Empática */}
+              {/* Card 1: Comunicação Didática e Acolhimento */}
               <motion.article
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
                 transition={{ duration: 0.65 }}
-                className="group flex flex-col justify-between rounded-xl border border-[#e8dfd2] bg-white p-7 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-[#deb753] hover:shadow-md sm:p-9"
+                className="group flex flex-col justify-between rounded-xl border border-[#e8dde0] bg-white p-7 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-[#b5455f] hover:shadow-md sm:p-9"
               >
                 <div>
                   <div className="flex items-center justify-between">
-                    <span className="inline-flex items-center gap-1.5 rounded-md border border-[#deb753]/30 bg-[#f4efe6] px-3.5 py-1 text-[10px] font-bold uppercase tracking-wider text-[#322003]">
-                      <HeartHandshake size={14} /> Atendimento Humanizado & Empático
+                    <span className="inline-flex items-center gap-1.5 rounded-md border border-[#f5d3d8] bg-[#fbebed] px-3.5 py-1 text-[10px] font-bold uppercase tracking-wider text-[#571424]">
+                      <HeartHandshake size={14} /> Didática, Paciência & Acolhimento
                     </span>
-                    <span className="text-xs font-semibold text-[#8e6318]">
+                    <span className="text-xs font-semibold text-[#741f34]">
                       Sem Juridiquês
                     </span>
                   </div>
-                  <h3 className="mt-4 font-serif text-2xl leading-tight text-[#14110e] sm:text-[1.75rem]">
-                    Você Entende Cada Passo do Seu Processo com Tranquilidade
+                  <h3 className="mt-4 font-serif text-2xl leading-tight text-[#141316] sm:text-[1.75rem]">
+                    Você Entende Cada Detalhe do Seu Benefício com Clareza
                   </h3>
-                  <p className="mt-3 text-[14px] leading-relaxed text-[#4c433a]">
-                    Muitas pessoas chegam com receio da complexidade das leis ou medo de julgamentos morais. Aqui, a Dra. Francielle explica cada detalhe com paciência e didática, garantindo que você tenha plena ciência dos seus direitos e participe com confiança de cada decisão.
+                  <p className="mt-3 text-[14px] leading-relaxed text-[#4b4650]">
+                    Graças à sua formação interdisciplinar como pedagoga e neuropsicopedagoga, a Dra. Stefanie possui uma capacidade diferenciada de explicar regras previdenciárias difíceis de forma simples, humana e acessível, acolhendo idosos, pessoas com deficiência e famílias com atenção irrestrita.
                   </p>
-                  <ul className="mt-5 space-y-2 text-xs font-medium text-[#14110e]">
+                  <ul className="mt-5 space-y-2 text-xs font-medium text-[#141316]">
                     <li className="flex items-center gap-2">
-                      <CheckCircle2 size={15} className="shrink-0 text-[#8e6318]" />
-                      <span>Explicação clara e acessível em linguagem que qualquer pessoa compreende</span>
+                      <CheckCircle2 size={15} className="shrink-0 text-[#741f34]" />
+                      <span>Comunicação transparente e acolhedora em linguagem clara para você e sua família</span>
                     </li>
                     <li className="flex items-center gap-2">
-                      <CheckCircle2 size={15} className="shrink-0 text-[#8e6318]" />
-                      <span>Empatia profunda com as dores e ansiedades em momentos delicados da vida</span>
+                      <CheckCircle2 size={15} className="shrink-0 text-[#741f34]" />
+                      <span>Empatia com a ansiedade de quem espera a concessão do sustento mensal</span>
                     </li>
                     <li className="flex items-center gap-2">
-                      <CheckCircle2 size={15} className="shrink-0 text-[#8e6318]" />
-                      <span>Transparência total sobre chances, riscos reais e prazos prováveis</span>
+                      <CheckCircle2 size={15} className="shrink-0 text-[#741f34]" />
+                      <span>Transparência total sobre prazos, documentos e expectativas reais de valores</span>
                     </li>
                   </ul>
                 </div>
-                <div className="mt-7 border-t border-[#e8dfd2] pt-4">
+                <div className="mt-7 border-t border-[#e8dde0] pt-4">
                   <a
                     href={getWhatsAppUrl(
-                      "Olá, Dra. Francielle! Gostaria de tirar dúvidas sobre o meu caso em uma conversa sem burocracia."
+                      "Olá, Dra. Stefanie! Gostaria de tirar dúvidas sobre o meu caso em uma conversa sem burocracia."
                     )}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex w-full items-center justify-between rounded-lg border border-[#deb753]/40 bg-[#faf7f2] px-4 py-3.5 text-[11px] font-bold uppercase tracking-[0.12em] text-[#14110e] transition-all hover:border-[#8e6318] hover:bg-[#14110e] hover:text-[#f7e5a9]"
+                    className="inline-flex w-full items-center justify-between rounded-lg border border-[#ecadb7] bg-[#fdf7f8] px-4 py-3.5 text-[11px] font-bold uppercase tracking-[0.12em] text-[#141316] transition-all hover:border-[#741f34] hover:bg-[#141316] hover:text-[#fdf7f8]"
                   >
                     <span className="inline-flex items-center gap-2">
-                      <WhatsAppIcon size={15} /> Conversar no WhatsApp com a Dra. Francielle
+                      <WhatsAppIcon size={15} /> Conversar no WhatsApp com a Dra. Stefanie
                     </span>
                     <ArrowUpRight size={15} />
                   </a>
                 </div>
               </motion.article>
 
-              {/* Card 2: Agilidade e Soluções Extrajudiciais */}
+              {/* Card 2: Firmeza Técnica e Combate a Erros do INSS */}
               <motion.article
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
                 transition={{ duration: 0.65, delay: 0.1 }}
-                className="group flex flex-col justify-between rounded-xl border border-[#e8dfd2] bg-white p-7 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-[#deb753] hover:shadow-md sm:p-9"
+                className="group flex flex-col justify-between rounded-xl border border-[#e8dde0] bg-white p-7 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-[#b5455f] hover:shadow-md sm:p-9"
               >
                 <div>
                   <div className="flex items-center justify-between">
-                    <span className="inline-flex items-center gap-1.5 rounded-md border border-[#deb753]/30 bg-[#f4efe6] px-3.5 py-1 text-[10px] font-bold uppercase tracking-wider text-[#322003]">
-                      <Users2 size={14} /> Foco em Resultados & Celeridade
+                    <span className="inline-flex items-center gap-1.5 rounded-md border border-[#f5d3d8] bg-[#fbebed] px-3.5 py-1 text-[10px] font-bold uppercase tracking-wider text-[#571424]">
+                      <Scale size={14} /> Firmeza Técnica & Combate a Negativas
                     </span>
-                    <span className="text-xs font-semibold text-[#8e6318]">
-                      Cartório & Acordos Rápidos
+                    <span className="text-xs font-semibold text-[#741f34]">
+                      Justiça Federal & INSS
                     </span>
                   </div>
-                  <h3 className="mt-4 font-serif text-2xl leading-tight text-[#14110e] sm:text-[1.75rem]">
-                    Prioridade em Soluções Rápidas em Cartório Sem Demora Judicial
+                  <h3 className="mt-4 font-serif text-2xl leading-tight text-[#141316] sm:text-[1.75rem]">
+                    Atuação Incisiva para Destravar Processos e Reverter Decisões
                   </h3>
-                  <p className="mt-3 text-[14px] leading-relaxed text-[#4c433a]">
-                    Sabemos que tempo é dinheiro e desgaste emocional. Sempre que os requisitos legais estão presentes, priorizamos inventários, divórcios e dissoluções de união estável em cartório, resolvendo partilhas em semanas com economia e paz.
+                  <p className="mt-3 text-[14px] leading-relaxed text-[#4b4650]">
+                    Com sólida especialização jurídica (Ciências Criminais PUC-MG e Previdenciário), a Dra. Stefanie não se conforma com respostas automáticas do INSS. Quando o órgão comete erros ou nega um benefício justo, recorremos imediatamente perante a Justiça Federal, garantindo o retroativo integral.
                   </p>
-                  <ul className="mt-5 space-y-2 text-xs font-medium text-[#14110e]">
+                  <ul className="mt-5 space-y-2 text-xs font-medium text-[#141316]">
                     <li className="flex items-center gap-2">
-                      <CheckCircle2 size={15} className="shrink-0 text-[#8e6318]" />
-                      <span>Inventários extrajudiciais céleres concluídos em até 3 meses sem arrastar processos por anos</span>
+                      <CheckCircle2 size={15} className="shrink-0 text-[#741f34]" />
+                      <span>Ações judiciais perante a Justiça Federal com pedidos de tutela de urgência</span>
                     </li>
                     <li className="flex items-center gap-2">
-                      <CheckCircle2 size={15} className="shrink-0 text-[#8e6318]" />
-                      <span>Acompanhamento direto pelo WhatsApp com retornos ágeis e esclarecimentos pontuais</span>
+                      <CheckCircle2 size={15} className="shrink-0 text-[#741f34]" />
+                      <span>Resgate de períodos rurais, insalubres e não computados no CNIS</span>
                     </li>
                     <li className="flex items-center gap-2">
-                      <CheckCircle2 size={15} className="shrink-0 text-[#8e6318]" />
-                      <span>Planejamento financeiro e tributário para reduzir custos com ITCD e taxas cartorárias</span>
+                      <CheckCircle2 size={15} className="shrink-0 text-[#741f34]" />
+                      <span>Recebimento de valores atrasados retroativos com juros e correção monetária</span>
                     </li>
                   </ul>
                 </div>
-                <div className="mt-7 border-t border-[#e8dfd2] pt-4">
+                <div className="mt-7 border-t border-[#e8dde0] pt-4">
                   <a
                     href={getWhatsAppUrl(
-                      "Olá, Dra. Francielle! Gostaria de consultar sobre a possibilidade de um inventário ou divórcio rápido em cartório."
+                      "Olá, Dra. Stefanie! Tive um problema com o INSS e preciso de orientação jurídica para reverter."
                     )}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex w-full items-center justify-between rounded-lg border border-[#deb753]/40 bg-[#faf7f2] px-4 py-3.5 text-[11px] font-bold uppercase tracking-[0.12em] text-[#14110e] transition-all hover:border-[#8e6318] hover:bg-[#14110e] hover:text-[#f7e5a9]"
+                    className="inline-flex w-full items-center justify-between rounded-lg border border-[#ecadb7] bg-[#fdf7f8] px-4 py-3.5 text-[11px] font-bold uppercase tracking-[0.12em] text-[#141316] transition-all hover:border-[#741f34] hover:bg-[#141316] hover:text-[#fdf7f8]"
                   >
                     <span className="inline-flex items-center gap-2">
-                      <WhatsAppIcon size={15} /> Consultar Solução em Cartório no WhatsApp
+                      <WhatsAppIcon size={15} /> Consultar Problema do INSS no WhatsApp
                     </span>
                     <ArrowUpRight size={15} />
                   </a>
                 </div>
               </motion.article>
             </div>
-          </div>
-        </section>
-
-        {/* Método de Trabalho em 3 Passos */}
-        <section className="relative overflow-hidden border-t border-[#e8dfd2] bg-[#faf7f2] py-20 text-[#14110e] sm:py-24 lg:py-28">
-          <div className="pointer-events-none absolute -left-28 top-1/4 size-96 rounded-full bg-[#deb753]/10 blur-3xl" />
-          <div className="pointer-events-none absolute -right-28 bottom-1/4 size-96 rounded-full bg-[#deb753]/10 blur-3xl" />
-
-          <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-[0.88fr_1.12fr] lg:gap-20 lg:px-12">
-            <div>
-              <Heading
-                light
-                eyebrow="COMO ATUAMOS NO SEU CASO"
-                description="Um método transparente, técnico e humanizado para analisar sua situação e aplicar a solução jurídica mais rápida e segura."
-              >
-                Três etapas claras para{" "}
-                <span className="italic text-[#8e6318]">
-                  proteger seu patrimônio e defender seus filhos.
-                </span>
-              </Heading>
-
-              <blockquote className="mt-8 rounded-xl border border-[#e8dfd2] bg-white p-6 font-serif text-base italic leading-7 text-[#14110e] shadow-xs">
-                &ldquo;Cada caso envolve vidas, famílias e expectativas reais. Meu compromisso é garantir que você se sinta acolhida e segura, sabendo que sua causa está sendo cuidada com o máximo rigor técnico e atenção pessoal.&rdquo;
-                <footer className="mt-3 font-sans text-[11px] font-semibold not-italic uppercase tracking-wider text-[#8e6318]">
-                  — Dra. Francielle Gonçalves Barbosa · Advogada
-                </footer>
-              </blockquote>
-            </div>
-
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-              variants={stagger}
-              className="divide-y divide-[#e8dfd2]"
-            >
-              {[
-                [
-                  "01",
-                  "Escuta Atenta & Diagnóstico Documental",
-                  "Conversa inicial presencial no escritório em Patos de Minas ou via WhatsApp para compreender a fundo seu relato, recolher os documentos necessários e avaliar detalhadamente os fatos.",
-                ],
-                [
-                  "02",
-                  "Definição da Estratégia Mais Rápida e Econômica",
-                  "Análise minuciosa para verificar se a causa pode ser resolvida de maneira extrajudicial (acordo ou cartório) com menor custo e tempo, ou se é indispensável uma ação judicial com pedido liminar de urgência.",
-                ],
-                [
-                  "03",
-                  "Acompanhamento Firme & Feedback Constante",
-                  "Protocolo técnico com forte fundamentação jurisprudencial, diligência constante perante juízos e cartórios e retorno contínuo para mantê-la sempre informada sobre cada andamento.",
-                ],
-              ].map(([number, title, description]) => (
-                <motion.div
-                  key={number}
-                  variants={reveal}
-                  className="grid gap-3 py-6 first:pt-0 sm:grid-cols-[70px_1fr] sm:gap-6 sm:py-7"
-                >
-                  <span className="font-serif text-2xl font-semibold text-[#8e6318]">
-                    {number}
-                  </span>
-                  <div>
-                    <h3 className="font-serif text-2xl text-[#14110e]">{title}</h3>
-                    <p className="mt-2 max-w-lg text-[13px] leading-6 text-[#4c433a]">
-                      {description}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
           </div>
         </section>
 
         {/* Avaliações / Depoimentos Reais no Google Meu Negócio */}
         <section
           id="avaliacoes"
-          className="scroll-mt-24 border-t border-[#deb753]/30 bg-[#f4efe6] py-20 text-[#14110e] sm:py-28 lg:py-32"
+          className="scroll-mt-24 border-t border-[#e8dde0] bg-[#f4eef0] py-20 text-[#141316] sm:py-28 lg:py-32"
         >
           <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
             <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
               <Heading
                 light
                 eyebrow="PROVA SOCIAL VERIFICADA · GOOGLE MEU NEGÓCIO"
-                description="Veja avaliações autênticas e espontâneas deixadas por clientes no Google sobre o atendimento e a dedicação da Dra. Francielle Gonçalves Barbosa em Patos de Minas - MG."
+                description="Veja avaliações autênticas e espontâneas registradas por clientes no Google sobre o atendimento e a competência da Dra. Stefanie Barbosa em Jacutinga - MG."
               >
-                Avaliada com nota máxima 5,0 ★ com{" "}
-                <span className="italic text-[#8e6318]">
-                  13 avaliações no Google pela dedicação, empatia e excelência profissional.
+                Avaliada com nota 4,8 ★ no Google com{" "}
+                <span className="italic text-[#741f34]">
+                  depoimentos que destacam transparência, agilidade e excelência profissional.
                 </span>
               </Heading>
 
               {/* Verified Google Badge Card */}
-              <div className="flex flex-col gap-3 rounded-xl border border-[#e8dfd2] bg-white p-5 shadow-xs sm:flex-row sm:items-center md:min-w-[340px]">
-                <div className="flex size-14 shrink-0 items-center justify-center rounded-lg border border-[#deb753]/30 bg-[#faf7f2] shadow-xs">
+              <div className="flex flex-col gap-3 rounded-xl border border-[#e8dde0] bg-white p-5 shadow-xs sm:flex-row sm:items-center md:min-w-[340px]">
+                <div className="flex size-14 shrink-0 items-center justify-center rounded-lg border border-[#ecadb7] bg-[#fdf7f8] shadow-xs">
                   <GoogleIcon size={30} />
                 </div>
                 <div>
                   <div className="flex items-center gap-2">
-                    <span className="font-serif text-3xl font-bold leading-none text-[#14110e]">
-                      5,0
+                    <span className="font-serif text-3xl font-bold leading-none text-[#141316]">
+                      4,8
                     </span>
-                    <div className="flex gap-0.5 text-[#deb753]">
+                    <div className="flex gap-0.5 text-[#f59e0b]">
                       {Array.from({ length: 5 }, (_, i) => (
                         <Star
                           key={i}
                           size={14}
-                          className="fill-[#deb753] text-[#deb753]"
+                          className="fill-[#f59e0b] text-[#f59e0b]"
                         />
                       ))}
                     </div>
                   </div>
-                  <p className="mt-1 text-[11px] font-semibold uppercase tracking-wider text-[#4c433a]">
-                    Francielle Gonçalves — Advogada
+                  <p className="mt-1 text-[11px] font-semibold uppercase tracking-wider text-[#4b4650]">
+                    Stefanie Barbosa Advocacia Previdenciária
                   </p>
                   <a
                     href={GOOGLE_SEARCH_URL}
                     target="_blank"
                     rel="noreferrer"
-                    className="mt-1 inline-flex items-center gap-1 text-[11px] font-bold text-[#8e6318] transition-colors hover:text-[#14110e]"
+                    className="mt-1 inline-flex items-center gap-1 text-[11px] font-bold text-[#741f34] transition-colors hover:text-[#141316]"
                   >
-                    13 avaliações no Google <ArrowUpRight size={13} />
+                    12 avaliações no Google <ArrowUpRight size={13} />
                   </a>
                 </div>
               </div>
@@ -1449,38 +1416,46 @@ export default function Home() {
               {clientReviews.map((review) => (
                 <article
                   key={review.name}
-                  className="group relative flex flex-col justify-between rounded-xl border border-[#e8dfd2] bg-white p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-[#deb753] hover:shadow-md sm:p-8"
+                  className="group relative flex flex-col justify-between rounded-xl border border-[#e8dde0] bg-white p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-[#b5455f] hover:shadow-md sm:p-8"
                 >
                   <div>
                     {/* Header: Stars + Badge */}
                     <div className="flex items-center justify-between gap-2">
-                      <div className="flex gap-1 text-[#deb753]">
+                      <div className="flex gap-1 text-[#f59e0b]">
                         {Array.from({ length: 5 }, (_, i) => (
                           <Star
                             key={i}
                             size={14}
-                            className="fill-[#deb753] text-[#deb753]"
+                            className="fill-[#f59e0b] text-[#f59e0b]"
                           />
                         ))}
                       </div>
-                      <span className="rounded-md border border-[#deb753]/30 bg-[#faf7f2] px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wider text-[#8e6318] shadow-xs">
+                      <span className="rounded-md border border-[#f5d3d8] bg-[#fbebed] px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wider text-[#741f34] shadow-xs">
                         {review.badge}
                       </span>
                     </div>
 
                     {/* Review content */}
-                    <p className="mt-5 text-[14px] italic leading-relaxed text-[#14110e]">
+                    <p className="mt-5 text-[14px] italic leading-relaxed text-[#141316]">
                       &ldquo;{review.content}&rdquo;
                     </p>
+
+                    {/* Response from Dra. Stefanie */}
+                    {review.response && (
+                      <div className="mt-4 rounded-lg border-l-2 border-[#741f34] bg-[#fdf7f8] p-2.5 text-[11px] text-[#5c5560]">
+                        <p className="font-semibold text-[#741f34]">Resposta do escritório:</p>
+                        <p className="italic text-[#141316]">{review.response}</p>
+                      </div>
+                    )}
                   </div>
 
                   {/* Reviewer info */}
-                  <div className="mt-6 flex items-center gap-3 border-t border-[#e8dfd2] pt-4">
-                    <div className="grid size-10 shrink-0 place-items-center rounded-lg border border-[#deb753]/30 bg-[#faf7f2] font-serif text-sm font-semibold text-[#8e6318] shadow-xs">
+                  <div className="mt-6 flex items-center gap-3 border-t border-[#e8dde0] pt-4">
+                    <div className="grid size-10 shrink-0 place-items-center rounded-lg border border-[#ecadb7] bg-[#fdf7f8] font-serif text-sm font-semibold text-[#741f34] shadow-xs">
                       {review.name.charAt(0)}
                     </div>
                     <div className="min-w-0 flex-1">
-                      <p className="truncate font-serif text-base font-semibold text-[#14110e]">
+                      <p className="truncate font-serif text-base font-semibold text-[#141316]">
                         {review.name}
                       </p>
                       <p className="text-[10px] uppercase tracking-wider text-[#786b5e]">
@@ -1493,23 +1468,23 @@ export default function Home() {
             </div>
 
             {/* Bottom Actions and Trust Tags */}
-            <div className="mt-12 flex flex-col items-center justify-between gap-6 border-t border-[#e8dfd2] pt-8 sm:flex-row">
+            <div className="mt-12 flex flex-col items-center justify-between gap-6 border-t border-[#e8dde0] pt-8 sm:flex-row">
               <div className="flex flex-wrap items-center gap-2">
                 {[
-                  "Advogada em Patos de Minas - MG",
+                  "Advogada em Jacutinga - MG",
                   "Atendimento Digital para Todo o Brasil",
-                  "Nota 5,0 ★ no Google (13 avaliações)",
-                  "Método S.E.G.U.R.A Exclusivo",
-                  "Divórcio, Guarda & Pensão Alimentícia",
-                  "Inventário Extrajudicial em até 3 Meses",
-                  "Economia Comprovada no ITCD Minas Gerais",
-                  "Mais de 10,5k Seguidores no Instagram",
+                  "Nota 4,8 ★ no Google (12 avaliações)",
+                  "Especialista em Direito Previdenciário",
+                  "Especialista em Ciências Criminais PUC-MG",
+                  "Pós em Família e Sucessões",
+                  "Pedagoga e Neuropsicopedagoga",
+                  "Registro OAB/MG 184.682",
                 ].map((tag) => (
                   <span
                     key={tag}
-                    className="inline-flex items-center gap-1.5 rounded-lg border border-[#e8dfd2] bg-white px-3.5 py-1.5 text-[11px] font-medium text-[#14110e] shadow-xs"
+                    className="inline-flex items-center gap-1.5 rounded-lg border border-[#e8dde0] bg-white px-3.5 py-1.5 text-[11px] font-medium text-[#141316] shadow-xs"
                   >
-                    <CheckCircle2 size={13} className="text-[#8e6318]" />
+                    <CheckCircle2 size={13} className="text-[#741f34]" />
                     {tag}
                   </span>
                 ))}
@@ -1519,7 +1494,7 @@ export default function Home() {
                 href={GOOGLE_SEARCH_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="group inline-flex shrink-0 items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-[#8e6318] transition-colors hover:text-[#14110e]"
+                className="group inline-flex shrink-0 items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-[#741f34] transition-colors hover:text-[#141316]"
               >
                 Ver Todas as Avaliações no Google{" "}
                 <ArrowUpRight
@@ -1531,28 +1506,28 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Contato & Localização da Sede em Patos de Minas - MG */}
+        {/* Contato & Localização da Sede em Jacutinga - MG */}
         <section
           id="contato"
-          className="scroll-mt-24 border-t border-[#deb753]/30 bg-[#faf7f2] py-20 text-[#14110e] sm:py-28 lg:py-32"
+          className="scroll-mt-24 border-t border-[#e8dde0] bg-[#faf7f8] py-20 text-[#141316] sm:py-28 lg:py-32"
         >
           <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-[0.92fr_1.08fr] lg:gap-20 lg:px-12">
             <div>
               <Heading
                 light
-                eyebrow="CONTATO & ATENDIMENTO EM PATOS DE MINAS"
-                description="Agende uma consulta presencial no escritório no bairro Copacabana ou inicie seu atendimento imediatamente pelo WhatsApp para relatar seu caso com sigilo absoluto e rapidez."
+                eyebrow="CONTATO & ATENDIMENTO EM JACUTINGA"
+                description="Agende uma consulta presencial no escritório na Rua das Acácias ou inicie seu atendimento imediatamente pelo WhatsApp para relatar seu caso com sigilo absoluto e rapidez."
               >
                 Estamos prontos para{" "}
-                <span className="italic text-[#8e6318]">
-                  escutar sua situação e proteger seus direitos.
+                <span className="italic text-[#741f34]">
+                  analisar seus documentos e defender seus direitos previdenciários.
                 </span>
               </Heading>
 
               <div className="mt-9 flex flex-col items-start gap-4">
                 <GlowingButton
                   href={getWhatsAppUrl(
-                    "Olá, Dra. Francielle! Gostaria de agendar um atendimento para análise jurídica do meu caso."
+                    "Olá, Dra. Stefanie! Gostaria de agendar um atendimento para análise jurídica do meu caso."
                   )}
                   target="_blank"
                   size="lg"
@@ -1561,58 +1536,58 @@ export default function Home() {
                 >
                   <WhatsAppIcon size={17} /> Iniciar Conversa no WhatsApp
                 </GlowingButton>
-                <p className="text-[11px] leading-5 text-[#4c433a]">
+                <p className="text-[11px] leading-5 text-[#4b4650]">
                   Telefone e WhatsApp direto:{" "}
-                  <strong className="text-[#14110e]">{PHONE_DISPLAY}</strong>
+                  <strong className="text-[#141316]">{PHONE_DISPLAY}</strong>
                 </p>
               </div>
 
-              <div className="mt-10 space-y-4 text-xs text-[#4c433a]">
+              <div className="mt-10 space-y-4 text-xs text-[#4b4650]">
                 <div className="flex items-start gap-3">
                   <Clock
                     size={16}
-                    className="mt-0.5 shrink-0 text-[#8e6318]"
+                    className="mt-0.5 shrink-0 text-[#741f34]"
                   />
                   <div>
-                    <p className="font-semibold text-[#14110e]">
+                    <p className="font-semibold text-[#141316]">
                       Horário de Funcionamento
                     </p>
-                    <p className="mt-0.5 text-[#14110e]">
-                      Aberto 24 horas · Atendimento com agendamento prévio e plantão de acolhimento
+                    <p className="mt-0.5 text-[#141316]">
+                      Segunda a Sexta a partir das 08:00 · Atendimento com agendamento prévio
                     </p>
-                    <p className="text-[11px] text-[#786b5e]">
-                      Atendimento presencial em Patos de Minas - MG e atendimento digital para clientes em todo o Brasil
+                    <p className="text-[11px] text-[#6b6270]">
+                      Atendimento presencial em Jacutinga - MG e atendimento digital para segurados em todo o Brasil
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-3 pt-1">
-                  <Phone size={16} className="shrink-0 text-[#8e6318]" />
+                  <Phone size={16} className="shrink-0 text-[#741f34]" />
                   <a
                     href={`tel:+${WHATSAPP_NUMBER}`}
-                    className="font-medium text-[#14110e] transition-colors hover:text-[#8e6318]"
+                    className="font-medium text-[#141316] transition-colors hover:text-[#741f34]"
                   >
                     {PHONE_DISPLAY} (Ligações e WhatsApp)
                   </a>
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <InstagramIcon size={16} className="shrink-0 text-[#8e6318]" />
+                  <InstagramIcon size={16} className="shrink-0 text-[#741f34]" />
                   <a
                     href={INSTAGRAM_URL}
                     target="_blank"
                     rel="noreferrer"
-                    className="transition-colors hover:text-[#8e6318] text-[#14110e]"
+                    className="transition-colors hover:text-[#741f34] text-[#141316]"
                   >
-                    {INSTAGRAM_HANDLE} (Instagram Oficial · 10,5k seguidores)
+                    {INSTAGRAM_HANDLE} (Instagram Oficial · 1.743 seguidores)
                   </a>
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <Mail size={16} className="shrink-0 text-[#8e6318]" />
+                  <Mail size={16} className="shrink-0 text-[#741f34]" />
                   <a
                     href={`mailto:${EMAIL_CONTACT}`}
-                    className="transition-colors hover:text-[#8e6318] text-[#14110e]"
+                    className="transition-colors hover:text-[#741f34] text-[#141316]"
                   >
                     {EMAIL_CONTACT}
                   </a>
@@ -1621,16 +1596,16 @@ export default function Home() {
                 <div className="flex items-start gap-3">
                   <MapPin
                     size={16}
-                    className="mt-0.5 shrink-0 text-[#8e6318]"
+                    className="mt-0.5 shrink-0 text-[#741f34]"
                   />
                   <div>
-                    <span className="text-[#14110e]">{ADDRESS_TEXT}</span>
+                    <span className="text-[#141316]">{ADDRESS_TEXT}</span>
                     <br />
                     <a
-                      href={GOOGLE_SEARCH_URL}
+                      href={GOOGLE_MAPS_URL}
                       target="_blank"
                       rel="noreferrer"
-                      className="mt-1 inline-flex items-center gap-1 font-semibold text-[#8e6318] hover:underline"
+                      className="mt-1 inline-flex items-center gap-1 font-semibold text-[#741f34] hover:underline"
                     >
                       Ver no Google Maps <ArrowUpRight size={12} />
                     </a>
@@ -1639,81 +1614,99 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Office & Profile Card */}
-            <div className="relative overflow-hidden rounded-xl border border-[#e8dfd2] bg-white p-7 shadow-sm sm:p-10">
-              <div className="absolute right-0 top-0 h-1.5 w-32 bg-gradient-to-r from-[#8e6318] to-[#deb753]" />
+            {/* Office & Profile Card with Physical Facade Photo */}
+            <div className="relative overflow-hidden rounded-xl border border-[#e8dde0] bg-white p-7 shadow-sm sm:p-10">
+              <div className="absolute right-0 top-0 h-1.5 w-32 bg-gradient-to-r from-[#571424] via-[#8c2a41] to-[#b5455f]" />
 
-              <div className="relative h-16 w-52 sm:h-20 sm:w-64">
-                <Image
-                  src={LOGO_FULL_SRC}
-                  alt="Barbosa Advocacia e Consultoria"
-                  fill
-                  sizes="260px"
-                  className="object-contain object-left"
-                />
-              </div>
-              <div className="mt-4">
-                <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#8e6318]">
-                  Sede do Escritório
-                </p>
-                <p className="mt-0.5 font-cinzel text-xl font-bold text-[#14110e] sm:text-2xl">
-                  BARBOSA ADVOCACIA E CONSULTORIA
-                </p>
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#8e6318]">
-                  Dra. Francielle Gonçalves Barbosa · Patos de Minas - MG
-                </p>
+              <div className="grid gap-6 sm:grid-cols-[1.2fr_0.8fr] items-start">
+                <div>
+                  <div className="relative h-16 w-52 sm:h-20 sm:w-64">
+                    <Image
+                      src={LOGO_FULL_SRC}
+                      alt="Stefanie Barbosa Advocacia Previdenciária"
+                      fill
+                      sizes="260px"
+                      className="object-contain object-left"
+                    />
+                  </div>
+                  <div className="mt-4">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#741f34]">
+                      Sede do Escritório
+                    </p>
+                    <p className="mt-0.5 font-cinzel text-xl font-bold text-[#141316] sm:text-2xl">
+                      STEFANIE BARBOSA ADVOCACIA
+                    </p>
+                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#741f34]">
+                      Dra. Stefanie Barbosa · {OAB_REGISTRY} · Jacutinga - MG
+                    </p>
+                  </div>
+                </div>
+
+                {/* Office photo in card */}
+                <div className="relative aspect-[3/4] w-full overflow-hidden rounded-xl border border-[#e8dde0] shadow-xs">
+                  <Image
+                    src={FOTO_FACHADA_SRC}
+                    alt="Placa e Fachada do Escritório em Jacutinga - MG"
+                    fill
+                    unoptimized
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 bg-[#141316]/85 p-2 text-center text-[10px] font-medium text-white">
+                    Sede · Jacutinga / MG
+                  </div>
+                </div>
               </div>
 
-              <address className="mt-7 max-w-md text-[14px] not-italic leading-7 text-[#4c433a]">
-                <strong className="font-semibold text-[#14110e]">
-                  Dra. Francielle Gonçalves Barbosa
+              <address className="mt-6 max-w-md text-[14px] not-italic leading-7 text-[#4b4650]">
+                <strong className="font-semibold text-[#141316]">
+                  Dra. Stefanie Barbosa
                 </strong>
                 <br />
-                Advogada Especialista em Direito de Família e Sucessões
+                Advogada Especialista em Direito Previdenciário ({OAB_REGISTRY})
                 <br />
-                Criadora do Método S.E.G.U.R.A
+                Pós-Graduada em Ciências Criminais (PUC-MG) & Família/Sucessões
                 <br />
-                Divórcio · Guarda · Pensão · Inventários
+                Pedagoga e Neuropsicopedagoga
                 <br />
                 {ADDRESS_TEXT}
               </address>
 
               {/* Weekly schedule table */}
-              <div className="mt-6 rounded-lg border border-[#e8dfd2] bg-[#faf7f2] p-4 text-xs">
-                <p className="mb-2.5 text-[10px] font-bold uppercase tracking-[0.15em] text-[#8e6318]">
-                  Atendimento & Informações
+              <div className="mt-6 rounded-lg border border-[#e8dde0] bg-[#faf7f8] p-4 text-xs">
+                <p className="mb-2.5 text-[10px] font-bold uppercase tracking-[0.15em] text-[#741f34]">
+                  Atendimento & Informações Oficiais
                 </p>
-                <div className="grid grid-cols-2 gap-y-1.5 text-[#4c433a]">
+                <div className="grid grid-cols-2 gap-y-1.5 text-[#4b4650]">
                   <span>Funcionamento</span>
-                  <span className="text-right font-semibold text-[#14110e]">
-                    Aberto 24 horas
+                  <span className="text-right font-semibold text-[#141316]">
+                    Segunda a Sexta a partir das 08:00
                   </span>
                   <span>Atendimento Presencial</span>
-                  <span className="text-right font-medium text-[#8e6318]">
-                    Patos de Minas - MG
+                  <span className="text-right font-medium text-[#741f34]">
+                    Jacutinga - MG (Sede Própria)
                   </span>
                   <span>Endereço</span>
-                  <span className="text-right text-[#14110e]">R. Lagamar, 98 - Copacabana</span>
+                  <span className="text-right text-[#141316]">R. das Acácias, 267</span>
                   <span>Avaliações Google</span>
-                  <span className="text-right font-semibold text-[#8e6318]">5,0 ★ (13 avaliações)</span>
+                  <span className="text-right font-semibold text-[#741f34]">4,8 ★ (12 avaliações)</span>
                   <span>Atendimento Digital</span>
-                  <span className="text-right text-[#14110e]">Todo o Brasil</span>
+                  <span className="text-right text-[#141316]">Todo o Brasil</span>
                 </div>
               </div>
 
-              <div className="my-7 h-px bg-[#e8dfd2]" />
+              <div className="my-7 h-px bg-[#e8dde0]" />
 
               <div className="flex flex-wrap items-center justify-between gap-4">
-                <p className="text-xs text-[#786b5e]">
-                  Atendimento humanizado, ético e com total sigilo profissional
+                <p className="text-xs text-[#6b6270]">
+                  Atendimento transparente, ético e em estrita conformidade com a OAB/MG
                 </p>
                 <a
                   href={getWhatsAppUrl(
-                    "Olá, Dra. Francielle! Gostaria de agendar um atendimento no escritório."
+                    "Olá, Dra. Stefanie! Gostaria de agendar um atendimento no escritório."
                   )}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-lg border border-[#deb753]/40 bg-[#f4efe6] px-5 py-3 text-[10px] font-bold uppercase tracking-[0.14em] text-[#14110e] transition-colors hover:border-[#8e6318] hover:bg-[#14110e] hover:text-[#f7e5a9]"
+                  className="inline-flex items-center gap-2 rounded-lg border border-[#ecadb7] bg-[#fbebed] px-5 py-3 text-[10px] font-bold uppercase tracking-[0.14em] text-[#571424] transition-colors hover:border-[#741f34] hover:bg-[#741f34] hover:text-white"
                 >
                   <WhatsAppIcon size={14} /> Falar no WhatsApp <ArrowUpRight size={14} />
                 </a>
@@ -1723,23 +1716,23 @@ export default function Home() {
         </section>
 
         {/* Pre-Footer CTA Strip */}
-        <section className="border-t border-[#deb753]/30 bg-gradient-to-r from-[#f4efe6] via-[#faf7f2] to-[#f4efe6] px-5 py-14 text-[#14110e] shadow-xs sm:px-8 sm:py-16 lg:px-12">
+        <section className="border-t border-[#ecadb7] bg-gradient-to-r from-[#f4eef0] via-[#faf7f8] to-[#f4eef0] px-5 py-14 text-[#141316] shadow-xs sm:px-8 sm:py-16 lg:px-12">
           <div className="mx-auto flex max-w-7xl flex-col justify-between gap-7 sm:flex-row sm:items-center">
             <div>
-              <p className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#8e6318]">
-                <Sparkles size={13} /> FRANCIELLE GONÇALVES ADVOGADA · PATOS DE MINAS & MINAS GERAIS
+              <p className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#741f34]">
+                <Sparkles size={13} /> STEFANIE BARBOSA ADVOCACIA PREVIDENCIÁRIA · {OAB_REGISTRY}
               </p>
-              <h2 className="mt-3 max-w-2xl font-serif text-3xl leading-tight text-[#14110e] sm:text-4xl">
-                Precisa de uma advogada que realmente ouve você e defende sua família com firmeza e sensibilidade?
+              <h2 className="mt-3 max-w-2xl font-serif text-3xl leading-tight text-[#141316] sm:text-4xl">
+                Pronto para conquistar a sua aposentadoria ou benefício do INSS com quem realmente entende do assunto?
               </h2>
             </div>
             <a
               href={getWhatsAppUrl(
-                "Olá, Dra. Francielle! Gostaria de uma avaliação para a minha situação jurídica familiar."
+                "Olá, Dra. Stefanie! Gostaria de uma avaliação para a minha situação jurídica previdenciária."
               )}
               target="_blank"
               rel="noreferrer"
-              className="group inline-flex w-fit shrink-0 items-center gap-3 rounded-lg bg-gradient-to-r from-[#8e6318] via-[#c59a3f] to-[#8e6318] px-7 py-4 text-[11px] font-bold uppercase tracking-[0.14em] text-white shadow-md transition-all hover:-translate-y-0.5 hover:brightness-105 hover:shadow-lg"
+              className="group inline-flex w-fit shrink-0 items-center gap-3 rounded-lg bg-gradient-to-r from-[#571424] via-[#8c2a41] to-[#571424] px-7 py-4 text-[11px] font-bold uppercase tracking-[0.14em] text-white shadow-md transition-all hover:-translate-y-0.5 hover:brightness-110 hover:shadow-lg"
             >
               <WhatsAppIcon size={17} /> Falar no WhatsApp{" "}
               <ArrowUpRight size={15} />
@@ -1747,55 +1740,55 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Footer - Elegant Light Luxury */}
-        <footer className="border-t border-[#e8dfd2] bg-[#f4efe6] px-5 py-14 text-[#14110e] sm:px-8 lg:px-12">
+        {/* Footer - Elegant Silk & Marsala Luxury */}
+        <footer className="border-t border-[#e8dde0] bg-[#f4eef0] px-5 py-14 text-[#141316] sm:px-8 lg:px-12">
           <div className="mx-auto grid max-w-7xl gap-10 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_1fr]">
             <div>
               <a
                 href="#inicio"
-                aria-label="Francielle Gonçalves Advogada"
+                aria-label="Stefanie Barbosa Advocacia Previdenciária"
                 className="inline-block transition-transform hover:scale-[1.01]"
               >
                 <div className="relative h-16 w-60 sm:h-20 sm:w-72 lg:h-24 lg:w-80">
                   <Image
                     src={LOGO_FULL_SRC}
-                    alt="Barbosa Advocacia e Consultoria — Dra. Francielle Gonçalves"
+                    alt="Stefanie Barbosa Advocacia Previdenciária"
                     fill
                     sizes="(max-width: 640px) 240px, (max-width: 1024px) 288px, 320px"
                     className="object-contain object-left"
                   />
                 </div>
               </a>
-              <p className="mt-4 max-w-xs text-xs leading-6 text-[#5c5042]">
-                ⚖️ Advocacia de excelência com atendimento humanizado, ética e rigor técnico. Protegendo mulheres e seu patrimônio com o Método S.E.G.U.R.A em Patos de Minas - MG e em todo o Brasil.
+              <p className="mt-4 max-w-xs text-xs leading-6 text-[#5c5560]">
+                ⚖️ Advocacia previdenciária de excelência, transparência e rigor técnico. Defesa firme do seu direito à aposentadoria, BPC/LOAS e benefícios do INSS em Jacutinga - MG e em todo o Brasil.
               </p>
-              <p className="mt-3 text-[11px] font-semibold text-[#8e6318]">
-                Dra. Francielle Gonçalves Barbosa · Advogada
+              <p className="mt-3 text-[11px] font-semibold text-[#741f34]">
+                Dra. Stefanie Barbosa · Advogada · {OAB_REGISTRY}
               </p>
             </div>
 
             <div>
-              <h2 className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#8e6318]">
+              <h2 className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#741f34]">
                 Navegação
               </h2>
-              <div className="mt-4 flex flex-col items-start gap-3 text-xs text-[#5c5042]">
+              <div className="mt-4 flex flex-col items-start gap-3 text-xs text-[#5c5560]">
                 <a className="footer-link" href="#inicio">
                   Início
                 </a>
                 <a className="footer-link" href="#sobre">
-                  Dra. Francielle
-                </a>
-                <a className="footer-link" href="#metodo-segura">
-                  Método S.E.G.U.R.A
+                  Dra. Stefanie
                 </a>
                 <a className="footer-link" href="#atuacao">
-                  Áreas de Atuação
+                  Especialidades
+                </a>
+                <a className="footer-link" href="#como-funciona">
+                  Como Funciona
                 </a>
                 <a className="footer-link" href="#diferenciais">
                   Por Que Escolher
                 </a>
                 <a className="footer-link" href="#avaliacoes">
-                  Avaliações de Clientes (5,0 ★)
+                  Avaliações de Clientes (4,8 ★)
                 </a>
                 <a className="footer-link" href="#contato">
                   Contato & Sede
@@ -1804,17 +1797,17 @@ export default function Home() {
             </div>
 
             <div>
-              <h2 className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#8e6318]">
+              <h2 className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#741f34]">
                 Contato & Atendimento
               </h2>
-              <div className="mt-4 flex flex-col items-start gap-2.5 text-xs text-[#5c5042]">
+              <div className="mt-4 flex flex-col items-start gap-2.5 text-xs text-[#5c5560]">
                 <a
                   href={getWhatsAppUrl(
-                    "Olá, Dra. Francielle! Gostaria de falar com o escritório."
+                    "Olá, Dra. Stefanie! Gostaria de falar com o escritório."
                   )}
                   target="_blank"
                   rel="noreferrer"
-                  className="footer-link inline-flex items-center gap-2 font-medium text-[#14110e]"
+                  className="footer-link inline-flex items-center gap-2 font-medium text-[#141316]"
                 >
                   <WhatsAppIcon size={15} /> WhatsApp: {PHONE_DISPLAY}
                 </a>
@@ -1839,7 +1832,7 @@ export default function Home() {
                   <Mail size={15} className="shrink-0" /> {EMAIL_CONTACT}
                 </a>
                 <a
-                  href={GOOGLE_SEARCH_URL}
+                  href={GOOGLE_MAPS_URL}
                   target="_blank"
                   rel="noreferrer"
                   className="footer-link inline-flex items-start gap-2"
@@ -1847,16 +1840,16 @@ export default function Home() {
                   <MapPin size={15} className="mt-0.5 shrink-0" />
                   <span>{ADDRESS_TEXT}</span>
                 </a>
-                <p className="inline-flex items-center gap-2 pt-1 text-[11px] text-[#8e6318]">
-                  <Clock size={14} className="shrink-0" /> Aberto 24 horas · Plantão & Agendamento
+                <p className="inline-flex items-center gap-2 pt-1 text-[11px] text-[#741f34]">
+                  <Clock size={14} className="shrink-0" /> Seg. a Sex. a partir das 08:00 · Agendamento flexível
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="mx-auto mt-12 flex max-w-7xl flex-col gap-3 border-t border-[#e8dfd2] pt-6 text-[10px] text-stone-500 sm:flex-row sm:items-center sm:justify-between">
+          <div className="mx-auto mt-12 flex max-w-7xl flex-col gap-3 border-t border-[#e8dde0] pt-6 text-[10px] text-stone-500 sm:flex-row sm:items-center sm:justify-between">
             <p>
-              © {new Date().getFullYear()} BARBOSA ADVOCACIA E CONSULTORIA. Todos os direitos reservados.
+              © {new Date().getFullYear()} STEFANIE BARBOSA ADVOCACIA PREVIDENCIÁRIA ({OAB_REGISTRY}). Todos os direitos reservados.
             </p>
             <p>
               Conteúdo informativo, em estrita conformidade com o Código de Ética e Disciplina da OAB.
@@ -1871,16 +1864,16 @@ export default function Home() {
         >
           <a
             href={getWhatsAppUrl(
-              "Olá, Dra. Francielle! Gostaria de consultar sobre meu caso e tirar dúvidas pelo WhatsApp."
+              "Olá, Dra. Stefanie! Gostaria de consultar sobre meu benefício e tirar dúvidas pelo WhatsApp."
             )}
             target="_blank"
             rel="noreferrer"
-            aria-label="Falar agora pelo WhatsApp com a Dra. Francielle Gonçalves"
+            aria-label="Falar agora pelo WhatsApp com a Dra. Stefanie Barbosa"
             className="group relative flex size-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl transition-all duration-300 hover:scale-110 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-[#25D366]/40"
           >
             <WhatsAppIcon size={28} />
-            <span className="pointer-events-none absolute right-16 hidden whitespace-nowrap rounded-lg bg-[#14110e] border border-[#deb753]/30 px-3.5 py-1.5 text-xs font-semibold text-white shadow-lg transition-opacity group-hover:block">
-              Falar com a Dra. Francielle Gonçalves
+            <span className="pointer-events-none absolute right-16 hidden whitespace-nowrap rounded-lg bg-[#141316] border border-[#b5455f]/30 px-3.5 py-1.5 text-xs font-semibold text-white shadow-lg transition-opacity group-hover:block">
+              Falar com a Dra. Stefanie Barbosa
             </span>
           </a>
         </aside>
@@ -1904,13 +1897,13 @@ export default function Home() {
                 exit={{ opacity: 0, y: 16, scale: 0.99 }}
                 transition={{ duration: 0.24 }}
                 onClick={(event) => event.stopPropagation()}
-                className="relative max-h-[90vh] w-full overflow-y-auto rounded-t-xl border border-[#e8dfd2] bg-white p-7 shadow-2xl sm:max-w-xl sm:rounded-xl sm:p-10 text-[#14110e]"
+                className="relative max-h-[90vh] w-full overflow-y-auto rounded-t-xl border border-[#e8dde0] bg-white p-7 shadow-2xl sm:max-w-xl sm:rounded-xl sm:p-10 text-[#141316]"
               >
                 <button
                   type="button"
                   aria-label="Fechar detalhes da especialidade"
                   onClick={() => setActiveArea(null)}
-                  className="absolute right-5 top-5 grid size-10 place-items-center rounded-lg border border-[#e8dfd2] bg-[#faf7f2] text-[#14110e] transition-colors hover:border-[#deb753] hover:text-[#8e6318] cursor-pointer"
+                  className="absolute right-5 top-5 grid size-10 place-items-center rounded-lg border border-[#e8dde0] bg-[#faf7f8] text-[#141316] transition-colors hover:border-[#b5455f] hover:text-[#741f34] cursor-pointer"
                 >
                   <X size={18} />
                 </button>
@@ -1919,26 +1912,26 @@ export default function Home() {
 
                 <h2
                   id="area-dialog-title"
-                  className="mt-4 max-w-sm pr-10 font-serif text-3xl leading-tight text-[#14110e] sm:text-4xl"
+                  className="mt-4 max-w-sm pr-10 font-serif text-3xl leading-tight text-[#141316] sm:text-4xl"
                 >
                   {activeArea.title}
                 </h2>
 
-                <p className="mt-5 text-sm leading-7 text-[#4c433a]">
+                <p className="mt-5 text-sm leading-7 text-[#4b4650]">
                   {activeArea.details}
                 </p>
 
-                <div className="mt-6 border-t border-[#e8dfd2] pt-5">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#8e6318]">
+                <div className="mt-6 border-t border-[#e8dde0] pt-5">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#741f34]">
                     Demandas e Pedidos Atendidos pelo Escritório:
                   </p>
                   <ul className="mt-4 space-y-3">
                     {activeArea.topics.map((topic) => (
                       <li
                         key={topic}
-                        className="flex items-center gap-3 text-sm text-[#2b241c]"
+                        className="flex items-center gap-3 text-sm text-[#141316]"
                       >
-                        <span className="size-2 shrink-0 rounded-full bg-[#8e6318]" />
+                        <span className="size-2 shrink-0 rounded-full bg-[#741f34]" />
                         <span>{topic}</span>
                       </li>
                     ))}
@@ -1958,7 +1951,7 @@ export default function Home() {
                   <button
                     type="button"
                     onClick={() => setActiveArea(null)}
-                    className="px-5 py-3 text-xs font-semibold text-stone-500 transition-colors hover:text-[#14110e] cursor-pointer"
+                    className="px-5 py-3 text-xs font-semibold text-stone-500 transition-colors hover:text-[#141316] cursor-pointer"
                   >
                     Fechar
                   </button>

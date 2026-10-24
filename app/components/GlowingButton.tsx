@@ -11,6 +11,7 @@ interface GlowingButtonProps {
   size?: "sm" | "md" | "lg";
   variant?:
     | "gold"
+    | "marsala"
     | "gold-dark"
     | "rosegold"
     | "champagne"
@@ -36,30 +37,32 @@ export default function GlowingButton({
     lg: "px-7 py-4 text-xs tracking-[0.14em]",
   }[size];
 
-  // Refined metallic polished gold, champagne and prestige luxury styling for Dra. Francielle Gonçalves Barbosa
+  // Refined Marsala Borgonha, Velvet Cabernet, Obsidian Tailoring and Soft Pearl styling for Dra. Stefanie Barbosa
   const variantClasses = {
     gold:
-      "border border-[#c59a3f]/70 bg-gradient-to-r from-[#8e6318] via-[#c59a3f] to-[#8e6318] text-white font-bold shadow-md shadow-[#8e6318]/25 hover:-translate-y-0.5 hover:brightness-105 hover:shadow-gold",
+      "border border-[#b5455f]/60 bg-gradient-to-r from-[#571424] via-[#8c2a41] to-[#571424] text-white font-bold shadow-md shadow-[#571424]/30 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-marsala",
+    marsala:
+      "border border-[#b5455f]/60 bg-gradient-to-r from-[#571424] via-[#8c2a41] to-[#571424] text-white font-bold shadow-md shadow-[#571424]/30 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-marsala",
     rosegold:
-      "border border-[#c59a3f]/70 bg-gradient-to-r from-[#8e6318] via-[#c59a3f] to-[#8e6318] text-white font-bold shadow-md shadow-[#8e6318]/25 hover:-translate-y-0.5 hover:brightness-105 hover:shadow-gold",
+      "border border-[#b5455f]/60 bg-gradient-to-r from-[#571424] via-[#8c2a41] to-[#571424] text-white font-bold shadow-md shadow-[#571424]/30 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-marsala",
     "gold-dark":
-      "border border-[#deb753]/40 bg-gradient-to-r from-[#322003] via-[#5a3c08] to-[#322003] text-white font-bold shadow-md hover:-translate-y-0.5 hover:brightness-110",
+      "border border-[#ecadb7]/30 bg-gradient-to-r from-[#141316] via-[#26060e] to-[#141316] text-white font-bold shadow-md hover:-translate-y-0.5 hover:brightness-110",
     champagne:
-      "border border-[#deb753]/50 bg-[#f4efe6] text-[#14110e] font-bold shadow-xs hover:-translate-y-0.5 hover:bg-[#ede5d8]",
+      "border border-[#ecadb7]/60 bg-[#fbebed] text-[#571424] font-bold shadow-xs hover:-translate-y-0.5 hover:bg-[#f5d3d8]",
     bronze:
-      "border border-[#5a3c08]/50 bg-[#322003] text-white font-bold shadow-md hover:-translate-y-0.5 hover:brightness-110",
+      "border border-[#571424]/50 bg-[#3c0c17] text-white font-bold shadow-md hover:-translate-y-0.5 hover:brightness-110",
     dark:
-      "border border-[#deb753]/40 bg-[#14110e] text-[#f7e5a9] shadow-sm hover:-translate-y-0.5 hover:bg-[#221c17] hover:text-white",
+      "border border-[#b5455f]/40 bg-[#141316] text-[#fdf7f8] shadow-sm hover:-translate-y-0.5 hover:bg-[#1f1d22] hover:text-white",
     outline:
-      "border border-[#8e6318]/50 bg-white text-[#8e6318] hover:-translate-y-0.5 hover:border-[#8e6318] hover:bg-[#f4efe6] hover:text-[#14110e]",
+      "border border-[#741f34]/50 bg-white text-[#741f34] hover:-translate-y-0.5 hover:border-[#741f34] hover:bg-[#fbebed] hover:text-[#571424]",
     ruby:
       "border border-[#ef4444]/40 bg-gradient-to-r from-[#7f1d1d] via-[#991b1b] to-[#7f1d1d] text-white font-bold shadow-md hover:-translate-y-0.5 hover:brightness-110",
     white:
-      "border border-[#e8dfd2] bg-white text-[#14110e] shadow-sm hover:-translate-y-0.5 hover:border-[#deb753] hover:shadow-md",
+      "border border-[#e6d8dc] bg-white text-[#141316] shadow-sm hover:-translate-y-0.5 hover:border-[#b5455f] hover:shadow-md",
   }[variant];
 
   const classes =
-    "inline-flex items-center justify-center gap-2 rounded-lg font-bold uppercase transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#deb753] select-none text-center cursor-pointer " +
+    "inline-flex items-center justify-center gap-2 rounded-lg font-bold uppercase transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#8c2a41] select-none text-center cursor-pointer " +
     sizeClasses +
     " " +
     variantClasses +

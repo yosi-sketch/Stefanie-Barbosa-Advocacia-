@@ -2,65 +2,64 @@
 
 :root {
   color-scheme: light;
-  --brand-gold-light: #fff4d4;
-  --brand-gold-highlight: #f7e5a9;
-  --brand-gold-shimmer: #eac66f;
-  --brand-gold-accent: #deb753;
-  --brand-gold: #c59a3f;
-  --brand-gold-rich: #8e6318;
-  --brand-gold-dark: #5a3c08;
-  --brand-gold-deep: #322003;
-  --brand-gold-shadow: #1c1101;
-  --brand-obsidian: #14110e;
-  --brand-charcoal: #221c17;
+  /* Paleta Exclusiva Inspirada na Dra. Stefanie Barbosa: Marsala Borgonha, Ébano Alfaiataria & Seda Pérola */
+  --brand-marsala-50: #fdf7f8;
+  --brand-marsala-100: #fbebed;
+  --brand-marsala-200: #f5d3d8;
+  --brand-marsala-300: #ecadb7;
+  --brand-marsala-400: #b5455f;
+  --brand-marsala-500: #8c2a41;
+  --brand-marsala-600: #741f34;
+  --brand-marsala-700: #571424;
+  --brand-marsala-800: #3c0c17;
+  --brand-marsala-900: #26060e;
+  
+  --brand-obsidian: #141316;
+  --brand-charcoal: #1f1d22;
+  --brand-slate: #323038;
   --brand-surface: #ffffff;
-  --brand-surface-elevated: #faf7f2;
-  --brand-ink: #14110e;
-  --brand-ink-soft: #4c433a;
-  --brand-pearl: #faf7f2;
-  --brand-paper: #f4efe6;
+  --brand-surface-elevated: #faf7f8;
+  --brand-ink: #141316;
+  --brand-ink-soft: #4b4650;
+  --brand-pearl: #faf7f8;
+  --brand-paper: #f4eef0;
 }
 
 @theme inline {
   --font-serif: var(--font-serif), var(--font-display), "Playfair Display", "Cormorant Garamond", serif;
   --font-cinzel: var(--font-cinzel), "Cinzel", "Trajan Pro", serif;
   --font-sans: var(--font-body), "Plus Jakarta Sans", system-ui, sans-serif;
-  --color-ink: #14110e;
-  --color-ink-soft: #4c433a;
+  --color-ink: #141316;
+  --color-ink-soft: #4b4650;
   --color-pearl: #ffffff;
-  --color-brand-50: #fbf9f5;
-  --color-brand-100: #f4efe6;
-  --color-brand-200: #e8dfd2;
-  --color-brand-300: #d5c8b5;
-  --color-brand-400: #deb753;
-  --color-brand-500: #c59a3f;
-  --color-brand-600: #8e6318;
-  --color-brand-700: #5a3c08;
-  --color-brand-800: #322003;
-  --color-brand-900: #1c1101;
-  --color-brand-950: #14110e;
-  --color-gold-100: #fff4d4;
-  --color-gold-200: #f7e5a9;
-  --color-gold-300: #eac66f;
-  --color-gold-400: #deb753;
-  --color-gold-500: #c59a3f;
-  --color-gold-600: #8e6318;
-  --color-gold-700: #5a3c08;
-  --color-gold-800: #322003;
-  --color-gold-900: #1c1101;
-  --color-bronze-100: #fff4d4;
-  --color-bronze-200: #f7e5a9;
-  --color-bronze-300: #deb753;
-  --color-bronze-400: #c59a3f;
-  --color-bronze-500: #8e6318;
-  --color-bronze-600: #5a3c08;
-  --color-bronze-700: #322003;
-  --color-bronze-800: #1c1101;
+  
+  --color-brand-50: #fdf7f8;
+  --color-brand-100: #fbebed;
+  --color-brand-200: #f5d3d8;
+  --color-brand-300: #ecadb7;
+  --color-brand-400: #b5455f;
+  --color-brand-500: #8c2a41;
+  --color-brand-600: #741f34;
+  --color-brand-700: #571424;
+  --color-brand-800: #3c0c17;
+  --color-brand-900: #26060e;
+  --color-brand-950: #141316;
+
+  --color-marsala-50: #fdf7f8;
+  --color-marsala-100: #fbebed;
+  --color-marsala-200: #f5d3d8;
+  --color-marsala-300: #ecadb7;
+  --color-marsala-400: #b5455f;
+  --color-marsala-500: #8c2a41;
+  --color-marsala-600: #741f34;
+  --color-marsala-700: #571424;
+  --color-marsala-800: #3c0c17;
+  --color-marsala-900: #26060e;
+
   --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.05);
-  --shadow-gold: 0 10px 30px rgba(197, 154, 63, 0.22);
-  --shadow-bronze: 0 10px 30px rgba(142, 99, 24, 0.18);
-  --shadow-obsidian: 0 16px 45px rgba(0, 0, 0, 0.08);
-  --shadow-glow: 0 0 35px rgba(222, 183, 83, 0.25);
+  --shadow-marsala: 0 10px 30px rgba(116, 31, 52, 0.22);
+  --shadow-obsidian: 0 16px 45px rgba(20, 19, 22, 0.08);
+  --shadow-glow: 0 0 35px rgba(181, 69, 95, 0.25);
 }
 
 html {
@@ -69,15 +68,15 @@ html {
 }
 
 body {
-  background: #faf8f5;
-  color: #14110e;
+  background: #faf7f8;
+  color: #141316;
   font-family: var(--font-body), "Plus Jakarta Sans", system-ui, sans-serif;
-  caret-color: #8e6318;
+  caret-color: #741f34;
 }
 
 ::selection {
-  background: #f7e5a9;
-  color: #14110e;
+  background: #f5d3d8;
+  color: #26060e;
 }
 
 .font-cinzel {
@@ -97,11 +96,11 @@ body {
 }
 
 .eyebrow {
-  color: #8e6318;
+  color: #741f34;
 }
 
 .eyebrow-light {
-  color: #5a3c08;
+  color: #571424;
 }
 
 .eyebrow::before,
@@ -116,7 +115,7 @@ body {
 .nav-link {
   position: relative;
   padding-block: 0.5rem;
-  color: #4c433a;
+  color: #4b4650;
   font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -130,7 +129,7 @@ body {
   bottom: 0;
   left: 0;
   height: 2px;
-  background: #8e6318;
+  background: #741f34;
   content: "";
   transform: scaleX(0);
   transform-origin: left;
@@ -138,7 +137,7 @@ body {
 }
 
 .nav-link:hover {
-  color: #14110e;
+  color: #141316;
 }
 
 .nav-link:hover::after {
@@ -150,7 +149,7 @@ body {
 }
 
 .footer-link:hover {
-  color: #8e6318;
+  color: #741f34;
 }
 
 ::-webkit-scrollbar {
@@ -158,17 +157,17 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f4efe6;
+  background: #f4eef0;
 }
 
 ::-webkit-scrollbar-thumb {
-  border: 2px solid #f4efe6;
+  border: 2px solid #f4eef0;
   border-radius: 999px;
-  background: #d5c8b5;
+  background: #d8c9cc;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #8e6318;
+  background: #741f34;
 }
 
 @media (prefers-reduced-motion: reduce) {
